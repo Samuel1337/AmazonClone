@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 const App = () => (
   <div>
-    <p>Front End Routes Online</p>
+    <p>Front End Routes Exist</p>
     <Switch>
       <Route exact path="/login" component={LoginFormContainer} />
       <Route exact path="/signup" component={SignupFormContainer} />
