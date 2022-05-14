@@ -4,3 +4,8 @@ const RootReducer = combineReducers({
 })
 
 export default RootReducer;
+// entities: {
+//     users: {}
+// },
+// session: {},
+// errors: {}
