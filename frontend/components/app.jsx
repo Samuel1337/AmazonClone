@@ -1,10 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Greeting_container from './greeting_container';
 
 const App = () => (
   <div>
-    <p>Front End Routes Exist</p>
-    <Switch>
+    <h1>Front End Routes Exist</h1>
+    <Greeting_container />
+    {/* <Switch>
       <Route exact path="/login" component={LoginFormContainer} />
       <Route exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/category/products" component={CategoryProductsIndex} />
@@ -14,7 +16,7 @@ const App = () => (
       <Route exact path="/cart" component={CartIndex} />
       <Route exact path="/" component={Home} />
       <Redirect to="/" />
-    </Switch>
+    </Switch> */}
   </div>
 );
 
