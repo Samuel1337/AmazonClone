@@ -11,7 +11,7 @@ const App = () => (
   <div>
     <header>
       <nav id="header-black">
-        <img src="../../app/assets/images/logo.png" />
+        <img src={window.logo} id="logo" />
         <GreetingContainer />
       </nav>
       <nav id="header-blue">

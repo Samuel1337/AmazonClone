@@ -8,13 +8,29 @@ header * {
     color: white;
 }
 
+#logo {
+    height: 50px;
+    width: 150px;
+    border-radius: 2px;
+}
+
+
 
 #header-black {
     background-color: #131921;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    #logo {
+        margin-left: 15px;
+    }
+    #logo:hover {
+        outline: 1px solid white;
+        cursor: pointer;
+    }
 }
+
 #header-blue {
     background-color: #232F3E;
     height: 39px;

@@ -88,7 +88,8 @@ class SessionForm extends React.Component {
 
         return (
             <div id="session-page">
-                <img src="../..app/assets/images/logo_white.png" />
+                
+                <img src={window.logo_white} id="logo" />
                 <nav id="session-box">
                     <h1>{formType}</h1>
                     <form onSubmit={this.handleSubmit}>
