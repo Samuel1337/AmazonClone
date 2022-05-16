@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import GreetingContainer from './greetingContainer';
 import loginFormContainer from './loginFormContainer';
 import signupFormContainer from './signupFormContainer';
+import Home from './home';
 
 const App = () => (
   <div>
@@ -26,18 +27,19 @@ const App = () => (
         <a href="">Gift Idea</a>
       </nav>
     </header>
+    <Switch>
       <AuthRoute path="/login" component={loginFormContainer} />
       <AuthRoute path="/signup" component={signupFormContainer} />
-    {/* <Switch>
-      <Route path="/category/products" component={CategoryProductsIndex} />
+      <Route path="/" component={Home} />
+    </Switch>
+      {/* <Route path="/category/products" component={CategoryProductsIndex} />
       <Route path="/products/:productId" component={ProductShow} />
       <Route path="/reviews/new" component={CreateReviewForm} />
       <Route path="/reviews/:productId/edit" component={EditReviewForm} />
       <Route path="/cart" component={CartIndex} />
-      <Route path="/" component={Home} />
-      <Redirect to="/" />
-    </Switch> */}
+      <Redirect to="/" /> */}
   </div>
 );
 
 export default App;
+

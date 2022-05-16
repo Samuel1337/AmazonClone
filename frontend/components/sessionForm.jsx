@@ -33,11 +33,11 @@ class SessionForm extends React.Component {
     redirect() {
         if (this.props.formType === "Sign-Up") {
             return (
-                <button><Link to="/login">Click here to Sign-In</Link></button>
+                <Link id="redirect" to="/login"><button>Click here to Sign-In</button></Link>
                 )
             } else {
                 return (
-                <button><Link to="/signup">Create an account</Link></button>
+                <Link id="redirect" to="/signup"><button>Create an account</button></Link>
             )
         }
     }
@@ -88,7 +88,7 @@ class SessionForm extends React.Component {
 
         return (
             <div id="session-page">
-                <img src="app/assets/images/logo_white.png" />
+                <img src="../..app/assets/images/logo_white.png" />
                 <nav id="session-box">
                     <h1>{formType}</h1>
                     <form onSubmit={this.handleSubmit}>
@@ -114,18 +114,18 @@ class SessionForm extends React.Component {
                                     onChange={this.update('password')}
                                     />
                             <br />
-                        </nav>    
                         <div id="session-errors">
                             {this.errors()}
                         </div>
-                        <nav id="session-buttons">
                             <button>{formType}</button>
                             <br />
-                            <button>Demo User</button>
-                            {this.intro()}
-                            {this.redirect()}
-                        </nav>
+                        </nav>    
                     </form>
+                    <nav id="session-buttons">
+                        <button>Demo User</button>
+                        {this.intro()}
+                        {this.redirect()}
+                    </nav>
                 </nav>
                 <br />
             </div>
