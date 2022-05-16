@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 class SessionForm extends React.Component {
     constructor(props) {
       super(props);
-      
+        
       this.state = {
         username: "",
         password: ""
@@ -29,13 +29,13 @@ class SessionForm extends React.Component {
     }
 
     redirect() {
-        if (this.props.formType === "Sign Up") {
+        if (this.props.formType === "Sign-Up") {
             return (
-                <p><Link to="/login">Log In</Link> Instead</p>
+                <button><Link to="/login">Click Here to Sign-In</Link></button>
                 )
             } else {
                 return (
-                <p><Link to="/signup">Sign Up</Link> Instead</p>
+                <button><Link to="/signup">Click Here to Sign-Up</Link></button>
             )
         }
     }
@@ -56,29 +56,52 @@ class SessionForm extends React.Component {
         const { formType } = this.props;
 
         return (
-            <div>
-                <h1>{formType}</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Username:
-                        <input
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            />
-                    </label>
-                    <label>
-                        Password:
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                        />
-                    </label>
-                    <button>{formType}</button>
-                    {this.redirect()}
-                    {this.errors()}
-                 </form>
+            <div id="session-page">
+                <img src="app/assets/images/logo_white.png" />
+                <nav id="session-box">
+                    <h1>{formType}</h1>
+                    <form onSubmit={this.handleSubmit}>
+                    <nav id="session-inputs">
+                            <label id="session-label">
+                                Name:
+                            </label>
+                            <br />
+                                <input
+                                    type="text"
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    />
+                            <br />
+                            <label id="session-label">
+                                Email:
+                            </label>
+                            <br />
+                                <input
+                                    type="text"
+                                    />
+                            <br />
+                            <label id="session-label">
+                                Password:
+                            </label>
+                            <br />
+                                <input
+                                    type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    />
+                            <br />
+                        </nav>    
+                        <nav id="session-buttons">
+                            <button>{formType}</button>
+                            <br />
+                            <button>Demo User</button>
+                            <span>Already have an account?</span>
+                            {this.redirect()}
+                        </nav>
+                    </form>
+                </nav>
+                <br />
+                {this.errors()}
             </div>
         );
     }

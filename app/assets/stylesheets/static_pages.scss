@@ -2,17 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header {
+header * {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+
+#header-black {
     background-color: #131921;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+#header-blue {
+    background-color: #232F3E;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline: 80px;
+    
+    a {
+        font-size: 14px;
+        padding: 7px;
+        border-radius: 2px;
+    }
+    a:hover{
+        outline: 1px solid white;
+    }
+}
+
+
 
 #greeting {
 
     font-family: Arial, Helvetica, sans-serif;
     padding: 16px;
+    cursor: default;
     p {
         color: white;
         font-size: 12px;
@@ -28,5 +55,6 @@ header {
     }
     #header-link:hover {
         color: #EEA333;
+        cursor: pointer;
     }
 }

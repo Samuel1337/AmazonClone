@@ -9,8 +9,22 @@ import signupFormContainer from './signupFormContainer';
 const App = () => (
   <div>
     <header>
-      <img src="../../app/assets/images/logo.png" />
-      <GreetingContainer />
+      <nav id="header-black">
+        <img src="../../app/assets/images/logo.png" />
+        <GreetingContainer />
+      </nav>
+      <nav id="header-blue">
+        <a href="">All Products</a>
+        <a href="">Baby</a>
+        <a href="">Beauty &#38; Personal Care</a>
+        <a href="">Fashion</a>
+        <a href="">Fitness</a>
+        <a href="">Home Decor</a>
+        <a href="">Kitchen</a>
+        <a href="">Maternity</a>
+        <a href="">Smart Home</a>
+        <a href="">Gift Idea</a>
+      </nav>
     </header>
       <AuthRoute path="/login" component={loginFormContainer} />
       <AuthRoute path="/signup" component={signupFormContainer} />

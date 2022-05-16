@@ -1,3 +1,90 @@
 // Place all the styles related to the api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#session-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    
+    img {
+        padding: 20px;
+    }
+}
+
+
+#session-box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    outline: 1px solid lightgray;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+
+    #session-inputs * {
+        padding: 5px;
+        margin: 5px;
+    }
+    
+    input {
+        width: 215px;
+        border: 1px solid gray;
+        border-radius: 2px;
+    }
+    
+    input:active {
+        border-color: #EEA333;
+    }
+    
+    h1 {
+        font-size: 28px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+    }
+    
+    #session-label {
+        font-size: 13px;
+        font-weight: 700;
+    }
+    
+    
+    button {
+        width: 230px;
+        padding: 6px;
+        background-image: linear-gradient(to top, #F0C14E 0%, #ffe9b0 100%);
+        font-size: 12px;
+        text-decoration: none;
+        color: black;
+        border-radius: 3px;
+        border: 1px solid gray;
+        
+        * {
+            text-decoration: none;
+            color: black;
+        }
+    }
+    
+    button:hover {
+        background-color: #F0C14E;
+        cursor: pointer;
+    }
+    
+    span {
+        font-size: 10px;
+        padding-top: 5px;
+        margin: 5px;
+    }
+    
+    #session-buttons {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+}

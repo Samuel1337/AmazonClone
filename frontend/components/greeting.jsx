@@ -12,7 +12,7 @@ class Greeting extends React.Component {
             return (
                 <div id="greeting">
                     <p>Hello, {currentUser.username}</p>
-                    <button onClick={logout}>Logout</button>
+                    <a id="header-link" onClick={logout}>Logout</a>
                 </div>
             )
         } else {
