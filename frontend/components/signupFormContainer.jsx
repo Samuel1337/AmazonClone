@@ -1,4 +1,4 @@
-import { signup } from "../actions/session_actions";
+import { clearErrors, signup } from "../actions/session_actions";
 import { connect } from "react-redux";
 import SessionForm from "./sessionForm";
 
@@ -8,7 +8,9 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    processForm: user => dispatch(signup(user))
+    processForm: user => dispatch(signup(user)),
+    clearErrors: () => dispatch(clearErrors()),
+    demoLogin: user => dispatch(login(user))
 })
 
 export default connect(mSTP,mDTP)(SessionForm);

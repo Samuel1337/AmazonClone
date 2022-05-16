@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 class SessionForm extends React.Component {
     constructor(props) {
       super(props);
-        
+
       this.state = {
         username: "",
         password: ""
@@ -17,7 +17,13 @@ class SessionForm extends React.Component {
       this.redirect = this.redirect.bind(this);
       this.email = this.email.bind(this);
       this.intro = this.intro.bind(this);
+      this.demo = this.demo.bind(this);
+      this.demoHelper = this.demoHelper.bind(this);
       this.errors = this.errors.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.clearErrors();
     }
   
     handleSubmit(e) {
@@ -51,6 +57,7 @@ class SessionForm extends React.Component {
                     </label>
                     <br />
                     <input
+                        id="session-email"
                         type="text"
                     />
                     <br />
@@ -68,6 +75,44 @@ class SessionForm extends React.Component {
             return (
                 <span>New to Euphrates?</span>
             )
+        }
+    }
+
+    demo() {
+        const demoUser = {
+            username: "Demo",
+            password: "123456"
+        }
+        let username = demoUser.username;
+        let email = "demo@aol.com";
+        let password = demoUser.password;
+
+        let usernameInput = document.getElementById("session-username");
+        let emailInput = document.getElementById("session-email");
+        let passwordInput = document.getElementById("session-password");
+
+        this.demoHelper(username, usernameInput);
+        if (emailInput) {
+            this.demoHelper(email, emailInput);
+        }
+        this.demoHelper(password, passwordInput);
+        
+        setTimeout(() => {
+            const user = Object.assign({}, {username: "Demo", password: "123456"});
+            this.props.demoLogin(user);
+        }, 1500);
+    }
+
+    demoHelper(content, field) {
+        field.value = "";
+        let partial = "";
+        for (let i = 0; i < content.length; i++) {
+            const char = content[i];
+            setTimeout(() => {
+                partial += char;
+                console.log(partial)
+                field.value = partial;
+            }, 500);
         }
     }
 
@@ -99,6 +144,7 @@ class SessionForm extends React.Component {
                             </label>
                             <br />
                                 <input
+                                    id="session-username"
                                     type="text"
                                     value={this.state.username}
                                     onChange={this.update('username')}
@@ -110,6 +156,7 @@ class SessionForm extends React.Component {
                             </label>
                             <br />
                                 <input
+                                    id="session-password"
                                     type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
@@ -123,7 +170,7 @@ class SessionForm extends React.Component {
                         </nav>    
                     </form>
                     <nav id="session-buttons">
-                        <button>Demo User</button>
+                        <button onClick={this.demo}>Demo User</button>
                         {this.intro()}
                         {this.redirect()}
                     </nav>

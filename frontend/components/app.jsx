@@ -6,12 +6,13 @@ import GreetingContainer from './greetingContainer';
 import loginFormContainer from './loginFormContainer';
 import signupFormContainer from './signupFormContainer';
 import Home from './home';
+import { Link } from 'react-router-dom';
 
 const App = () => (
   <div>
     <header>
       <nav id="header-black">
-        <img src={window.logo} id="logo" />
+        <Link to="/"><img src={window.logo} id="logo" /></Link>
         <GreetingContainer />
       </nav>
       <nav id="header-blue">
