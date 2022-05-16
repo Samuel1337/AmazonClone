@@ -10,16 +10,20 @@ class Greeting extends React.Component {
         const {currentUser, logout} = this.props;
         if (currentUser) {
             return (
-                <div>
+                <div id="greeting">
                     <p>Hello, {currentUser.username}</p>
-                    <button onClick={logout}>Logout</button>
+                    <a id="header-link" onClick={logout}>Logout</a>
                 </div>
             )
         } else {
             return (
-                <div>
-                    <Link to="/signup">Sign Up </Link>
-                    <Link to="/login"> Log In</Link>
+                <div id="greeting">
+                    <p>Hello, Guest</p>
+                    <span>
+                        <Link to="/signup" id="header-link">Sign Up </Link>
+                        or 
+                        <Link to="/login" id="header-link"> Sign In</Link>
+                    </span>
                 </div>
             )
         }

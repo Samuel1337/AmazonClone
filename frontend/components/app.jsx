@@ -1,44 +1,43 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Switch } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-
-const App = () => (
-  <div>
-    <p>Front End Routes Exist</p>
-    <Switch>
-      <Route exact path="/category/products" component={CategoryProductsIndex} />
-      <Route exact path="/products/:productId" component={ProductShow} />
-      <Route exact path="/reviews/new" component={CreateReviewForm} />
-      <Route exact path="/reviews/:productId/edit" component={EditReviewForm} />
-      <Route exact path="/cart" component={CartIndex} />
-      <Route exact path="/login" component={LoginFormContainer} />
-      <Route exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/" component={Home} />
-=======
 import { Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 import GreetingContainer from './greetingContainer';
 import loginFormContainer from './loginFormContainer';
 import signupFormContainer from './signupFormContainer';
+import Home from './home';
+import { Link } from 'react-router-dom';
 
 const App = () => (
   <div>
     <header>
-      <GreetingContainer />
-      <h1>Front End Routes Online</h1>
+      <nav id="header-black">
+        <Link to="/"><img src={window.logo} id="logo" /></Link>
+        <GreetingContainer />
+      </nav>
+      <nav id="header-blue">
+        <a href="">All Products</a>
+        <a href="">Baby</a>
+        <a href="">Beauty &#38; Personal Care</a>
+        <a href="">Fashion</a>
+        <a href="">Fitness</a>
+        <a href="">Home Decor</a>
+        <a href="">Kitchen</a>
+        <a href="">Maternity</a>
+        <a href="">Smart Home</a>
+        <a href="">Gift Idea</a>
+      </nav>
     </header>
+    <Switch>
       <AuthRoute path="/login" component={loginFormContainer} />
       <AuthRoute path="/signup" component={signupFormContainer} />
-    {/* <Switch>
-      <Route path="/category/products" component={CategoryProductsIndex} />
+      <Route path="/" component={Home} />
+    </Switch>
+      {/* <Route path="/category/products" component={CategoryProductsIndex} />
       <Route path="/products/:productId" component={ProductShow} />
       <Route path="/reviews/new" component={CreateReviewForm} />
       <Route path="/reviews/:productId/edit" component={EditReviewForm} />
       <Route path="/cart" component={CartIndex} />
-      <Route path="/" component={Home} />
->>>>>>> user-auth
       <Redirect to="/" />
     </Switch> */}
   </div>

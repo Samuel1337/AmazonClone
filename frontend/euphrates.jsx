@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // set up Store
     let store;
     if (window.currentUser) {
-    const preloadedState = {
-        entities: {
-        users: { [window.currentUser.id]: window.currentUser }
-        },
-        session: { id: window.currentUser.id }
-    };
-    store = configureStore(preloadedState);
-    delete window.currentUser;
+        const preloadedState = {
+            entities: {
+            users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { id: window.currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
     } else {
-    store = configureStore();
+        store = configureStore();
     }
-
+    
     // set up Root
     const root = document.getElementById("root");
 <<<<<<< HEAD
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 =======
 >>>>>>> user-auth
     ReactDOM.render(<Root store={store} />, root);
-    
+
     // testing
     window.store = store;
     window.getState = store.getState;
