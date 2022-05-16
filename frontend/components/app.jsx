@@ -38,7 +38,8 @@ const App = () => (
       <Route path="/reviews/new" component={CreateReviewForm} />
       <Route path="/reviews/:productId/edit" component={EditReviewForm} />
       <Route path="/cart" component={CartIndex} />
-      <Redirect to="/" /> */}
+      <Redirect to="/" />
+    </Switch> */}
   </div>
 );
 

@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // set up Root
     const root = document.getElementById("root");
+<<<<<<< HEAD
+    store = configureStore();
+=======
+>>>>>>> user-auth
     ReactDOM.render(<Root store={store} />, root);
 
     // testing

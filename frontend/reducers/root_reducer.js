@@ -4,6 +4,14 @@ import errorsReducer from "./errors_reducer";
 import sessionReducer from "./session_reducer";
 
 
+<<<<<<< HEAD
+export default RootReducer;
+// entities: {
+//     users: {}
+// },
+// session: {},
+// errors: {}
+=======
 const rootReducer = combineReducers({
   entities: entitiesReducer,
   session: sessionReducer,
@@ -11,3 +19,4 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+>>>>>>> user-auth
