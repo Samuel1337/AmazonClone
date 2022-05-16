@@ -9,8 +9,8 @@ import signupFormContainer from './signupFormContainer';
 const App = () => (
   <div>
     <header>
+      <img src="../../app/assets/images/logo.png" />
       <GreetingContainer />
-      <h1>Front End Routes Online</h1>
     </header>
       <AuthRoute path="/login" component={loginFormContainer} />
       <AuthRoute path="/signup" component={signupFormContainer} />
