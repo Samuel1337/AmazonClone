@@ -7,6 +7,7 @@ import loginFormContainer from './loginFormContainer';
 import signupFormContainer from './signupFormContainer';
 import Home from './home';
 import { Link } from 'react-router-dom';
+import Categories from './categories';
 
 const App = () => (
   <div>
@@ -15,7 +16,8 @@ const App = () => (
         <Link to="/"><img src={window.logo} id="logo" /></Link>
         <GreetingContainer />
       </nav>
-      <nav id="header-blue">
+      <Categories />
+      {/* <nav id="header-blue">
         <a href="">All Products</a>
         <a href="">Baby</a>
         <a href="">Beauty &#38; Personal Care</a>
@@ -26,7 +28,7 @@ const App = () => (
         <a href="">Maternity</a>
         <a href="">Smart Home</a>
         <a href="">Gift Idea</a>
-      </nav>
+      </nav> */}
     </header>
     <Switch>
       <AuthRoute path="/login" component={loginFormContainer} />
