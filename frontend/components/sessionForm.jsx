@@ -15,6 +15,8 @@ class SessionForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.update = this.update.bind(this);
       this.redirect = this.redirect.bind(this);
+      this.email = this.email.bind(this);
+      this.intro = this.intro.bind(this);
       this.errors = this.errors.bind(this);
     }
   
@@ -31,11 +33,40 @@ class SessionForm extends React.Component {
     redirect() {
         if (this.props.formType === "Sign-Up") {
             return (
-                <button><Link to="/login">Click Here to Sign-In</Link></button>
+                <button><Link to="/login">Click here to Sign-In</Link></button>
                 )
             } else {
                 return (
-                <button><Link to="/signup">Click Here to Sign-Up</Link></button>
+                <button><Link to="/signup">Create an account</Link></button>
+            )
+        }
+    }
+
+    email() {
+        if (this.props.formType === "Sign-Up") {
+            return (
+                <>
+                    <label id="session-label">
+                        Email:
+                    </label>
+                    <br />
+                    <input
+                        type="text"
+                    />
+                    <br />
+                </>
+            )
+        }
+    }
+
+    intro() {
+        if (this.props.formType === "Sign-Up") {
+            return (
+                <span>Already have an account?</span>
+            )
+        } else {
+            return (
+                <span>New to Euphrates?</span>
             )
         }
     }
@@ -72,14 +103,7 @@ class SessionForm extends React.Component {
                                     onChange={this.update('username')}
                                     />
                             <br />
-                            <label id="session-label">
-                                Email:
-                            </label>
-                            <br />
-                                <input
-                                    type="text"
-                                    />
-                            <br />
+                            {this.email()}
                             <label id="session-label">
                                 Password:
                             </label>
@@ -91,17 +115,19 @@ class SessionForm extends React.Component {
                                     />
                             <br />
                         </nav>    
+                        <div id="session-errors">
+                            {this.errors()}
+                        </div>
                         <nav id="session-buttons">
                             <button>{formType}</button>
                             <br />
                             <button>Demo User</button>
-                            <span>Already have an account?</span>
+                            {this.intro()}
                             {this.redirect()}
                         </nav>
                     </form>
                 </nav>
                 <br />
-                {this.errors()}
             </div>
         );
     }

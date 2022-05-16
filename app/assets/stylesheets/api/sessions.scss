@@ -71,6 +71,7 @@
     }
     
     button:hover {
+        background-image: none;
         background-color: #F0C14E;
         cursor: pointer;
     }
@@ -86,5 +87,11 @@
         align-items: center;
         flex-direction: column;
         margin-top: 10px;
+    }
+
+    #session-errors {
+        font-size: 10px;
+        color: red;
+        padding-inline: 10px;
     }
 }
