@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import GreetingContainer from './greetingContainer';
 import loginFormContainer from './loginFormContainer';
 import signupFormContainer from './signupFormContainer';
+import UnderConstruction from './under_construction';
 import Home from './home';
 import { Link } from 'react-router-dom';
 import Categories from './categories';
@@ -17,31 +18,24 @@ const App = () => (
         <GreetingContainer />
       </nav>
       <Categories />
-      {/* <nav id="header-blue">
-        <a href="">All Products</a>
-        <a href="">Baby</a>
-        <a href="">Beauty &#38; Personal Care</a>
-        <a href="">Fashion</a>
-        <a href="">Fitness</a>
-        <a href="">Home Decor</a>
-        <a href="">Kitchen</a>
-        <a href="">Maternity</a>
-        <a href="">Smart Home</a>
-        <a href="">Gift Idea</a>
-      </nav> */}
     </header>
-    <Switch>
-      <AuthRoute path="/login" component={loginFormContainer} />
-      <AuthRoute path="/signup" component={signupFormContainer} />
-      <Route path="/" component={Home} />
-      <Redirect to="/" />
-    </Switch>
-      {/* <Route path="/category/products" component={CategoryProductsIndex} />
-      <Route path="/products/:productId" component={ProductShow} />
-      <Route path="/reviews/new" component={CreateReviewForm} />
-      <Route path="/reviews/:productId/edit" component={EditReviewForm} />
-      <Route path="/cart" component={CartIndex} />
-    </Switch> */}
+    
+    <body id="body">
+      
+      <Switch>
+        <AuthRoute path="/login" component={loginFormContainer} />
+        <AuthRoute path="/signup" component={signupFormContainer} />
+        <Route exact path="/" component={Home} />
+        <Route path="/under_construction" component={UnderConstruction} />
+        <Redirect to="/under_construction" />
+      </Switch>
+        {/* <Route path="/category/products" component={CategoryProductsIndex} />
+        <Route path="/products/:productId" component={ProductShow} />
+        <Route path="/reviews/new" component={CreateReviewForm} />
+        <Route path="/reviews/:productId/edit" component={EditReviewForm} />
+        <Route path="/cart" component={CartIndex} />
+      </Switch> */}
+    </body>
   </div>
 );
 

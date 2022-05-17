@@ -9,6 +9,12 @@ header * {
     color: white;
 }
 
+#body {
+    min-height: 100vh;
+    // display: flex;
+    // justify-content: center;
+}
+
 #logo {
     height: 50px;
     width: 150px;
@@ -59,8 +65,6 @@ header * {
     }
 }
 
-
-
 #greeting {
 
     font-family: Arial, Helvetica, sans-serif;
@@ -85,5 +89,12 @@ header * {
     }
 }
 
-
+#error-page {
+    height: 40vh;
+    bottom: 0%;
+    width: 100vw;
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+}
 

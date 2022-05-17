@@ -74,16 +74,16 @@ class Carousel extends React.Component {
                 <div className="carousel__track-container">
                     <ul className="carousel__track">
                         <li className="carousel__slide current-slide">
-                            <img className="carousel__image" src={window.panel1} alt="" />
+                            <img className="carousel__image" src={window.panel1} alt="1" />
                         </li>
                         <li className="carousel__slide">
-                            <img className="carousel__image" src={window.panel2} alt="" />
+                            <img className="carousel__image" src={window.panel2} alt="2" />
                         </li>
                         <li className="carousel__slide">
-                            <img className="carousel__image" src={window.panel3} alt="" />
+                            <img className="carousel__image" src={window.panel3} alt="3" />
                         </li>
                         <li className="carousel__slide">
-                            <img className="carousel__image" src={window.panel4} alt="" />
+                            <img className="carousel__image" src={window.panel4} alt="4" />
                         </li>
                     </ul>
                 </div>
