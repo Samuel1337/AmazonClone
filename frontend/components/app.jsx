@@ -34,13 +34,13 @@ const App = () => (
       <AuthRoute path="/login" component={loginFormContainer} />
       <AuthRoute path="/signup" component={signupFormContainer} />
       <Route path="/" component={Home} />
+      <Redirect to="/" />
     </Switch>
       {/* <Route path="/category/products" component={CategoryProductsIndex} />
       <Route path="/products/:productId" component={ProductShow} />
       <Route path="/reviews/new" component={CreateReviewForm} />
       <Route path="/reviews/:productId/edit" component={EditReviewForm} />
       <Route path="/cart" component={CartIndex} />
-      <Redirect to="/" />
     </Switch> */}
   </div>
 );

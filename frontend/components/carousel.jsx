@@ -1,32 +1,96 @@
 import React from "react";
 
 class Carousel extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 0
+        }
+        this.start = this.start.bind(this);
+    }
+
+    componentDidMount() {
+        this.start();
+    }
+
+    start() {
+        this.track = document.querySelector('.carousel__track');
+        this.slides = Array.from(this.track.children);
+        this.nextButton = document.querySelector('.carousel__button.right');
+        this.prevButton = document.querySelector('.carousel__button.left');
+
+        this.slideWidth = this.slides[0].getBoundingClientRect().width;
+        
+        this.setSlidePosition = (slide, index) => {
+            slide.style.left = this.slideWidth * index + 'px';
+        }
+        
+        this.slides.forEach(this.setSlidePosition);
+
+        this.moveToSlide = (currentSlide, targetSlide) => {
+            this.track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+            currentSlide.classList.remove('current-slide');
+            targetSlide.classList.add('current-slide');
+        }
+
+        this.prevButton.addEventListener("click", e => {
+
+            e.preventDefault();
+            this.setState({counter: this.state.counter + 1})
+
+            const currentSlide = this.track.querySelector('.current-slide');
+            let prevSlide = currentSlide.previousElementSibling;
+            
+            if (prevSlide === null) {
+                prevSlide = this.track.querySelector('.carousel__slide:last-child')
+            }
+            
+            this.moveToSlide(currentSlide, prevSlide);
+        })
+        
+        this.nextButton.addEventListener("click", e => {
+
+            e.preventDefault();
+            this.setState({counter: this.state.counter + 1})
+            
+            const currentSlide = this.track.querySelector('.current-slide');
+            let nextSlide = currentSlide.nextElementSibling;
+            
+            if (nextSlide === null) {
+                nextSlide = this.track.querySelector('.carousel__slide:first-child')
+            }
+
+            this.moveToSlide(currentSlide, nextSlide);
+        })
+
+    }
+
     render() {
         return (
-            <div class="carousel">
-                <button class="carousel__button left">
+            <div className="carousel">
+                <button className="carousel__button left">
                     <img src={window.left} alt="" />
                 </button>
-                <div class="carousel__track-container">
-                    <ul class="carousel__track">
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src={window.panel1} alt="" />
+                <div className="carousel__track-container">
+                    <ul className="carousel__track">
+                        <li className="carousel__slide current-slide">
+                            <img className="carousel__image" src={window.panel1} alt="" />
                         </li>
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src={window.panel2} alt="" />
+                        <li className="carousel__slide">
+                            <img className="carousel__image" src={window.panel2} alt="" />
                         </li>
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src={window.panel3} alt="" />
+                        <li className="carousel__slide">
+                            <img className="carousel__image" src={window.panel3} alt="" />
                         </li>
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src={window.panel4} alt="" />
+                        <li className="carousel__slide">
+                            <img className="carousel__image" src={window.panel4} alt="" />
                         </li>
                     </ul>
                 </div>
-                <button class="carousel__button right">
+                <button className="carousel__button right">
                     <img src={window.right} alt="" />
                 </button>
-                <div class="white__fog"></div>
+                <div className="white__fog"></div>
             </div>
         )
     }
