@@ -67,7 +67,18 @@ class Carousel extends React.Component {
 
             this.moveToSlide(currentSlide, nextSlide);
         })
-
+        
+        // loop
+        setInterval(() => {
+            const currentSlide = this.track.querySelector('.current-slide');
+            let nextSlide = currentSlide.nextElementSibling;
+            
+            if (nextSlide === null) {
+                nextSlide = this.track.querySelector('.carousel__slide:first-child')
+            }
+    
+            this.moveToSlide(currentSlide, nextSlide);
+        }, 5000);
     }
 
     render() {
