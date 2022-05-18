@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Categories extends React.Component {
 
@@ -6,19 +7,19 @@ class Categories extends React.Component {
         return (
             <nav id="header-blue">
                 <ul>
-                <li><a href="">All Products</a></li>
-                <li><a href="">Electronics</a></li>
-                <li><a href="">Computers</a></li>
-                <li><a href="">Smart Home</a></li>
-                <li><a href="">Home, Garden &#38; Tools</a></li>
-                <li><a href="">Pet Supplies</a></li>
-                <li><a href="">Food &#38; Grocery</a></li>
-                <li><a href="">Beauty &#38; Health</a></li>
-                <li><a href="">Toys, Kids &#38; Baby</a></li>
-                <li><a href="">Handmade</a></li>
-                <li><a href="">Sports</a></li>
-                <li><a href="">Outdoors</a></li>
-                <li><a href="">Automotive &#38; Industrial</a></li>
+                    <li><Link to="/all">All Products</Link></li>
+                    <li><Link to="/electronics">Electronics</Link></li>
+                    <li><Link to="/computers">Computers</Link></li>
+                    <li><Link to="/smart-home">Smart Home</Link></li>
+                    <li><Link to="/home-garden-tools">Home, Garden &#38; Tools</Link></li>
+                    <li><Link to="/pet-supplies">Pet Supplies</Link></li>
+                    <li><Link to="/food-grocery">Food &#38; Grocery</Link></li>
+                    <li><Link to="/beauty-health">Beauty &#38; Health</Link></li>
+                    <li><Link to="/toys-kids-baby">Toys, Kids &#38; Baby</Link></li>
+                    <li><Link to="/handmade">Handmade</Link></li>
+                    <li><Link to="/sports">Sports</Link></li>
+                    <li><Link to="/outdoors">Outdoors</Link></li>
+                    <li><Link to="/automotive-industrial">Automotive &#38; Industrial</Link></li>
                 </ul>
             </nav>
         )

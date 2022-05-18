@@ -15,12 +15,14 @@
     background: lightgreen;
     height: 100%;
     position: relative;
+    clip-path: polygon(0px 0px, 1524px 0px, 1524px 600px, 0px 600px);
 }
 
 .carousel__track {
     padding: 0;
     margin: 0;
     list-style: none;
+    transition: all 2s;
 }
 
 .carousel__slide {
@@ -28,6 +30,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
+    height: 600px;
 }
 
 .carousel__button img {

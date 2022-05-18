@@ -1,0 +1,555 @@
+Model:
+
+t.string    name
+t.float     price
+t.text      description
+t.integer   rating
+t.string    filename
+t.integer   category_id 
+
+Electronics
+
+    1:
+
+    name: "Fire HD 10 tablet, 10.1", 1080p Full HD, 32 GB, latest model (2021 release), Black",
+    price: 149.99,
+    description: "Fast and responsive - powerful octa-core processor and 3 GB RAM. 50% more RAM than previous generation.
+    Long-lasting 12-hour battery and 32 or 64 GB internal storage. Add up to 1 TB with microSD (sold separately).
+    Brighter display - Vivid 10.1" 1080p Full HD display is 10% brighter than previous generation, with more than 2 million pixels.
+    Enjoy your favorite apps like Netflix, Facebook, Hulu, Instagram, TikTok, and more through Amazon’s Appstore (Google Play not supported. Subscription for some apps required).
+    Stay connected - Download apps like Zoom, or ask Alexa to make video calls to friends and family.
+    Get more done – Check email, update shopping lists, and set reminders. Use your favorite apps like Microsoft Office, OneNote, and Dropbox.
+    Hands-free with Alexa, including on/off toggle.
+    Thinner and lighter than previous generation. Screen made with strengthened aluminosilicate glass.
+    Split screen – All-new feature for Fire OS that shows two compatible apps, like Facebook Messenger and Prime Video, open side by side for easy multitasking.",
+    rating: 0,
+    filename: "categories/electronics/fire-tablet.jpg",
+    category_id: 1
+
+    2:
+
+    name: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
+    price: 24.99,
+    description: "[Smart Touch Control] Specific touch control function makes it more convenient, tap once to play/pause music and answer calls, double tap to skip forward/backward, hold to adjust the volume. You can easily control it without operating the phone.
+    [BLUETOOTH 5.3] Adopt the advanced Bluetooth 5.3 technology. TOZO T6 Support HSP, HFP, A2DP, AVRCP, which greatly improve the transmission speed and providing you with a low-latency listening experience.
+    [One step pairing] Pick up 2 headsets from charging case and they will connect each other automatically, then only one step easily enter mobile phone Bluetooth setting to pair the earbuds.
+    [IPX8 waterproof] Earbuds and charging case inner Nano-coating makes it possible to waterproof for 1 meters deep for 30 minutes. It is suitable for sports to prevent water. Ideal for sweating it out at the gym . Earbuds and case even can be washed by water and soap.
+    [Charge on the go] Playtime lasts for over 6 hours from single charge and total 30 hours with charging case. Enjoy fast charging, to fully charge the rechargerable case only 55 minutes via cable or less than 2 hours via wireless charger. Providing convenient charging way with no strings attached.",
+    rating: 0,
+    filename: "categories/electronics/wireless-earbuds.jpg",
+    category_id: 1
+
+    3:
+
+    name: "Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
+    price: 299.00,
+    description: "3 Play Styles: TV Mode, Tabletop Mode, Handheld Mode
+    6.2-inch, multi-touch capacitive touch screen
+    4.5-9 plus Hours of Battery Life will vary depending on software usage conditions
+    Connects over Wi-Fi for multiplayer gaming; Up to 8 consoles can be connected for local wireless multiplayer
+    Model number: HAC-001(-01)",
+    rating: 0,
+    filename: "categories/electronics/nintendo-switch.jpg",
+    category_id: 1
+
+    4:
+
+    name: "Wyze Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT",
+    price: 35.98,
+    description: "Color night vision: An all-new Starlight Sensor records night time video in full, vivid color. The Starlight Sensor can see full color in environments up to 25x darker than traditional video cameras and the new f/1.6 aperture captures 2x more light.
+    Indoor/Outdoor: Wyze Cam v3 is a wired video camera with an IP65 rating so you can confidently install it outside in the rain or inside in the kids’ room. Wyze Outdoor Power Adapter (sold separately) required for outdoor use. Phone Compatibility - Android 5.0+, iOS 9.0+.
+    Motion & Sound detection: Wyze Cam records video when motion or sound is detected and sends an alert straight to your phone. Motion Detection Zones and custom settings allow you to adjust the sensitivity of detection or turn it off completely.
+    24/7 Continuous Recording: Continuous video recording with a 32GB MicroSD card (sold separately). Just insert the MicroSD into the base of the Wyze Cam and you’re all set.
+    IFTTT certified connect all of your different apps and devices. When you sign up for a free account, you can enable your apps and devices to work together.",
+    rating: 0,
+    filename: "categories/electronics/video-camera.jpg",
+    category_id: 1
+
+
+Computers
+
+    1:
+    
+    name: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
+    price: 1249,
+    description: "All-Day Battery Life – Go longer than ever with up to 18 hours of battery life.
+    Powerful Performance – Take on everything from professional-quality editing to action-packed gaming with ease. The Apple M1 chip with an 8-core CPU delivers up to 3.5x faster performance than the previous generation while using way less power.
+    Superfast Memory – 8GB of unified memory makes your entire system speedy and responsive. That way it can support tasks like memory-hogging multitab browsing and opening a huge graphic file quickly and easily.
+    Stunning Display – With a 13.3” Retina display, images come alive with new levels of realism. Text is sharp and clear, and colors are more vibrant.
+    Why Mac – Easy to learn. Easy to set up. Astoundingly powerful. Intuitive. Packed with apps to use right out of the box. Mac is designed to let you work, play, and create like never before.
+    Simply Compatible – All your existing apps work, including Adobe Creative Cloud, Microsoft 365, and Google Drive. Plus you can use your favorite iPhone and iPad apps directly on macOS. Altogether you’ll have access to the biggest collection of apps ever for Mac. All available on the App Store.
+    Easy to Learn – If you already have an iPhone, MacBook Air feels familiar from the moment you turn it on. And it works perfectly with all your Apple devices. Use your iPad to extend the workspace of your Mac, answer texts and phone calls directly on your Mac, and more.
+    Fanless Design – Your MacBook Air stays cool and runs quietly even while tackling intense workloads.
+    AppleCare – Every Mac comes with a one-year limited warranty and up to 90 days of complimentary technical support. Get AppleCare+ to extend your coverage and reduce the stress and cost of unexpected repairs.
+    Environmentally Friendly – MacBook Air is made with a 100% recycled aluminum enclosure and uses less energy for a smaller carbon footprint.",
+    rating: 0,
+    filename: "categories/computers/macbook-air-laptop.jpg",
+    category_id: 2
+    
+    2:
+    
+    name: "OMEN 30L NVIDIA RTX 3090 Gaming Desktop PC (Liquid Cooled Intel i7-10700K, Z490 Mobo, 750 Watt Platinum PSU, Windows 11 Home, 1TB WD Black NVMe SSD, 32GB HyperX RGB RAM)",
+    price: 2799,
+    description: "Impressive chassis with tempered glass side window, RGB color customization, industry’s best hardware & technology; Easy access door for ease of expandability!
+    10th Gen Intel Core i7-10700K (3.8GHz/5.1GHz) 8 Core Overclockable Desktop Processor + OMEN Liquid Cooling
+    24GB NVIDIA GeForce RTX 3090 VR Ready Graphics Card; 750 Watt Cooler Master Platinum Efficiency Power Supply
+    1TB WD Black Performance PCIe NVMe M.2 SSD
+    32GB Kingston HyperX DDR4 3200MHz XMP RGB RAM; Z490 Motherboard; Windows 11 Home; Intel AX201 Wi-Fi 6",
+    rating: 0,
+    filename: "categories/computers/gaming-desktop.jpg",
+    category_id: 2
+    
+    3:
+    
+    name: "HP Elite Desktop PC Computer Intel Core i5 3.1-GHz, 8 gb Ram, 1 TB Hard Drive, DVDRW, 19 Inch LCD Monitor, Keyboard, Mouse, Wireless WiFi, Windows 10 (Renewed)",
+    price: 181.50,
+    description: "This Certified Refurbished product is tested and certified to look and work like new. The refurbishing process includes functionality testing, basic cleaning, inspection, and repackaging. The product ships with all relevant accessories, a minimum 90-day warranty, and may arrive in a generic box. Only select sellers who maintain a high-performance bar may offer Certified Refurbished products on Amazon.com.
+    HP Elite 8200 Small Form Factor Desktop PC, Intel Quad Core i5-2400 up to 3.4GHz, 8G DDR3, 1T, DVDRW, WiFi, Windows 10 64-Multi-Language Support English/Spanish/French (Renewed)
+    Includes: USB Keyboard & Mouse, WiFi Adapter, Microsoft office 30 days free trail..
+    Ports: USB 2.0, DisplayPort, VGA, PS/2 keyboard, PS/2 mouse, RJ-45, microphone/headphone jack, line in, line out.
+    Operating System: Windows 10 64 Bit – Multi-language supports English/Spanish/French.",
+    rating: 0,
+    filename: "categories/computers/elite-desktop",
+    category_id: 2
+   
+    4:
+
+    name: "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24" FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11",
+    price: 699.99,
+    description: "This space-saving AIO PC hides raw, unfiltered power - with an AMD Ryzen 5 55000U processor, the IdeaCentre AIO 3 thrives under heavy performance loads
+    We designed the slim and compact all-in-one computer for ease and convenience with fewer cables and clutter, a dock for your cell phone, plus instant privacy and instant login features for better security; wireless keyboard and mouse included
+    View more of the screen with this AIO computer's three-sided narrow bezel FHD display for vibrant colors with crystal-clear quality from almost any angle; plus, the IdeaCentre AIO 3 streams high-octane, sharply etched audio over its two 3W stereo speakers certified by Harman Kardon
+    The hidden camera on the top of the AIO 3 offers up to 5M clarity, enhancing authenticity during your video chatting or conferencing – push the webcam down for extra security
+    Connect with two USB 2.0 ports and two USB 3.2 Gen 2 Type-A ports, one 1000 LAN, one microphone/earphone combo, one Power DC Jack and one HDMI-out",
+    rating: 0,
+    filename: "categories/computers/lenovo.jpg",
+    category_id: 2
+
+Smart Home
+
+    1:
+
+    name: "Echo (4th Gen) | With premium sound, smart home hub, and Alexa | Charcoal",
+    price: 99.99,
+    description: "PREMIUM SOUND: Rich, detailed sound that automatically adapts to any room. Supports lossless HD audio available on select streaming services such as Amazon Music HD.
+    VOICE CONTROL YOUR MUSIC: Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and more. HD requires a compatible music streaming service.
+    SMART HOME HUB: Built-in hub to voice control compatible lights, locks, and sensors. Easily set up compatible Zigbee devices or select Ring Smart Lighting solar lights and bulbs.
+    ALEXA IS READY TO HELP: Set timers, reminders, and alarms. Alexa answers questions like "Alexa, what time is it?"
+    START YOUR ROUTINES WITH MOTION - Turn on compatible lights, play your Flash Briefing, or turn on the coffee maker when you walk into the room.
+    FILL YOUR HOME WITH SOUND: With multi-room music, play synchronized music across Echo devices in different rooms. Or pair your Echo with compatible Fire TV devices to feel scenes come to life with home theater audio.
+    CONNECT WITH OTHERS HANDS-FREE: Call friends and family who have the Alexa app or an Echo device. Instantly drop in on other rooms or announce to the whole house that dinner's ready.
+    PRIVACY CONTROLS: Designed to protect your privacy – Amazon is not in the business of selling your personal information to others. Built with multiple layers of privacy controls including a mic off button.",
+    rating: 0,
+    filename: "categories/smart-home/echo-dot.jpg",
+    category_id: 3
+
+    2:
+
+    name: "Ring Rechargeable Battery Pack",
+    price: 34.99,
+    description: "Works with Ring Video Doorbell 3, Video Doorbell 3 Plus, Video Doorbell 4, Peephole Cam, Stick Up Cam Battery (2nd and 3rd Gen), Spotlight Cam Battery, and Smart Lighting Solar Floodlight.
+    Powers your device for up to six months depending on motion and light settings.
+    Includes a quick-release tab to easily change the battery without moving the device.",
+    rating: 0,
+    filename: "categories/smart-home/battery-pack.jpg",
+    category_id: 3
+
+    3:
+
+    name: "Ring Solar Panel White - Compatible with Ring Spotlight Cam Battery and Stick Up Cam Battery",
+    price: 59.99,
+    description: "Designed exclusively for charging the Ring Spotlight Cam Battery and Stick Up Cam Battery (2nd and 3rd generations only).
+    With just a few hours of direct sunlight every day, your Ring Camera will stay charged around the clock.
+    Power connection is 13 feet. Item dimensions is 7.75 x 5.50 x 0.50 inch.
+    Ring recommends at least 3-4 hours of direct sunlight, depending on your usage. Ability to recharge varies based on device settings, motion notifications and sun exposure in the area of placement.",
+    rating: 0,
+    filename: "categories/smart-home/solar-panel.jpg",
+    category_id: 3
+
+    4:
+
+    name: "Smart Power Strip, WiFi Surge Protector Work with Alexa Google Home, Smart Plug Outlets with 3 USB 3 Charging Port, Home Office Cruise Ship Travel Multi-Plug Extender, 10A",
+    price: 22.11,
+    description: "Voice Control - Smart power strip works with Amazon Alexa and Google Assistant. It is safe and convenient to control with voice. For people who can't free their hands to manually turn on/off the Alexa smart plugs or have inconvenience with both hands. Only for a 2.4GHz WiFi router, no need for a separate hub.
+    APP Remote Control - Free app controls the smart outlet plug by your smartphone (ios 8.0 or above/Android 4.4 or above). You can control the Alexa power strip at any time anywhere. Only support 2.4GHz WiFi network. No paid subscription service.
+    Multi-Plug Outlet - Smart surge protector features 3 USB 3 charging ports, the total USB output is up to 3.1A. You can charge your cellphone, tablets, and other USB gadgets at the same time.
+    Timer Function - Set a schedule to turn on/off electrical appliances when you are home or away by Timer and Countdown function. Just like lamps, coffee makers, humidifiers, lights, and so on. This also helps lower your electricity bill by turning power-hungry devices off when they are not working.
+    Multiple Safeguards - Smart extension cord is made of high-quality materials. Support 100-240V, 10A maximum load. The circuit breaker automatically breaks off when the current exceeds the threshold, preventing plugged-in high-temperature devices from damages. PC-V0 materials can protect your home safely.",
+    rating: 0,
+    filename: "categories/smart-home/power-strip.jpg",
+    category_id: 3
+
+Home, Garden & Tools
+
+    1:
+
+    name: "Shovel, Rake and Tool Holder with Hooks- Wall Mounted Organizer for Garage, Closet, or Shed-Hang Home and Garden Tools-Space Saving Rack by Stalwart",
+    price: 10.84,
+    description: "MULTI-FUNCTIONAL ORGANIZER: This wall mounted organizer has both slots to hold handles, and six hooks to hang other supplies on. The wall hooks and holder can be utilized indoors and outdoors to hold cleaning supplies, tools, or gardening utensils.
+    5 SLIP RESISTANT HANGING SLOTS: The slots have rolling balls that automatically adjust to the thickness of a shovel, rake, or broom handle and grips it securely. The hanging slots easily hold heavy tools with its no-slip grip.
+    6 RETRACTABLE HOOKS: This space saving organization hub is equipped with six hanging hooks, making it a great spot for anything you need to hang in your garage, shed, or closet. Hooks are retractable when not in use.
+    EASY TO INSTALL AND USE: Installation is simple, and the necessary screws are included. To install, simply drill the organizer into the wall of your choice to hold your mops, cleaning supplies, or tools.
+    PRODUCT DETAILS: Color: Gray. Materials: High density plastic and rubber. Dimensions: (L) 16” x (W) 2.75” x (H) 3.25”. Screws and mollies are included for installation.",
+    rating: 0,
+    filename: "categories/home-garden-tools/tool-holder.jpg",
+    category_id: 4
+
+    2:
+
+    name: "HYCHIKA 20V Home Tool Kit with Case, 104 PCS Cordless Drill Driver Tool Set with Battery&Charger for Garden Office Home Repair Maintain, Power Tools Combo Kits for Home",
+    price: 49.99,
+    description: "【MULTI-PURPOSE HOME TOOL KIT With CASE】: 104 pcs houselod tool set, including hand tools and drill drivers that are most frequently used daily. Suitable for most small maintenance ,repair and home DIY projects around the house.makes general repair, fixing and maintenance jobs much simpler and faster.
+    【20V Cordless Drill & LED】The Power drills has 21 different torque settings and drilling functions. There are 2 variable speeds, 0-400RPM and 0-1500RPM, which fits the wide range of drilling and screw driving applications. The max torque is 35 Nm and with 10mm self-locking chuck.The forward and reserse variable speed trigger is easy to control drilling speeds and reverse out drill bits.
+    【ERGONOMIC DESIGN, EASY TO CARRY】: Cordless tools with non-slip comfort grip handles, fit for ergonomic design and provides ideal balance and tool control for fastening tasks. Tools are neatly stored in a sturdy case that with internal molded compartments to protect each component and easy access.The home tool set with case fits anywhere, like in your atelier, home, garage, or in your car.
+    【COMPLETE VARIETY】: There are more than 104 home repair tool kits in the tool kit with drill. Claw hammer, saw, plumbing pliers, wrench, needle-nose pliers, tape measure (16 inches) level, paper cutter, screwdriver head,bike tire lever removal tools chain detacher，and other combination kits for heavy-duty cordless electric drills.
+    【QUALITY GUARANTEE】: Quality Guarantee: Our hand tools are forged for strength, and lasts a lifetime in normal use.Every purchase comes with 1 year warranty. If you are not satisfied, please contact us at any time.",
+    rating: 0,
+    filename: "categories/home-garden-tools/tool-kit.jpg",
+    category_id: 4
+
+    3:
+
+    name: "CHRYZTAL Garden Tool Set, Stainless Steel Heavy Duty Gardening Tool Set, with Non-Slip Rubber Grip, Storage Tote Bag, Outdoor Hand Tools, Ideal Garden Tool Kit Gifts for Women and Men",
+    price: 29.98,
+    description: "【Premium Garden Tools 】- The gardening tool sets includes a large trowel, small trowel, cultivator, hand rake, weeder, pruning shears and an Oxford cloth tote to keep all your tools packed away, which are robust, so you don't need to worry about rust and damage. High quality, enough durable to cut through thick weeds. Stainless steel garden tools are easier to fix up your garden.
+    【A Neat Pocket to Hold all Tools】 - the nice storage tote bag are designed to hold all the garden tools to ensure you won't lose any tools.Made of extra-sturdy 600D Oxford cloth, it’s an easy-to-clean tote that resists tears and protects your gear; pack your tools in the deep pockets, each with an elastic cord, to effortlessly carry to and from your garden.
+    【Sturdy and Stainless Steel Garden Set】: Each tool has an ergonomically made soft handle, fashioned from high-quality TRP, that fits comfortably in small and large hands, on top of that, they’re intuitively designed to provide plenty of leverage and save you effort and strain when planting, weeding, and digging. Precisely scaled stainless steel blades that remain sharp for cutting. Sawtooth shovel for easy digging, 2.0 mm thickness, ensuring perfect insertion into the soil.
+    【Comfortable and Easy to Store】 - Non-slip handles for comfortable grip. Reduce stress on your wrists and hands. Each tool comes with a handy hanging hole on the handle makes them easy to be stored.
+    【Garden Tool Gifts for Women and Men】- Your garden-obsessed friend, wife, husband, parents and grandparents will be surely satisfied with our premium 7 in 1 gardening tool set when they are gifted on their birthday, anniversary, Valentine’s Day, Christmas, and any other cause for celebration; if you need any advice or product support, please contact our excellent customer service team who will happily respond to your question within 12 hours.",
+    rating: 0,
+    filename: "categories/home-garden-tools/tool-set.jpg",
+    category_id: 4
+
+    4:
+
+    name: "H&GT Garden Kneeler and Seat, Foldable Garden Stool Heavy Duty Gardening Bench for Kneeling and Sitting to Prevent Knee & Back Pain, Great Gardening Gifts for Women, Grandparents, Seniors, Mom & Dad",
+    price: 49.97,
+    description: "PREVENT BACK/KNEE STRAIN: This gardening stool comes with sturdy arms and structure to ease getting up and down from your kneeling positions to prevent injuries and keeping movements painless to extend your gardening years and comfort
+    BONUS TOOL POUCH: Your package comes with a deluxe removable tool pouch that you can attach to your garden chair with Velcro, and have your gardening tools kit right by your side of gardening bench
+    UNIQUE GARDENING GIFTS: A perfect gardening workseat for senior gardeners, grandparents, mom & dad who love to spend their time in yard. Highly recommended gift for people with knee replacements, joint surgery and arthritis
+    HEAVY DUTY AND LIGHTWEIGHT: With premium quality of EVA Foam cushion to kneel and sit down, this gardening seat kneeler only weighs 5.7 lbs and folds with no physical force. Portable to move from space to space as you perform chores, easy to store and carry
+    WARRANTY: Buy Now without any risk. The warranty period for our multifunctional garden kneeler seat is 365 days. If you face any issue with our product, feel free to contact us.",
+    rating: 0,
+    filename: "categories/home-garden-tools/garden-stool.jpg",
+    category_id: 4
+
+Pet Supplies
+
+    1:
+
+    name: "Rocco & Roxie Stain & Odor Eliminator for Strong Odor - Enzyme-Powered Pet Odor Eliminator for Home - Carpet Stain Remover for Cats and Dog Pee - Enzymatic Cat Urine Destroyer - Carpet Cleaner Spray",
+    price: 18.97,
+    description: "CERTIFIED GENTLE AND SAFE Chlorine free and color safe. Safe to use around pets and children. No hazardous propellants, no residue left behind. So gentle it’s been Certified Safe for all carpets, earning the Seal of Approval by the trusted Carpet and Rug Institute (CRI)
+    ELIMINATES STAINS, ODORS AND RESIDUE If it’s gross, it’s gone. Not just the stain, but the stink. From stinky yellow pet urine and feces to vomit and other organic spills, our professional strength formula tackles them all.
+    EVERY SURFACE, EVERY TIME For use on carpets, floors, furniture, clothing, litter boxes, kennels, carriers, all pet living and sleeping areas—anywhere stains happen.
+    ENZYME ACTIVATED The key is getting to the problem deep-down. This spray contains natural enzymes that are activated on contact with odors and stains, feeding on ammonia crystals and organic matter until they are completely eliminated.
+    100% SATISFACTION GUARANTEED An Amazon best seller—for a reason. If your stains and odors aren’t gone, neither is your money. We’ll refund it in full.",
+    rating: 0,
+    filename: "categories/pet-supplies/stain-eliminator.jpg",
+    category_id: 5
+
+    2:
+
+    name: "VEVOR 50 Inch Dog Grooming Tub, Professional Stainless Steel Pet Dog Bath Tub, with Steps Faucet & Accessories Dog Washing Station",
+    price: 1139.99,
+    description: "59"H Stainless Steel Tub: Product Size: 49.2"L x 25.2"W x 59.5"H; Fit for maximize size pets: 49"L x 25"W x 40"H. It can accommodate different-sized dogs(max.220LB). The pet grooming tub is constructed with 304 stainless steel, which is non-deformation, rust-proof, scratch-proof, and sturdy enough for long-time use. What's more, the durable stainless steel pet grooming bathtub is easy maintenance and cleaning.
+    Movable Door & Ramp: Fully welded one-piece dog washing station features outstanding sealing performance to be water leakage-proof. The tub is equipped with a sliding right door with a secure lock to keep your pet inside the bath; a space-saving ramp can be folded and hidden when not in use, the non-skid grooved surface on the ramp helps your pet walk in out securely. The rubber feet are also non-skid and have no damage to the floor.
+    Adjustable Sprayer & Faucet: The pet washing station comes with a high-pressure sprayer(3 types of water outlet volume) and a faucet with two hoses(adjust water temperature) to give your pets a warm and comfortable bath. Besides, There is a non-skid floor grate for detachable to fit different pet sizes and keep your pet away from long-term soaking in the water.
+    Fell Set of Accessories: Our pet wash tub includes an s-shaped stainless steel pipe for isolating the foul smell; A drain strainer for filter pet fur and other dirt; And an overhead grooming arm with two loops for fixing the pet. Besides, a red play ball is a gift for keeping pets occupied and making bathing more pleasant.
+    Wide Application: The dog tub for bath can be applied to indoor or outdoor places to give your pet a more enjoyable user experience, such as home, pet hospital, and pet beauty salon. There is no more trouble bathing for your pet with our pet bathtub.",
+    rating: 0,
+    filename: "categories/pet-supplies/groom-tub.jpg",
+    category_id: 5
+
+    3:
+
+    name: "Solliquin Behavior Supplement for Dogs & Cats",
+    price: 22.99,
+    description: "UNIQUE, PATENTED FORMULA: Solliquin is formulated to help facilitate contentment during periods of adjustment in your pet's daily routine
+    HELPS PROMOTE CALM BEHAVIOR DURING TIMES OF STRESS: For some pets, stressful events like fireworks, storms, and car rides can result in behavior that can make home life difficult. Solliquin helps promote and maintain calm and relaxed behavior in pets
+    CONVENIENT ADMINISTRATION: Available in a tasty soft chew for dogs and cats 8-30 lbs",
+    rating: 0,
+    filename: "categories/pet-supplies/supplement.jpg",
+    category_id: 5
+
+    4:
+
+    name: "MidWest Homes for Pets Newly Enhanced Single & Double Door New World Dog Crate, Includes Leak-Proof Pan, Floor Protecting Feet, & New Patented Features",
+    price: 61.99,
+    description: "Newly enhanced with added security features to keep your pet safe | Slide-bolt door latches now feature patented Paw Block and locking tips to create a safer, more secure home for your pet
+    New World double door dog crate measures 36L x 23 x 25 inches and is suitable for intermediate dog breeds with an adult weight of 40 to 70 pounds. If your dog’s weight or measurements are on the higher side for this crate, we recommend buying the next crate size up
+    Updated locking system, floor protecting roller feet and durable leak-proof plastic pan included. Customer support team based in Indiana
+    Easy to assemble & portable | Dog crate sets up in seconds with no tools required and conveniently folds flat for travel
+    Durable & strong, quality construction creates a secure place for your dog to fulfill their natural instinct to den. Proper ventilation, large door openings with low thresholds, and rounded corner clips make New World a safer crate experience for your dog
+    PLEASE NOTE: MidWest Homes for Pets manufactures the New World dog crates. Assembly and safety instructions are included; please read all safety instructions prior to use",
+    rating: 0,
+    filename: "categories/pet-supplies/pet-home.jpg",
+    category_id: 5
+
+Food & Grocery
+
+    1:
+
+    name: "Quaker Instant Oatmeal, 4 Flavor Variety Pack, Individual Packets, 48 Count",
+    price: 11.91,
+    description: "Good Source of Fiber: Quaker Oats provide a good source of fiber to support a healthy digestive system; See nutrition facts for total fat per serving
+    Quaker Oats help support a healthy heart; Diets rich in whole grain foods and other plant foods and low in saturated fat and cholesterol may help reduce the risk of heart disease
+    Contains 48 packets: 23 maple and brown sugar, 13 apples and cinnamon, 7 cinnamon and spice, 5 peaches and cream flavor",
+    rating: 0,
+    filename: "categories/food-grocery/.jpg",
+    category_id: 6
+
+    2:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/food-grocery/",
+    category_id: 6
+
+    3:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/food-grocery/",
+    category_id: 6
+
+    4:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/food-grocery/",
+    category_id: 6
+
+Beauty & Health
+
+    1:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 7
+
+    2:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 7
+
+    3:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 7
+
+    4:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 7
+
+Toys, Kids & Baby
+
+    1:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 8
+
+    2:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 8
+
+    3:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 8
+
+    4:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 8
+
+Handmade
+
+    1:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 9
+
+    2:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 9
+
+    3:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 9
+
+    4:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 9
+
+Sports
+
+    1:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 10
+
+    2:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 10
+
+    3:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 10
+
+    4:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 10
+
+Outdoors
+
+    1:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 11
+
+    2:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 11
+
+    3:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 11
+
+    4:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 11
+
+Automotive & Industrial
+
+    1:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 12
+
+    2:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 12
+
+    3:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 12
+
+    4:
+
+    name: "",
+    price: ,
+    description: "",
+    rating: 0,
+    filename: "categories/",
+    category_id: 12

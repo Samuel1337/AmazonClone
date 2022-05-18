@@ -14,11 +14,13 @@ class Carousel extends React.Component {
     }
 
     start() {
+        // select elements
         this.track = document.querySelector('.carousel__track');
         this.slides = Array.from(this.track.children);
         this.nextButton = document.querySelector('.carousel__button.right');
         this.prevButton = document.querySelector('.carousel__button.left');
 
+        // sets width and position
         this.slideWidth = this.slides[0].getBoundingClientRect().width;
         
         this.setSlidePosition = (slide, index) => {
@@ -27,12 +29,14 @@ class Carousel extends React.Component {
         
         this.slides.forEach(this.setSlidePosition);
 
+        // moves slides
         this.moveToSlide = (currentSlide, targetSlide) => {
             this.track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
             currentSlide.classList.remove('current-slide');
             targetSlide.classList.add('current-slide');
         }
 
+        // left button event
         this.prevButton.addEventListener("click", e => {
 
             e.preventDefault();
@@ -48,6 +52,7 @@ class Carousel extends React.Component {
             this.moveToSlide(currentSlide, prevSlide);
         })
         
+        // right button event
         this.nextButton.addEventListener("click", e => {
 
             e.preventDefault();

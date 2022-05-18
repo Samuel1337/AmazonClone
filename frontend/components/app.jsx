@@ -9,6 +9,7 @@ import UnderConstruction from './under_construction';
 import Home from './home';
 import { Link } from 'react-router-dom';
 import Categories from './categories';
+import Footer from './footer';
 
 const App = () => (
   <div>
@@ -36,6 +37,9 @@ const App = () => (
         <Route path="/cart" component={CartIndex} />
       </Switch> */}
     </body>
+    <footer>
+      <Footer/>
+    </footer>
   </div>
 );
 
