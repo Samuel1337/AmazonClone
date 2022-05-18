@@ -5,6 +5,7 @@
 # t.array     description
 # t.integer   rating
 # t.string    filename
+# t.string    specialty 
 # t.integer   category_id 
 
 # Electronics
@@ -12,7 +13,7 @@
 Product.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!("products")
 
-electronics1 = Product.create({
+electronics1 = Product.create(
     name: "Fire HD 10 tablet, 10.1\", 1080p Full HD, 32 GB, latest model (2021 release), Black",
     price: 149.99,
     description: [
@@ -28,10 +29,11 @@ electronics1 = Product.create({
     ],
     rating: 0,
     filename: "categories/electronics/fire-tablet.jpg",
+    specialty: "best seller",
     category_id: 1
-})
+)
 
-electronics2 = Product.create({
+electronics2 = Product.create(
     name: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
     price: 24.99,
     description: [
@@ -43,10 +45,11 @@ electronics2 = Product.create({
     ],
     rating: 0,
     filename: "categories/electronics/wireless-earbuds.jpg",
+    specialty: "none",
     category_id: 1
-})
+)
 
-electronics3 = Product.create({
+electronics3 = Product.create(
     name: "Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
     price: 299.00,
     description: [
@@ -58,10 +61,11 @@ electronics3 = Product.create({
     ],
     rating: 0,
     filename: "categories/electronics/nintendo-switch.jpg",
+    specialty: "none",
     category_id: 1
-})
+)
 
-electronics4 = Product.create({
+electronics4 = Product.create(
     name: "Wyze Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT",
     price: 35.98,
     description: [
@@ -73,13 +77,14 @@ electronics4 = Product.create({
     ],
     rating: 0,
     filename: "categories/electronics/video-camera.jpg",
+    specialty: "none",
     category_id: 1
-})
+)
 
 
 # Computers
 
-computers1 = Product.create({    
+computers1 = Product.create(    
     name: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
     price: 1249,
     description: [
@@ -96,10 +101,11 @@ computers1 = Product.create({
     ],
     rating: 0,
     filename: "categories/computers/macbook-air-laptop.jpg",
+    specialty: "none",
     category_id: 2
-})
+)
     
-computers2 = Product.create({  
+computers2 = Product.create(  
     name: "OMEN 30L NVIDIA RTX 3090 Gaming Desktop PC (Liquid Cooled Intel i7-10700K, Z490 Mobo, 750 Watt Platinum PSU, Windows 11 Home, 1TB WD Black NVMe SSD, 32GB HyperX RGB RAM)",
     price: 2799,
     description: [
@@ -111,10 +117,11 @@ computers2 = Product.create({
     ],
     rating: 0,
     filename: "categories/computers/gaming-desktop.jpg",
+    specialty: "best seller",
     category_id: 2
-})
+)
     
-computers3 = Product.create({  
+computers3 = Product.create(  
     name: "HP Elite Desktop PC Computer Intel Core i5 3.1-GHz, 8 gb Ram, 1 TB Hard Drive, DVDRW, 19 Inch LCD Monitor, Keyboard, Mouse, Wireless WiFi, Windows 10 (Renewed)",
     price: 181.50,
     description: [
@@ -126,10 +133,11 @@ computers3 = Product.create({
     ],
     rating: 0,
     filename: "categories/computers/elite-desktop",
+    specialty: "none",
     category_id: 2
-})
+)
 
-computers4 = Product.create({  
+computers4 = Product.create(  
     name: "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24\" FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11",
     price: 699.99,
     description: [
@@ -141,12 +149,13 @@ computers4 = Product.create({
     ],
     rating: 0,
     filename: "categories/computers/lenovo.jpg",
+    specialty: "none",
     category_id: 2
-})
+)
 
 # Smart Home
 
-smart_home1 = Product.create({  
+smart_home1 = Product.create(  
     name: "Echo (4th Gen) | With premium sound, smart home hub, and Alexa | Charcoal",
     price: 99.99,
     description: [
@@ -161,10 +170,11 @@ smart_home1 = Product.create({
     ],
     rating: 0,
     filename: "categories/smart-home/echo-dot.jpg",
+    specialty: "best seller",
     category_id: 3
-})
+)
 
-smart_home2 = Product.create({  
+smart_home2 = Product.create(  
     name: "Ring Rechargeable Battery Pack",
     price: 34.99,
     description: [
@@ -174,10 +184,11 @@ smart_home2 = Product.create({
     ],
     rating: 0,
     filename: "categories/smart-home/battery-pack.jpg",
+    specialty: "none",
     category_id: 3
-})
+)
 
-smart_home3 = Product.create({  
+smart_home3 = Product.create(  
     name: "Ring Solar Panel White - Compatible with Ring Spotlight Cam Battery and Stick Up Cam Battery",
     price: 59.99,
     description: [
@@ -188,10 +199,11 @@ smart_home3 = Product.create({
     ],
     rating: 0,
     filename: "categories/smart-home/solar-panel.jpg",
+    specialty: "none",
     category_id: 3
-})
+)
 
-smart_home4 = Product.create({  
+smart_home4 = Product.create(  
     name: "Smart Power Strip, WiFi Surge Protector Work with Alexa Google Home, Smart Plug Outlets with 3 USB 3 Charging Port, Home Office Cruise Ship Travel Multi-Plug Extender, 10A",
     price: 22.11,
     description: [
@@ -203,12 +215,13 @@ smart_home4 = Product.create({
     ],
     rating: 0,
     filename: "categories/smart-home/power-strip.jpg",
+    specialty: "none",
     category_id: 3
-})
+)
 
 # Home, Garden & Tools
 
-home_garden_tools1 = Product.create({  
+home_garden_tools1 = Product.create(  
     name: "Shovel, Rake and Tool Holder with Hooks- Wall Mounted Organizer for Garage, Closet, or Shed-Hang Home and Garden Tools-Space Saving Rack by Stalwart",
     price: 10.84,
     description: [
@@ -220,10 +233,11 @@ home_garden_tools1 = Product.create({
     ],
     rating: 0,
     filename: "categories/home-garden-tools/tool-holder.jpg",
+    specialty: "none",
     category_id: 4
-})
+)
 
-home_garden_tools2 = Product.create({  
+home_garden_tools2 = Product.create(  
     name: "HYCHIKA 20V Home Tool Kit with Case, 104 PCS Cordless Drill Driver Tool Set with Battery&Charger for Garden Office Home Repair Maintain, Power Tools Combo Kits for Home",
     price: 49.99,
     description: [
@@ -235,10 +249,11 @@ home_garden_tools2 = Product.create({
     ],
     rating: 0,
     filename: "categories/home-garden-tools/tool-kit.jpg",
+    specialty: "none",
     category_id: 4
-})
+)
 
-home_garden_tools3 = Product.create({  
+home_garden_tools3 = Product.create(  
     name: "CHRYZTAL Garden Tool Set, Stainless Steel Heavy Duty Gardening Tool Set, with Non-Slip Rubber Grip, Storage Tote Bag, Outdoor Hand Tools, Ideal Garden Tool Kit Gifts for Women and Men",
     price: 29.98,
     description: [
@@ -250,10 +265,11 @@ home_garden_tools3 = Product.create({
     ],
     rating: 0,
     filename: "categories/home-garden-tools/tool-set.jpg",
+    specialty: "none",
     category_id: 4
-})
+)
 
-home_garden_tools4 = Product.create({  
+home_garden_tools4 = Product.create(  
     name: "H&GT Garden Kneeler and Seat, Foldable Garden Stool Heavy Duty Gardening Bench for Kneeling and Sitting to Prevent Knee & Back Pain, Great Gardening Gifts for Women, Grandparents, Seniors, Mom & Dad",
     price: 49.97,
     description: [
@@ -265,12 +281,13 @@ home_garden_tools4 = Product.create({
     ],
     rating: 0,
     filename: "categories/home-garden-tools/garden-stool.jpg",
+    specialty: "none",
     category_id: 4
-})
+)
 
 # Pet Supplies
 
-pet_supplies1 = Product.create({  
+pet_supplies1 = Product.create(  
     name: "Rocco & Roxie Stain & Odor Eliminator for Strong Odor - Enzyme-Powered Pet Odor Eliminator for Home - Carpet Stain Remover for Cats and Dog Pee - Enzymatic Cat Urine Destroyer - Carpet Cleaner Spray",
     price: 18.97,
     description: [
@@ -282,10 +299,11 @@ pet_supplies1 = Product.create({
     ],
     rating: 0,
     filename: "categories/pet-supplies/stain-eliminator.jpg",
+    specialty: "none",
     category_id: 5
-})
+)
 
-pet_supplies2 = Product.create({  
+pet_supplies2 = Product.create(  
     name: "VEVOR 50 Inch Dog Grooming Tub, Professional Stainless Steel Pet Dog Bath Tub, with Steps Faucet & Accessories Dog Washing Station",
     price: 1139.99,
     description: [
@@ -297,10 +315,11 @@ pet_supplies2 = Product.create({
     ],
     rating: 0,
     filename: "categories/pet-supplies/groom-tub.jpg",
+    specialty: "none",
     category_id: 5
-})
+)
 
-pet_supplies3 = Product.create({  
+pet_supplies3 = Product.create(  
     name: "Solliquin Behavior Supplement for Dogs & Cats",
     price: 22.99,
     description: [
@@ -310,10 +329,11 @@ pet_supplies3 = Product.create({
     ],
     rating: 0,
     filename: "categories/pet-supplies/supplement.jpg",
+    specialty: "none",
     category_id: 5
-})
+)
 
-pet_supplies4 = Product.create({  
+pet_supplies4 = Product.create(  
     name: "MidWest Homes for Pets Newly Enhanced Single & Double Door New World Dog Crate, Includes Leak-Proof Pan, Floor Protecting Feet, & New Patented Features",
     price: 61.99,
     description: [
@@ -326,12 +346,13 @@ pet_supplies4 = Product.create({
     ],
     rating: 0,
     filename: "categories/pet-supplies/pet-home.jpg",
+    specialty: "none",
     category_id: 5
-})
+)
 
 # Food & Grocery
 
-food_grocery1 = Product.create({  
+food_grocery1 = Product.create(  
     name: "Quaker Instant Oatmeal, 4 Flavor Variety Pack, Individual Packets, 48 Count",
     price: 11.91,
     description: [
@@ -341,10 +362,11 @@ food_grocery1 = Product.create({
     ],
     rating: 0,
     filename: "categories/food-grocery/instant-oatmeal.jpg",
+    specialty: "none",
     category_id: 6
-})
+)
 
-food_grocery2 = Product.create({  
+food_grocery2 = Product.create(  
     name: "Chef Boyardee Beef in Tomato & Meat Sauce Ravioli, 7.5 Oz. (Pack of 12)",
     price: 11.17,
     description: [
@@ -356,10 +378,11 @@ food_grocery2 = Product.create({
     ],
     rating: 0,
     filename: "categories/food-grocery/meat-sauce.jpg",
+    specialty: "none",
     category_id: 6
-})
+)
 
-food_grocery3 = Product.create({  
+food_grocery3 = Product.create(  
     name: "VENO 2 Pack Insulated Reusable Grocery Bag, Food Delivery Bag, Durable, Heavy Duty, Large Size, Stands Upright, Collapsible, Sturdy Zipper, Reusable and Sustainable (Cyan, 2 pack)",
     price: 17.99,
     description: [
@@ -371,10 +394,11 @@ food_grocery3 = Product.create({
     ],
     rating: 0,
     filename: "categories/food-grocery/grocery-bag.jpg",
+    specialty: "none",
     category_id: 6
-})
+)
 
-food_grocery4 = Product.create({  
+food_grocery4 = Product.create(  
     name: "HAPPYTOT Organics Super Foods Stage 4, Super Foods Variety Pack, 4.22 Ounce Pouch (Pack of 16) packaging may vary",
     price: 26.98,
     description: [
@@ -386,12 +410,13 @@ food_grocery4 = Product.create({
     ],
     rating: 0,
     filename: "categories/food-grocery/super-foods.jpg",
+    specialty: "none",
     category_id: 6
-})
+)
 
 # Beauty & Health
 
-beauty_health1 = Product.create({
+beauty_health1 = Product.create(
     name: "Facial Cleansing Brush by Olay Regenerist, Face Exfoliator with 2 Brush Heads Mothers Day Gifts Set",
     price: 14.60,
     description: [
@@ -404,10 +429,11 @@ beauty_health1 = Product.create({
     ],
     rating: 0,
     filename: "categories/beauty-health/cleansing-brush.jpg",
+    specialty: "best seller",
     category_id: 7
-})
+)
 
-beauty_health2 = Product.create({
+beauty_health2 = Product.create(
     name: "Centrum Multigummies + Beauty Gummy Multivitamin for Women, Fruit, 100 Count",
     price: 13.97,
     description: [
@@ -419,10 +445,11 @@ beauty_health2 = Product.create({
     ],
     rating: 0,
     filename: "categories/beauty-health/centrum.jpg",
+    specialty: "none",
     category_id: 7
-})
+)
 
-beauty_health3 = Product.create({
+beauty_health3 = Product.create(
     name: "2 Pack Hair Drying Towels, Hair Wrap Towels, Super Absorbent Microfiber Hair Towel Turban with Button Design to Dry Hair Quickly(Coffee& Pink)",
     price: 11.96,
     description: [
@@ -434,10 +461,11 @@ beauty_health3 = Product.create({
     ],
     rating: 0,
     filename: "categories/beauty-health/towels.jpg",
+    specialty: "none",
     category_id: 7
-})
+)
 
-beauty_health4 = Product.create({
+beauty_health4 = Product.create(
     name: "Sensodyne Extra Whitening Sensitive Teeth Whitening Toothpaste - 4 Ounces (Pack of 3)",
     price: 15.17,
     description: [
@@ -450,10 +478,11 @@ beauty_health4 = Product.create({
     ],
     rating: 0,
     filename: "categories/beauty-health/toothpaste.jpg",
+    specialty: "none",
     category_id: 7
-})
+)
 
-beauty_health5 = Product.create({
+beauty_health5 = Product.create(
     name: "ZO SKIN HEALTH Growth Factor Serum Plus - 30ml, 1 Fl Oz (Pack of 1), (GFS)",
     price: 139.97,
     description: [
@@ -465,12 +494,13 @@ beauty_health5 = Product.create({
     ],
     rating: 0,
     filename: "categories/beauty-health/serum.jpg",
+    specialty: "none",
     category_id: 7
-})
+)
 
 # Toys, Kids & Baby
 
-toys_kids_baby1 = Product.create({
+toys_kids_baby1 = Product.create(
     name: "Kids Dancing Talking Cactus Toys for Baby Boys and Girls, Talking Sunny Cactus Toy Electronic Plush Toy Singing, Record & Repeating What You Say with 120 English Songs and LED Lighting for Home Decor",
     price: 24.99,
     description: [
@@ -482,10 +512,11 @@ toys_kids_baby1 = Product.create({
     ],
     rating: 0,
     filename: "categories/toys-kids-baby/talking-cactus.jpg",
+    specialty: "none",
     category_id: 8
-})
+)
 
-toys_kids_baby2 = Product.create({
+toys_kids_baby2 = Product.create(
     name: "SplashEZ 3-in-1 Splash Pad, Sprinkler for Kids and Wading Pool for Learning – Children’s Sprinkler Pool, 60’’ Inflatable Water Summer Toys – “from A to Z” Outdoor Play Mat for Babies & Toddlers",
     price: 18.29,
     description: [
@@ -497,10 +528,11 @@ toys_kids_baby2 = Product.create({
     ],
     rating: 0,
     filename: "categories/toys-kids-baby/splash-pad.jpg",
+    specialty: "none",
     category_id: 8
-})
+)
 
-toys_kids_baby3 = Product.create({
+toys_kids_baby3 = Product.create(
     name: "Silicone Beach Toys for Kids - Baby Sandbox Toys - Best Silicone Toddler Beach Toy Set for Travel -Won't Break Like Plastic baby beach toys - Collapsible Beach Bucket, Shovel & Accessories",
     price: 30.95,
     description: [
@@ -512,10 +544,11 @@ toys_kids_baby3 = Product.create({
     ],
     rating: 0,
     filename: "categories/toys-kids-baby/beach-toys.jpg",
+    specialty: "none",
     category_id: 8
-})
+)
 
-toys_kids_baby4 = Product.create({
+toys_kids_baby4 = Product.create(
     name: "ORSEN LCD Writing Tablet Toddler Toys, 8.5 Inch Doodle Board Drawing Pad Gifts for Kids, Dinosaur Boy Toy Drawing Board Christmas Birthday Gift, Drawing Tablet for Boys Girls 3 4 5 6 7 Years Old-Green",
     price: 17.98,
     description: [
@@ -527,12 +560,13 @@ toys_kids_baby4 = Product.create({
     ],
     rating: 0,
     filename: "categories/toys-kids-baby/tablet-toy.jpg",
+    specialty: "none",
     category_id: 8
-})
+)
 
 # Handmade
 
-handmade1 = Product.create({
+handmade1 = Product.create(
     name: "Friendship Lamp – Classic Design - Wi-Fi Touch Lamp LED Light for Long-Distance, Connection, Relationship, Friendship, Gift, Over 200 Colors, App Setup, Handmade in USA by Filimin - Set of 2",
     price: 184,
     description: [
@@ -544,10 +578,11 @@ handmade1 = Product.create({
     ],
     rating: 0,
     filename: "categories/handmade/friendship-lamp.jpg",
+    specialty: "none",
     category_id: 9
-})
+)
 
-handmade2 = Product.create({
+handmade2 = Product.create(
     name: "Personalized Grandma Necklace - Custom Childrens Names, Birthstone Colors - 25MM 32MM Engraved Washers - Grandmother Christmas Gift - DGR-2532W",
     price: 30.65,
     description: [
@@ -559,10 +594,11 @@ handmade2 = Product.create({
     ],
     rating: 0,
     filename: "categories/handmade/custom-necklace.jpg",
+    specialty: "none",
     category_id: 9
-})
+)
 
-handmade3 = Product.create({
+handmade3 = Product.create(
     name: "New Inspirational Orgonite Pyramid for Success | Rainbow Moonstone Orgone Pyramid for Anti-stress - Calmness – Growth – Strength – Healing Crystal Gemstone Pyramid",
     price: 29.95,
     description: [
@@ -574,10 +610,11 @@ handmade3 = Product.create({
     ],
     rating: 0,
     filename: "categories/handmade/orgonite-pyramid.jpg",
+    specialty: "none",
     category_id: 9
-})
+)
 
-handmade4 = Product.create({
+handmade4 = Product.create(
     name: "Personalised Dog Gift Cushions | I Love My Dachshund | Custom Cushion Throw Pillow Cover | 18 x 18 Inch | Customised Gifts For Dog Lover Birthday Presents For Dog Mom Decor",
     price: 18.99,
     description: [
@@ -589,12 +626,13 @@ handmade4 = Product.create({
     ],
     rating: 0,
     filename: "categories/handmade/custom-cushion.jpg",
+    specialty: "none",
     category_id: 9
-})
+)
 
 # Sports
 
-sports1 = Product.create({
+sports1 = Product.create(
     name: "Sports Mom, Baseball Mom, Mom life, Mom boss, Mom Tumbler, Sports Mom, Soccer Mom, Gifts for Mom, Mother's Day, Funny tumbler, Coffee tumbler, Coffee cup",
     price: 24,
     description: [
@@ -607,10 +645,11 @@ sports1 = Product.create({
     ],
     rating: 0,
     filename: "categories/sports/sports-cup.jpg",
+    specialty: "none",
     category_id: 10
-})
+)
 
-sports2 = Product.create({
+sports2 = Product.create(
     name: "Basketball Wall Art Coat Hook - Boy's Sports Fan Themed Bedroom Nursery – Man Cave Decor - Towel Hanger",
     price: 14.95,
     description: [
@@ -623,10 +662,11 @@ sports2 = Product.create({
     ],
     rating: 0,
     filename: "categories/sports/basketball-hook.jpg",
+    specialty: "none",
     category_id: 10
-})
+)
 
-sports3 = Product.create({
+sports3 = Product.create(
     name: "Sports Player Girl Watercolor Art 8x10 Unframed Print Set Female Woman Grand Daughter Sport Player Volleyball Basketball Soccer Softball Wnba Kid's Room Bedroom Nursery Playroom Home Wall Decor",
     price: 29.12,
     description: [
@@ -638,10 +678,11 @@ sports3 = Product.create({
     ],
     rating: 0,
     filename: "categories/sports/sports-art.jpg",
+    specialty: "none",
     category_id: 10
-})
+)
 
-sports4 = Product.create({
+sports4 = Product.create(
     name: "Cullen Baseball Forks WA Shirts Baseball T-Shirts For Women and Men Sports T-Shirts Team Forks Tee Forks Graphic Tees Cullen Clothes Casual Sleeve Shirts",
     price: 17.90,
     description: [
@@ -661,12 +702,13 @@ sports4 = Product.create({
     ],
     rating: 0,
     filename: "categories/sports/baseball-shirt.jpg",
+    specialty: "none",
     category_id: 10
-})
+)
 
 # Outdoors
 
-outdoors1 = Product.create({
+outdoors1 = Product.create(
     name: "Custom Metal Signs | Metal Name Sign | Metal Wall Art | Split Letter Monogram Wall Decor | Metal Wall Art Last Name Sign | Family Name Sign | Personalized Wedding Gift | Metal Art | Outdoor Metal Sign",
     price: 18,
     description: [
@@ -674,10 +716,11 @@ outdoors1 = Product.create({
     ],
     rating: 0,
     filename: "categories/outdoors/metal-sign.jpg",
+    specialty: "none",
     category_id: 11
-})
+)
 
-outdoors2 = Product.create({
+outdoors2 = Product.create(
     name: "Personalized Cabin Sign Outdoor Wood Sign Welcome Sign Rustic Decor Custom Wood Sign",
     price: 65,
     description: [
@@ -690,10 +733,11 @@ outdoors2 = Product.create({
     ],
     rating: 0,
     filename: "categories/outdoors/cabin-sign.jpg",
+    specialty: "none",
     category_id: 11
-})
+)
 
-outdoors3 = Product.create({
+outdoors3 = Product.create(
     name: "Metal Sign - Warning Property Protected By Tortoise - Durable Metal Sign - Use Indoor/Outdoor - Great Gift and Decor Under $20 (8\" x 12\")",
     price: 12.99,
     description: [
@@ -706,10 +750,11 @@ outdoors3 = Product.create({
     ],
     rating: 0,
     filename: "categories/outdoors/tortoise-sign.jpg",
+    specialty: "none",
     category_id: 11
-})
+)
 
-outdoors4 = Product.create({
+outdoors4 = Product.create(
     name: "Wooden Tic Tac Toe Game | Board game for kids and family | Table Top Living Room Decor Fun Game | Indoor Outdoor Adults classic Travel Game (Burnt Wood)",
     price: 22,
     description: [
@@ -722,12 +767,13 @@ outdoors4 = Product.create({
     ],
     rating: 0,
     filename: "categories/outdoors/wooden-tictactoe.jpg",
+    specialty: "none",
     category_id: 11
-})
+)
 
 # Automotive & Industrial
 
-automotive_industrial1 = Product.create({
+automotive_industrial1 = Product.create(
     name: "Vibration-based Condition Monitoring: Industrial, Automotive and Aerospace Applications",
     price: 116,
     description: [
@@ -742,10 +788,11 @@ automotive_industrial1 = Product.create({
     ],
     rating: 0,
     filename: "categories/automotive-industrial/condition-monitoring.jpg",
+    specialty: "none",
     category_id: 12
-})
+)
 
-automotive_industrial2 = Product.create({
+automotive_industrial2 = Product.create(
     name: "The Archaeological Automobile: Understanding and Living with Historical Automobiles",
     price: 149.95,
     description: [
@@ -763,10 +810,11 @@ automotive_industrial2 = Product.create({
     ],
     rating: 0,
     filename: "categories/automotive-industrial/archaeological-automobile.jpg",
+    specialty: "none",
     category_id: 12
-})
+)
 
-automotive_industrial3 = Product.create({
+automotive_industrial3 = Product.create(
     name: "Farm and Workshop Welding, Third Revised Edition: Everything You Need to Know to Weld, Cut, and Shape Metal (Fox Chapel Publishing) Learn and Avoid Common Mistakes with Over 400 Step-by-Step Photos",
     price: 19.80,
     description: [
@@ -797,10 +845,11 @@ automotive_industrial3 = Product.create({
     ],
     rating: 0,
     filename: "categories/automotive-industrial/welding.jpg",
+    specialty: "none",
     category_id: 12
-})
+)
 
-automotive_industrial4 = Product.create({
+automotive_industrial4 = Product.create(
     name: "R. E. Olds and Industrial Lansing (MI) (Images of America)",
     price: 16.27,
     description: [
@@ -808,5 +857,6 @@ automotive_industrial4 = Product.create({
     ],
     rating: 0,
     filename: "categories/automotive-industrial/industrial-lansing.jpg",
+    specialty: "none",
     category_id: 12
-})
+)
