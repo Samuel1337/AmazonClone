@@ -3,14 +3,13 @@ import React from "react";
 class Carousel extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            counter: 0
-        }
         this.start = this.start.bind(this);
+        this.loop = this.loop.bind(this);
     }
 
     componentDidMount() {
         this.start();
+        this.loop();
     }
 
     start() {
@@ -40,7 +39,8 @@ class Carousel extends React.Component {
         this.prevButton.addEventListener("click", e => {
 
             e.preventDefault();
-            this.setState({counter: this.state.counter + 1})
+            clearInterval(this.timer);
+            this.loop();
 
             const currentSlide = this.track.querySelector('.current-slide');
             let prevSlide = currentSlide.previousElementSibling;
@@ -56,8 +56,9 @@ class Carousel extends React.Component {
         this.nextButton.addEventListener("click", e => {
 
             e.preventDefault();
-            this.setState({counter: this.state.counter + 1})
-            
+            clearInterval(this.timer);
+            this.loop();
+
             const currentSlide = this.track.querySelector('.current-slide');
             let nextSlide = currentSlide.nextElementSibling;
             
@@ -68,15 +69,17 @@ class Carousel extends React.Component {
             this.moveToSlide(currentSlide, nextSlide);
         })
         
-        // loop
-        setInterval(() => {
+    }
+
+    loop() {
+        this.timer = setInterval(() => {
             const currentSlide = this.track.querySelector('.current-slide');
             let nextSlide = currentSlide.nextElementSibling;
             
             if (nextSlide === null) {
                 nextSlide = this.track.querySelector('.carousel__slide:first-child')
             }
-    
+
             this.moveToSlide(currentSlide, nextSlide);
         }, 5000);
     }
