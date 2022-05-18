@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require("open-uri")
+
 User.destroy_all
 Product.destroy_all
 
@@ -22,7 +24,7 @@ demo = User.create!(username: "Demo", password: "123456");
 # t.integer   rating
 # t.string    filename
 # t.string    specialty 
-# t.integer   category_id 
+# t.string    category 
 
 # Electronics
 
@@ -43,8 +45,11 @@ electronics1 = Product.create(
     rating: 0,
     filename: "categories/electronics/fire-tablet.jpg",
     specialty: "best seller",
-    category_id: 1
+    category: "electronics"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/fire-tablet.jpg')
+electronics1.photo.attach(io: file, filename: 'fire-tablet.jpg')
 
 electronics2 = Product.create(
     title: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
@@ -59,8 +64,11 @@ electronics2 = Product.create(
     rating: 0,
     filename: "categories/electronics/wireless-earbuds.jpg",
     specialty: "none",
-    category_id: 1
+    category: "electronics"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/wireless-earbuds.jpg')
+electronics2.photo.attach(io: file, filename: 'wireless-earbuds.jpg')
 
 electronics3 = Product.create(
     title: "Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
@@ -75,8 +83,11 @@ electronics3 = Product.create(
     rating: 0,
     filename: "categories/electronics/nintendo-switch.jpg",
     specialty: "none",
-    category_id: 1
+    category: "electronics"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/nintendo-switch.jpg')
+electronics3.photo.attach(io: file, filename: 'nintendo-switch.jpg')
 
 electronics4 = Product.create(
     title: "Wyze Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT",
@@ -91,9 +102,11 @@ electronics4 = Product.create(
     rating: 0,
     filename: "categories/electronics/video-camera.jpg",
     specialty: "none",
-    category_id: 1
+    category: "electronics"
 )
 
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/video-camera.jpg')
+electronics4.photo.attach(io: file, filename: 'video-camera.jpg')
 
 # Computers
 
@@ -115,8 +128,11 @@ computers1 = Product.create(
     rating: 0,
     filename: "categories/computers/macbook-air-laptop.jpg",
     specialty: "none",
-    category_id: 2
+    category: "computers"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/macbook-air-laptop.jpg')
+computers1.photo.attach(io: file, filename: 'macbook-air-laptop.jpg')
     
 computers2 = Product.create(  
     title: "OMEN 30L NVIDIA RTX 3090 Gaming Desktop PC (Liquid Cooled Intel i7-10700K, Z490 Mobo, 750 Watt Platinum PSU, Windows 11 Home, 1TB WD Black NVMe SSD, 32GB HyperX RGB RAM)",
@@ -131,8 +147,11 @@ computers2 = Product.create(
     rating: 0,
     filename: "categories/computers/gaming-desktop.jpg",
     specialty: "best seller",
-    category_id: 2
+    category: "computers"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/gaming-desktop.jpg')
+computers2.photo.attach(io: file, filename: 'gaming-desktop.jpg')
     
 computers3 = Product.create(  
     title: "HP Elite Desktop PC Computer Intel Core i5 3.1-GHz, 8 gb Ram, 1 TB Hard Drive, DVDRW, 19 Inch LCD Monitor, Keyboard, Mouse, Wireless WiFi, Windows 10 (Renewed)",
@@ -147,8 +166,11 @@ computers3 = Product.create(
     rating: 0,
     filename: "categories/computers/elite-desktop",
     specialty: "none",
-    category_id: 2
+    category: "computers"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/elite-desktop.jpg')
+computers3.photo.attach(io: file, filename: 'elite-desktop.jpg')
 
 computers4 = Product.create(  
     title: "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24\" FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11",
@@ -163,8 +185,11 @@ computers4 = Product.create(
     rating: 0,
     filename: "categories/computers/lenovo.jpg",
     specialty: "none",
-    category_id: 2
+    category: "computers"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/lenovo.jpg')
+computers4.photo.attach(io: file, filename: 'lenovo.jpg')
 
 # Smart Home
 
@@ -184,8 +209,11 @@ smart_home1 = Product.create(
     rating: 0,
     filename: "categories/smart-home/echo-dot.jpg",
     specialty: "best seller",
-    category_id: 3
+    category: "smart-home"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/echo-dot.jpg')
+smart_home1.photo.attach(io: file, filename: 'echo-dot.jpg')
 
 smart_home2 = Product.create(  
     title: "Ring Rechargeable Battery Pack",
@@ -198,8 +226,11 @@ smart_home2 = Product.create(
     rating: 0,
     filename: "categories/smart-home/battery-pack.jpg",
     specialty: "none",
-    category_id: 3
+    category: "smart-home"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/battery-pack.jpg')
+smart_home2.photo.attach(io: file, filename: 'battery-pack.jpg')
 
 smart_home3 = Product.create(  
     title: "Ring Solar Panel White - Compatible with Ring Spotlight Cam Battery and Stick Up Cam Battery",
@@ -213,8 +244,11 @@ smart_home3 = Product.create(
     rating: 0,
     filename: "categories/smart-home/solar-panel.jpg",
     specialty: "none",
-    category_id: 3
+    category: "smart-home"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/solar-panel.jpg')
+smart_home3.photo.attach(io: file, filename: 'solar-panel.jpg')
 
 smart_home4 = Product.create(  
     title: "Smart Power Strip, WiFi Surge Protector Work with Alexa Google Home, Smart Plug Outlets with 3 USB 3 Charging Port, Home Office Cruise Ship Travel Multi-Plug Extender, 10A",
@@ -229,8 +263,11 @@ smart_home4 = Product.create(
     rating: 0,
     filename: "categories/smart-home/power-strip.jpg",
     specialty: "none",
-    category_id: 3
+    category: "smart-home"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/power-strip.jpg')
+smart_home4.photo.attach(io: file, filename: 'power-strip.jpg')
 
 # Home, Garden & Tools
 
@@ -247,8 +284,11 @@ home_garden_tools1 = Product.create(
     rating: 0,
     filename: "categories/home-garden-tools/tool-holder.jpg",
     specialty: "none",
-    category_id: 4
+    category: "home-garden-tools"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-holder.jpg')
+home_garden_tools1.photo.attach(io: file, filename: 'tool-holder.jpg')
 
 home_garden_tools2 = Product.create(  
     title: "HYCHIKA 20V Home Tool Kit with Case, 104 PCS Cordless Drill Driver Tool Set with Battery&Charger for Garden Office Home Repair Maintain, Power Tools Combo Kits for Home",
@@ -263,8 +303,11 @@ home_garden_tools2 = Product.create(
     rating: 0,
     filename: "categories/home-garden-tools/tool-kit.jpg",
     specialty: "none",
-    category_id: 4
+    category: "home-garden-tools"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-kit.jpg')
+home_garden_tools2.photo.attach(io: file, filename: 'tool-kit.jpg')
 
 home_garden_tools3 = Product.create(  
     title: "CHRYZTAL Garden Tool Set, Stainless Steel Heavy Duty Gardening Tool Set, with Non-Slip Rubber Grip, Storage Tote Bag, Outdoor Hand Tools, Ideal Garden Tool Kit Gifts for Women and Men",
@@ -279,8 +322,11 @@ home_garden_tools3 = Product.create(
     rating: 0,
     filename: "categories/home-garden-tools/tool-set.jpg",
     specialty: "none",
-    category_id: 4
+    category: "home-garden-tools"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-set.jpg')
+home_garden_tools3.photo.attach(io: file, filename: 'tool-set.jpg')
 
 home_garden_tools4 = Product.create(  
     title: "H&GT Garden Kneeler and Seat, Foldable Garden Stool Heavy Duty Gardening Bench for Kneeling and Sitting to Prevent Knee & Back Pain, Great Gardening Gifts for Women, Grandparents, Seniors, Mom & Dad",
@@ -295,8 +341,11 @@ home_garden_tools4 = Product.create(
     rating: 0,
     filename: "categories/home-garden-tools/garden-stool.jpg",
     specialty: "none",
-    category_id: 4
+    category: "home-garden-tools"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/garden-stool.jpg')
+home_garden_tools4.photo.attach(io: file, filename: 'garden-stool.jpg')
 
 # Pet Supplies
 
@@ -313,8 +362,11 @@ pet_supplies1 = Product.create(
     rating: 0,
     filename: "categories/pet-supplies/stain-eliminator.jpg",
     specialty: "none",
-    category_id: 5
+    category: "pet-supplies"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/stain-eliminator.jpg')
+pet_supplies1.photo.attach(io: file, filename: 'stain-eliminator.jpg')
 
 pet_supplies2 = Product.create(  
     title: "VEVOR 50 Inch Dog Grooming Tub, Professional Stainless Steel Pet Dog Bath Tub, with Steps Faucet & Accessories Dog Washing Station",
@@ -329,8 +381,11 @@ pet_supplies2 = Product.create(
     rating: 0,
     filename: "categories/pet-supplies/groom-tub.jpg",
     specialty: "none",
-    category_id: 5
+    category: "pet-supplies"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/groom-tub.jpg')
+pet_supplies2.photo.attach(io: file, filename: 'groom-tub.jpg')
 
 pet_supplies3 = Product.create(  
     title: "Solliquin Behavior Supplement for Dogs & Cats",
@@ -343,8 +398,11 @@ pet_supplies3 = Product.create(
     rating: 0,
     filename: "categories/pet-supplies/supplement.jpg",
     specialty: "none",
-    category_id: 5
+    category: "pet-supplies"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/supplement.jpg')
+pet_supplies3.photo.attach(io: file, filename: 'supplement.jpg')
 
 pet_supplies4 = Product.create(  
     title: "MidWest Homes for Pets Newly Enhanced Single & Double Door New World Dog Crate, Includes Leak-Proof Pan, Floor Protecting Feet, & New Patented Features",
@@ -360,8 +418,11 @@ pet_supplies4 = Product.create(
     rating: 0,
     filename: "categories/pet-supplies/pet-home.jpg",
     specialty: "none",
-    category_id: 5
+    category: "pet-supplies"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/pet-home.jpg')
+pet_supplies4.photo.attach(io: file, filename: 'pet-home.jpg')
 
 # Food & Grocery
 
@@ -376,8 +437,11 @@ food_grocery1 = Product.create(
     rating: 0,
     filename: "categories/food-grocery/instant-oatmeal.jpg",
     specialty: "none",
-    category_id: 6
+    category: "food-grocery"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/instant-oatmeal.jpg')
+food_grocery1.photo.attach(io: file, filename: 'instant-oatmeal.jpg')
 
 food_grocery2 = Product.create(  
     title: "Chef Boyardee Beef in Tomato & Meat Sauce Ravioli, 7.5 Oz. (Pack of 12)",
@@ -392,8 +456,11 @@ food_grocery2 = Product.create(
     rating: 0,
     filename: "categories/food-grocery/meat-sauce.jpg",
     specialty: "none",
-    category_id: 6
+    category: "food-grocery"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/meat-sauce.jpg')
+food_grocery2.photo.attach(io: file, filename: 'meat-sauce.jpg')
 
 food_grocery3 = Product.create(  
     title: "VENO 2 Pack Insulated Reusable Grocery Bag, Food Delivery Bag, Durable, Heavy Duty, Large Size, Stands Upright, Collapsible, Sturdy Zipper, Reusable and Sustainable (Cyan, 2 pack)",
@@ -408,8 +475,11 @@ food_grocery3 = Product.create(
     rating: 0,
     filename: "categories/food-grocery/grocery-bag.jpg",
     specialty: "none",
-    category_id: 6
+    category: "food-grocery"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/grocery-bag.jpg')
+food_grocery3.photo.attach(io: file, filename: 'grocery-bag.jpg')
 
 food_grocery4 = Product.create(  
     title: "HAPPYTOT Organics Super Foods Stage 4, Super Foods Variety Pack, 4.22 Ounce Pouch (Pack of 16) packaging may vary",
@@ -424,8 +494,11 @@ food_grocery4 = Product.create(
     rating: 0,
     filename: "categories/food-grocery/super-foods.jpg",
     specialty: "none",
-    category_id: 6
+    category: "food-grocery"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/super-foods.jpg')
+food_grocery4.photo.attach(io: file, filename: 'super-foods.jpg')
 
 # Beauty & Health
 
@@ -443,8 +516,11 @@ beauty_health1 = Product.create(
     rating: 0,
     filename: "categories/beauty-health/cleansing-brush.jpg",
     specialty: "best seller",
-    category_id: 7
+    category: "beauty-health"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/cleansing-brush.jpg')
+beauty_health1.photo.attach(io: file, filename: 'cleansing-brush.jpg')
 
 beauty_health2 = Product.create(
     title: "Centrum Multigummies + Beauty Gummy Multivitamin for Women, Fruit, 100 Count",
@@ -459,8 +535,11 @@ beauty_health2 = Product.create(
     rating: 0,
     filename: "categories/beauty-health/centrum.jpg",
     specialty: "none",
-    category_id: 7
+    category: "beauty-health"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/centrum.jpg')
+beauty_health2.photo.attach(io: file, filename: 'centrum.jpg')
 
 beauty_health3 = Product.create(
     title: "2 Pack Hair Drying Towels, Hair Wrap Towels, Super Absorbent Microfiber Hair Towel Turban with Button Design to Dry Hair Quickly(Coffee& Pink)",
@@ -475,8 +554,11 @@ beauty_health3 = Product.create(
     rating: 0,
     filename: "categories/beauty-health/towels.jpg",
     specialty: "none",
-    category_id: 7
+    category: "beauty-health"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/towels.jpg')
+beauty_health3.photo.attach(io: file, filename: 'towels.jpg')
 
 beauty_health4 = Product.create(
     title: "Sensodyne Extra Whitening Sensitive Teeth Whitening Toothpaste - 4 Ounces (Pack of 3)",
@@ -492,8 +574,11 @@ beauty_health4 = Product.create(
     rating: 0,
     filename: "categories/beauty-health/toothpaste.jpg",
     specialty: "none",
-    category_id: 7
+    category: "beauty-health"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/toothpaste.jpg')
+beauty_health4.photo.attach(io: file, filename: 'toothpaste.jpg')
 
 beauty_health5 = Product.create(
     title: "ZO SKIN HEALTH Growth Factor Serum Plus - 30ml, 1 Fl Oz (Pack of 1), (GFS)",
@@ -508,8 +593,11 @@ beauty_health5 = Product.create(
     rating: 0,
     filename: "categories/beauty-health/serum.jpg",
     specialty: "none",
-    category_id: 7
+    category: "beauty-health"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/serum.jpg')
+beauty_health5.photo.attach(io: file, filename: 'serum.jpg')
 
 # Toys, Kids & Baby
 
@@ -526,8 +614,11 @@ toys_kids_baby1 = Product.create(
     rating: 0,
     filename: "categories/toys-kids-baby/talking-cactus.jpg",
     specialty: "none",
-    category_id: 8
+    category: "toys-kids-baby"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/talking-cactus.jpg')
+toys_kids_baby1.photo.attach(io: file, filename: 'talking-cactus.jpg')
 
 toys_kids_baby2 = Product.create(
     title: "SplashEZ 3-in-1 Splash Pad, Sprinkler for Kids and Wading Pool for Learning – Children’s Sprinkler Pool, 60’’ Inflatable Water Summer Toys – “from A to Z” Outdoor Play Mat for Babies & Toddlers",
@@ -542,8 +633,11 @@ toys_kids_baby2 = Product.create(
     rating: 0,
     filename: "categories/toys-kids-baby/splash-pad.jpg",
     specialty: "none",
-    category_id: 8
+    category: "toys-kids-baby"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/splash-pad.jpg')
+toys_kids_baby2.photo.attach(io: file, filename: 'splash-pad.jpg')
 
 toys_kids_baby3 = Product.create(
     title: "Silicone Beach Toys for Kids - Baby Sandbox Toys - Best Silicone Toddler Beach Toy Set for Travel -Won't Break Like Plastic baby beach toys - Collapsible Beach Bucket, Shovel & Accessories",
@@ -558,8 +652,11 @@ toys_kids_baby3 = Product.create(
     rating: 0,
     filename: "categories/toys-kids-baby/beach-toys.jpg",
     specialty: "none",
-    category_id: 8
+    category: "toys-kids-baby"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/beach-toys.jpg')
+toys_kids_baby3.photo.attach(io: file, filename: 'beach-toys.jpg')
 
 toys_kids_baby4 = Product.create(
     title: "ORSEN LCD Writing Tablet Toddler Toys, 8.5 Inch Doodle Board Drawing Pad Gifts for Kids, Dinosaur Boy Toy Drawing Board Christmas Birthday Gift, Drawing Tablet for Boys Girls 3 4 5 6 7 Years Old-Green",
@@ -574,8 +671,11 @@ toys_kids_baby4 = Product.create(
     rating: 0,
     filename: "categories/toys-kids-baby/tablet-toy.jpg",
     specialty: "none",
-    category_id: 8
+    category: "toys-kids-baby"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/tablet-toy.jpg')
+toys_kids_baby4.photo.attach(io: file, filename: 'tablet-toy.jpg')
 
 # Handmade
 
@@ -592,8 +692,11 @@ handmade1 = Product.create(
     rating: 0,
     filename: "categories/handmade/friendship-lamp.jpg",
     specialty: "none",
-    category_id: 9
+    category: "handmade"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/friendship-lamp.jpg')
+handmade1.photo.attach(io: file, filename: 'friendship-lamp.jpg')
 
 handmade2 = Product.create(
     title: "Personalized Grandma Necklace - Custom Childrens Names, Birthstone Colors - 25MM 32MM Engraved Washers - Grandmother Christmas Gift - DGR-2532W",
@@ -608,8 +711,11 @@ handmade2 = Product.create(
     rating: 0,
     filename: "categories/handmade/custom-necklace.jpg",
     specialty: "none",
-    category_id: 9
+    category: "handmade"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/custom-necklace.jpg')
+handmade2.photo.attach(io: file, filename: 'custom-necklace.jpg')
 
 handmade3 = Product.create(
     title: "New Inspirational Orgonite Pyramid for Success | Rainbow Moonstone Orgone Pyramid for Anti-stress - Calmness – Growth – Strength – Healing Crystal Gemstone Pyramid",
@@ -624,8 +730,11 @@ handmade3 = Product.create(
     rating: 0,
     filename: "categories/handmade/orgonite-pyramid.jpg",
     specialty: "none",
-    category_id: 9
+    category: "handmade"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/orgonite-pyramid.jpg')
+handmade3.photo.attach(io: file, filename: 'orgonite-pyramid.jpg')
 
 handmade4 = Product.create(
     title: "Personalised Dog Gift Cushions | I Love My Dachshund | Custom Cushion Throw Pillow Cover | 18 x 18 Inch | Customised Gifts For Dog Lover Birthday Presents For Dog Mom Decor",
@@ -640,8 +749,11 @@ handmade4 = Product.create(
     rating: 0,
     filename: "categories/handmade/custom-cushion.jpg",
     specialty: "none",
-    category_id: 9
+    category: "handmade"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/custom-cushion.jpg')
+handmade4.photo.attach(io: file, filename: 'custom-cushion.jpg')
 
 # Sports
 
@@ -659,8 +771,11 @@ sports1 = Product.create(
     rating: 0,
     filename: "categories/sports/sports-cup.jpg",
     specialty: "none",
-    category_id: 10
+    category: "sports"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/sports-cup.jpg')
+sports1.photo.attach(io: file, filename: 'sports-cup.jpg')
 
 sports2 = Product.create(
     title: "Basketball Wall Art Coat Hook - Boy's Sports Fan Themed Bedroom Nursery – Man Cave Decor - Towel Hanger",
@@ -676,8 +791,11 @@ sports2 = Product.create(
     rating: 0,
     filename: "categories/sports/basketball-hook.jpg",
     specialty: "none",
-    category_id: 10
+    category: "sports"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/basketball-hook.jpg')
+sports2.photo.attach(io: file, filename: 'basketball-hook.jpg')
 
 sports3 = Product.create(
     title: "Sports Player Girl Watercolor Art 8x10 Unframed Print Set Female Woman Grand Daughter Sport Player Volleyball Basketball Soccer Softball Wnba Kid's Room Bedroom Nursery Playroom Home Wall Decor",
@@ -692,8 +810,11 @@ sports3 = Product.create(
     rating: 0,
     filename: "categories/sports/sports-art.jpg",
     specialty: "none",
-    category_id: 10
+    category: "sports"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/sports-art.jpg')
+sports3.photo.attach(io: file, filename: 'sports-art.jpg')
 
 sports4 = Product.create(
     title: "Cullen Baseball Forks WA Shirts Baseball T-Shirts For Women and Men Sports T-Shirts Team Forks Tee Forks Graphic Tees Cullen Clothes Casual Sleeve Shirts",
@@ -716,8 +837,11 @@ sports4 = Product.create(
     rating: 0,
     filename: "categories/sports/baseball-shirt.jpg",
     specialty: "none",
-    category_id: 10
+    category: "sports"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/baseball-shirt.jpg')
+sports4.photo.attach(io: file, filename: 'baseball-shirt.jpg')
 
 # Outdoors
 
@@ -730,8 +854,11 @@ outdoors1 = Product.create(
     rating: 0,
     filename: "categories/outdoors/metal-sign.jpg",
     specialty: "none",
-    category_id: 11
+    category: "outdoors"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/metal-sign.jpg')
+outdoors1.photo.attach(io: file, filename: 'metal-sign.jpg')
 
 outdoors2 = Product.create(
     title: "Personalized Cabin Sign Outdoor Wood Sign Welcome Sign Rustic Decor Custom Wood Sign",
@@ -747,8 +874,11 @@ outdoors2 = Product.create(
     rating: 0,
     filename: "categories/outdoors/cabin-sign.jpg",
     specialty: "none",
-    category_id: 11
+    category: "outdoors"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/cabin-sign.jpg')
+outdoors2.photo.attach(io: file, filename: 'cabin-sign.jpg')
 
 outdoors3 = Product.create(
     title: "Metal Sign - Warning Property Protected By Tortoise - Durable Metal Sign - Use Indoor/Outdoor - Great Gift and Decor Under $20 (8\" x 12\")",
@@ -764,8 +894,11 @@ outdoors3 = Product.create(
     rating: 0,
     filename: "categories/outdoors/tortoise-sign.jpg",
     specialty: "none",
-    category_id: 11
+    category: "outdoors"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/tortoise-sign.jpg')
+outdoors3.photo.attach(io: file, filename: 'tortoise-sign.jpg')
 
 outdoors4 = Product.create(
     title: "Wooden Tic Tac Toe Game | Board game for kids and family | Table Top Living Room Decor Fun Game | Indoor Outdoor Adults classic Travel Game (Burnt Wood)",
@@ -781,8 +914,11 @@ outdoors4 = Product.create(
     rating: 0,
     filename: "categories/outdoors/wooden-tictactoe.jpg",
     specialty: "none",
-    category_id: 11
+    category: "outdoors"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/wooden-tictactoe.jpg')
+outdoors4.photo.attach(io: file, filename: 'wooden-tictactoe.jpg')
 
 # Automotive & Industrial
 
@@ -802,8 +938,11 @@ automotive_industrial1 = Product.create(
     rating: 0,
     filename: "categories/automotive-industrial/condition-monitoring.jpg",
     specialty: "none",
-    category_id: 12
+    category: "automotive-industrial"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/condition-monitoring.jpg')
+automotive_industrial1.photo.attach(io: file, filename: 'condition-monitoring.jpg')
 
 automotive_industrial2 = Product.create(
     title: "The Archaeological Automobile: Understanding and Living with Historical Automobiles",
@@ -822,10 +961,13 @@ automotive_industrial2 = Product.create(
         "The Archaeological Automobile combines scholarship, pertinent anecdotes, style, and experience to provide a stimulating account of why we should all be archaeologists now."
     ],
     rating: 0,
-    filename: "categories/automotive-industrial/archaeological-automobile.jpg",
+    filename: "categories/automotive-industrial/archeological-automobile.jpg",
     specialty: "none",
-    category_id: 12
+    category: "automotive-industrial"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/archeological-automobile.jpg')
+automotive_industrial2.photo.attach(io: file, filename: 'archeological-automobile.jpg')
 
 automotive_industrial3 = Product.create(
     title: "Farm and Workshop Welding, Third Revised Edition: Everything You Need to Know to Weld, Cut, and Shape Metal (Fox Chapel Publishing) Learn and Avoid Common Mistakes with Over 400 Step-by-Step Photos",
@@ -859,8 +1001,11 @@ automotive_industrial3 = Product.create(
     rating: 0,
     filename: "categories/automotive-industrial/welding.jpg",
     specialty: "none",
-    category_id: 12
+    category: "automotive-industrial"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/welding.jpg')
+automotive_industrial3.photo.attach(io: file, filename: 'welding.jpg')
 
 automotive_industrial4 = Product.create(
     title: "R. E. Olds and Industrial Lansing (MI) (Images of America)",
@@ -871,5 +1016,8 @@ automotive_industrial4 = Product.create(
     rating: 0,
     filename: "categories/automotive-industrial/industrial-lansing.jpg",
     specialty: "none",
-    category_id: 12
+    category: "automotive-industrial"
 )
+
+file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/industrial-lansing.jpg')
+automotive_industrial4.photo.attach(io: file, filename: 'industrial-lansing.jpg')

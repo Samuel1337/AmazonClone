@@ -10,6 +10,7 @@ import Home from './home';
 import { Link } from 'react-router-dom';
 import Categories from './categories';
 import Footer from './footer';
+import CategoryIndex from './categoryIndex';
 
 const App = () => (
   <div>
@@ -26,12 +27,12 @@ const App = () => (
       <Switch>
         <AuthRoute path="/login" component={loginFormContainer} />
         <AuthRoute path="/signup" component={signupFormContainer} />
-        <Route exact path="/" component={Home} />
+        <Route path="/categories/:categoryId/products" component={CategoryIndex} />
         <Route path="/under_construction" component={UnderConstruction} />
+        <Route exact path="/" component={Home} />
         <Redirect to="/under_construction" />
       </Switch>
-        {/* <Route path="/category/products" component={CategoryProductsIndex} />
-        <Route path="/products/:productId" component={ProductShow} />
+        {/* <Route path="/products/:productId" component={ProductShow} />
         <Route path="/reviews/new" component={CreateReviewForm} />
         <Route path="/reviews/:productId/edit" component={EditReviewForm} />
         <Route path="/cart" component={CartIndex} />

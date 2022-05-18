@@ -1,4 +1,4 @@
-import { fetchProduct, fetchProducts } from "../util/product_api_util";
+import { fetchAllProducts, fetchCategoryProducts, fetchProduct } from "../util/product_api_util";
 
 export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS";
 export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";

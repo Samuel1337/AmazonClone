@@ -22,7 +22,7 @@ class Api::ProductsController < ApplicationController
             :rating,
             :filename,
             :specialty,
-            :category_id
+            :category
         )
     end
 end
