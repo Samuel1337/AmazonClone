@@ -1,6 +1,6 @@
 # Model:
 
-# t.string    name
+# t.string    title
 # t.float     price
 # t.array     description
 # t.integer   rating
@@ -14,7 +14,7 @@ Product.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!("products")
 
 electronics1 = Product.create(
-    name: "Fire HD 10 tablet, 10.1\", 1080p Full HD, 32 GB, latest model (2021 release), Black",
+    title: "Fire HD 10 tablet, 10.1\", 1080p Full HD, 32 GB, latest model (2021 release), Black",
     price: 149.99,
     description: [
         "Fast and responsive - powerful octa-core processor and 3 GB RAM. 50% more RAM than previous generation.",
@@ -34,7 +34,7 @@ electronics1 = Product.create(
 )
 
 electronics2 = Product.create(
-    name: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
+    title: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
     price: 24.99,
     description: [
         "[Smart Touch Control] Specific touch control function makes it more convenient, tap once to play/pause music and answer calls, double tap to skip forward/backward, hold to adjust the volume. You can easily control it without operating the phone.",
@@ -50,7 +50,7 @@ electronics2 = Product.create(
 )
 
 electronics3 = Product.create(
-    name: "Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
+    title: "Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
     price: 299.00,
     description: [
         "3 Play Styles: TV Mode, Tabletop Mode, Handheld Mode",
@@ -66,7 +66,7 @@ electronics3 = Product.create(
 )
 
 electronics4 = Product.create(
-    name: "Wyze Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT",
+    title: "Wyze Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT",
     price: 35.98,
     description: [
         "Color night vision: An all-new Starlight Sensor records night time video in full, vivid color. The Starlight Sensor can see full color in environments up to 25x darker than traditional video cameras and the new f/1.6 aperture captures 2x more light.",
@@ -85,7 +85,7 @@ electronics4 = Product.create(
 # Computers
 
 computers1 = Product.create(    
-    name: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
+    title: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
     price: 1249,
     description: [
         "All-Day Battery Life – Go longer than ever with up to 18 hours of battery life.",
@@ -106,7 +106,7 @@ computers1 = Product.create(
 )
     
 computers2 = Product.create(  
-    name: "OMEN 30L NVIDIA RTX 3090 Gaming Desktop PC (Liquid Cooled Intel i7-10700K, Z490 Mobo, 750 Watt Platinum PSU, Windows 11 Home, 1TB WD Black NVMe SSD, 32GB HyperX RGB RAM)",
+    title: "OMEN 30L NVIDIA RTX 3090 Gaming Desktop PC (Liquid Cooled Intel i7-10700K, Z490 Mobo, 750 Watt Platinum PSU, Windows 11 Home, 1TB WD Black NVMe SSD, 32GB HyperX RGB RAM)",
     price: 2799,
     description: [
         "Impressive chassis with tempered glass side window, RGB color customization, industry’s best hardware & technology; Easy access door for ease of expandability!",
@@ -122,7 +122,7 @@ computers2 = Product.create(
 )
     
 computers3 = Product.create(  
-    name: "HP Elite Desktop PC Computer Intel Core i5 3.1-GHz, 8 gb Ram, 1 TB Hard Drive, DVDRW, 19 Inch LCD Monitor, Keyboard, Mouse, Wireless WiFi, Windows 10 (Renewed)",
+    title: "HP Elite Desktop PC Computer Intel Core i5 3.1-GHz, 8 gb Ram, 1 TB Hard Drive, DVDRW, 19 Inch LCD Monitor, Keyboard, Mouse, Wireless WiFi, Windows 10 (Renewed)",
     price: 181.50,
     description: [
         "This Certified Refurbished product is tested and certified to look and work like new. The refurbishing process includes functionality testing, basic cleaning, inspection, and repackaging. The product ships with all relevant accessories, a minimum 90-day warranty, and may arrive in a generic box. Only select sellers who maintain a high-performance bar may offer Certified Refurbished products on Amazon.com.",
@@ -138,7 +138,7 @@ computers3 = Product.create(
 )
 
 computers4 = Product.create(  
-    name: "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24\" FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11",
+    title: "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24\" FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11",
     price: 699.99,
     description: [
         "This space-saving AIO PC hides raw, unfiltered power - with an AMD Ryzen 5 55000U processor, the IdeaCentre AIO 3 thrives under heavy performance loads",
@@ -156,7 +156,7 @@ computers4 = Product.create(
 # Smart Home
 
 smart_home1 = Product.create(  
-    name: "Echo (4th Gen) | With premium sound, smart home hub, and Alexa | Charcoal",
+    title: "Echo (4th Gen) | With premium sound, smart home hub, and Alexa | Charcoal",
     price: 99.99,
     description: [
         "PREMIUM SOUND: Rich, detailed sound that automatically adapts to any room. Supports lossless HD audio available on select streaming services such as Amazon Music HD.",
@@ -175,7 +175,7 @@ smart_home1 = Product.create(
 )
 
 smart_home2 = Product.create(  
-    name: "Ring Rechargeable Battery Pack",
+    title: "Ring Rechargeable Battery Pack",
     price: 34.99,
     description: [
         "Works with Ring Video Doorbell 3, Video Doorbell 3 Plus, Video Doorbell 4, Peephole Cam, Stick Up Cam Battery (2nd and 3rd Gen), Spotlight Cam Battery, and Smart Lighting Solar Floodlight.",
@@ -189,7 +189,7 @@ smart_home2 = Product.create(
 )
 
 smart_home3 = Product.create(  
-    name: "Ring Solar Panel White - Compatible with Ring Spotlight Cam Battery and Stick Up Cam Battery",
+    title: "Ring Solar Panel White - Compatible with Ring Spotlight Cam Battery and Stick Up Cam Battery",
     price: 59.99,
     description: [
         "Designed exclusively for charging the Ring Spotlight Cam Battery and Stick Up Cam Battery (2nd and 3rd generations only).",
@@ -204,7 +204,7 @@ smart_home3 = Product.create(
 )
 
 smart_home4 = Product.create(  
-    name: "Smart Power Strip, WiFi Surge Protector Work with Alexa Google Home, Smart Plug Outlets with 3 USB 3 Charging Port, Home Office Cruise Ship Travel Multi-Plug Extender, 10A",
+    title: "Smart Power Strip, WiFi Surge Protector Work with Alexa Google Home, Smart Plug Outlets with 3 USB 3 Charging Port, Home Office Cruise Ship Travel Multi-Plug Extender, 10A",
     price: 22.11,
     description: [
         "Voice Control - Smart power strip works with Amazon Alexa and Google Assistant. It is safe and convenient to control with voice. For people who can't free their hands to manually turn on/off the Alexa smart plugs or have inconvenience with both hands. Only for a 2.4GHz WiFi router, no need for a separate hub.",
@@ -222,7 +222,7 @@ smart_home4 = Product.create(
 # Home, Garden & Tools
 
 home_garden_tools1 = Product.create(  
-    name: "Shovel, Rake and Tool Holder with Hooks- Wall Mounted Organizer for Garage, Closet, or Shed-Hang Home and Garden Tools-Space Saving Rack by Stalwart",
+    title: "Shovel, Rake and Tool Holder with Hooks- Wall Mounted Organizer for Garage, Closet, or Shed-Hang Home and Garden Tools-Space Saving Rack by Stalwart",
     price: 10.84,
     description: [
         "MULTI-FUNCTIONAL ORGANIZER: This wall mounted organizer has both slots to hold handles, and six hooks to hang other supplies on. The wall hooks and holder can be utilized indoors and outdoors to hold cleaning supplies, tools, or gardening utensils.",
@@ -238,7 +238,7 @@ home_garden_tools1 = Product.create(
 )
 
 home_garden_tools2 = Product.create(  
-    name: "HYCHIKA 20V Home Tool Kit with Case, 104 PCS Cordless Drill Driver Tool Set with Battery&Charger for Garden Office Home Repair Maintain, Power Tools Combo Kits for Home",
+    title: "HYCHIKA 20V Home Tool Kit with Case, 104 PCS Cordless Drill Driver Tool Set with Battery&Charger for Garden Office Home Repair Maintain, Power Tools Combo Kits for Home",
     price: 49.99,
     description: [
         "【MULTI-PURPOSE HOME TOOL KIT With CASE】: 104 pcs houselod tool set, including hand tools and drill drivers that are most frequently used daily. Suitable for most small maintenance ,repair and home DIY projects around the house.makes general repair, fixing and maintenance jobs much simpler and faster.",
@@ -254,7 +254,7 @@ home_garden_tools2 = Product.create(
 )
 
 home_garden_tools3 = Product.create(  
-    name: "CHRYZTAL Garden Tool Set, Stainless Steel Heavy Duty Gardening Tool Set, with Non-Slip Rubber Grip, Storage Tote Bag, Outdoor Hand Tools, Ideal Garden Tool Kit Gifts for Women and Men",
+    title: "CHRYZTAL Garden Tool Set, Stainless Steel Heavy Duty Gardening Tool Set, with Non-Slip Rubber Grip, Storage Tote Bag, Outdoor Hand Tools, Ideal Garden Tool Kit Gifts for Women and Men",
     price: 29.98,
     description: [
         "【Premium Garden Tools 】- The gardening tool sets includes a large trowel, small trowel, cultivator, hand rake, weeder, pruning shears and an Oxford cloth tote to keep all your tools packed away, which are robust, so you don\'t need to worry about rust and damage. High quality, enough durable to cut through thick weeds. Stainless steel garden tools are easier to fix up your garden.",
@@ -270,7 +270,7 @@ home_garden_tools3 = Product.create(
 )
 
 home_garden_tools4 = Product.create(  
-    name: "H&GT Garden Kneeler and Seat, Foldable Garden Stool Heavy Duty Gardening Bench for Kneeling and Sitting to Prevent Knee & Back Pain, Great Gardening Gifts for Women, Grandparents, Seniors, Mom & Dad",
+    title: "H&GT Garden Kneeler and Seat, Foldable Garden Stool Heavy Duty Gardening Bench for Kneeling and Sitting to Prevent Knee & Back Pain, Great Gardening Gifts for Women, Grandparents, Seniors, Mom & Dad",
     price: 49.97,
     description: [
         "PREVENT BACK/KNEE STRAIN: This gardening stool comes with sturdy arms and structure to ease getting up and down from your kneeling positions to prevent injuries and keeping movements painless to extend your gardening years and comfort",
@@ -288,7 +288,7 @@ home_garden_tools4 = Product.create(
 # Pet Supplies
 
 pet_supplies1 = Product.create(  
-    name: "Rocco & Roxie Stain & Odor Eliminator for Strong Odor - Enzyme-Powered Pet Odor Eliminator for Home - Carpet Stain Remover for Cats and Dog Pee - Enzymatic Cat Urine Destroyer - Carpet Cleaner Spray",
+    title: "Rocco & Roxie Stain & Odor Eliminator for Strong Odor - Enzyme-Powered Pet Odor Eliminator for Home - Carpet Stain Remover for Cats and Dog Pee - Enzymatic Cat Urine Destroyer - Carpet Cleaner Spray",
     price: 18.97,
     description: [
         "CERTIFIED GENTLE AND SAFE Chlorine free and color safe. Safe to use around pets and children. No hazardous propellants, no residue left behind. So gentle it’s been Certified Safe for all carpets, earning the Seal of Approval by the trusted Carpet and Rug Institute (CRI)",
@@ -304,7 +304,7 @@ pet_supplies1 = Product.create(
 )
 
 pet_supplies2 = Product.create(  
-    name: "VEVOR 50 Inch Dog Grooming Tub, Professional Stainless Steel Pet Dog Bath Tub, with Steps Faucet & Accessories Dog Washing Station",
+    title: "VEVOR 50 Inch Dog Grooming Tub, Professional Stainless Steel Pet Dog Bath Tub, with Steps Faucet & Accessories Dog Washing Station",
     price: 1139.99,
     description: [
         "59\"H Stainless Steel Tub: Product Size: 49.2\"L x 25.2\"W x 59.5\"H; Fit for maximize size pets: 49\"L x 25\"W x 40\"H. It can accommodate different-sized dogs(max.220LB). The pet grooming tub is constructed with 304 stainless steel, which is non-deformation, rust-proof, scratch-proof, and sturdy enough for long-time use. What's more, the durable stainless steel pet grooming bathtub is easy maintenance and cleaning.",
@@ -320,7 +320,7 @@ pet_supplies2 = Product.create(
 )
 
 pet_supplies3 = Product.create(  
-    name: "Solliquin Behavior Supplement for Dogs & Cats",
+    title: "Solliquin Behavior Supplement for Dogs & Cats",
     price: 22.99,
     description: [
         "UNIQUE, PATENTED FORMULA: Solliquin is formulated to help facilitate contentment during periods of adjustment in your pet's daily routine",
@@ -334,7 +334,7 @@ pet_supplies3 = Product.create(
 )
 
 pet_supplies4 = Product.create(  
-    name: "MidWest Homes for Pets Newly Enhanced Single & Double Door New World Dog Crate, Includes Leak-Proof Pan, Floor Protecting Feet, & New Patented Features",
+    title: "MidWest Homes for Pets Newly Enhanced Single & Double Door New World Dog Crate, Includes Leak-Proof Pan, Floor Protecting Feet, & New Patented Features",
     price: 61.99,
     description: [
         "Newly enhanced with added security features to keep your pet safe | Slide-bolt door latches now feature patented Paw Block and locking tips to create a safer, more secure home for your pet",
@@ -353,7 +353,7 @@ pet_supplies4 = Product.create(
 # Food & Grocery
 
 food_grocery1 = Product.create(  
-    name: "Quaker Instant Oatmeal, 4 Flavor Variety Pack, Individual Packets, 48 Count",
+    title: "Quaker Instant Oatmeal, 4 Flavor Variety Pack, Individual Packets, 48 Count",
     price: 11.91,
     description: [
         "Good Source of Fiber: Quaker Oats provide a good source of fiber to support a healthy digestive system; See nutrition facts for total fat per serving",
@@ -367,7 +367,7 @@ food_grocery1 = Product.create(
 )
 
 food_grocery2 = Product.create(  
-    name: "Chef Boyardee Beef in Tomato & Meat Sauce Ravioli, 7.5 Oz. (Pack of 12)",
+    title: "Chef Boyardee Beef in Tomato & Meat Sauce Ravioli, 7.5 Oz. (Pack of 12)",
     price: 11.17,
     description: [
         "Chef Boyardee Beef Ravioli in tomato and meat sauce is a fun meal for the kids, and is ready to serve in less than one minute",
@@ -383,7 +383,7 @@ food_grocery2 = Product.create(
 )
 
 food_grocery3 = Product.create(  
-    name: "VENO 2 Pack Insulated Reusable Grocery Bag, Food Delivery Bag, Durable, Heavy Duty, Large Size, Stands Upright, Collapsible, Sturdy Zipper, Reusable and Sustainable (Cyan, 2 pack)",
+    title: "VENO 2 Pack Insulated Reusable Grocery Bag, Food Delivery Bag, Durable, Heavy Duty, Large Size, Stands Upright, Collapsible, Sturdy Zipper, Reusable and Sustainable (Cyan, 2 pack)",
     price: 17.99,
     description: [
         "REUSABLE: VENO maximizes the use of post-consumer material to make high-quality, sustainable grocery bags which saves plastic from ending up in oceans, lakes, and landfills. Keep our bag in your kitchen or trunk for convenience to help protect our environment and create a cleaner, more livable future.",
@@ -399,7 +399,7 @@ food_grocery3 = Product.create(
 )
 
 food_grocery4 = Product.create(  
-    name: "HAPPYTOT Organics Super Foods Stage 4, Super Foods Variety Pack, 4.22 Ounce Pouch (Pack of 16) packaging may vary",
+    title: "HAPPYTOT Organics Super Foods Stage 4, Super Foods Variety Pack, 4.22 Ounce Pouch (Pack of 16) packaging may vary",
     price: 26.98,
     description: [
         "Super Tasty Superfoods: Easily welcome superfoods into your tot’s diet, along with important nutrients A blend of organic fruits, vegetables, and wholesome chia seeds offer omega-3s, Fiber, and vitamin C to your growing (and sometimes picky!) eater",
@@ -417,7 +417,7 @@ food_grocery4 = Product.create(
 # Beauty & Health
 
 beauty_health1 = Product.create(
-    name: "Facial Cleansing Brush by Olay Regenerist, Face Exfoliator with 2 Brush Heads Mothers Day Gifts Set",
+    title: "Facial Cleansing Brush by Olay Regenerist, Face Exfoliator with 2 Brush Heads Mothers Day Gifts Set",
     price: 14.60,
     description: [
         "FACE CLEANSING DEVICE: This dermatologist-designed exfoliating facial brush boosts the performance of your cleanser for a deep clean",
@@ -434,7 +434,7 @@ beauty_health1 = Product.create(
 )
 
 beauty_health2 = Product.create(
-    name: "Centrum Multigummies + Beauty Gummy Multivitamin for Women, Fruit, 100 Count",
+    title: "Centrum Multigummies + Beauty Gummy Multivitamin for Women, Fruit, 100 Count",
     price: 13.97,
     description: [
         "One 100 count Bottle of cherry, berry, and orange-flavored Centrum Multi + beauty gummy multivitamin for women, hair skin and nails vitamins with antioxidants and vitamins D3 and B",
@@ -450,7 +450,7 @@ beauty_health2 = Product.create(
 )
 
 beauty_health3 = Product.create(
-    name: "2 Pack Hair Drying Towels, Hair Wrap Towels, Super Absorbent Microfiber Hair Towel Turban with Button Design to Dry Hair Quickly(Coffee& Pink)",
+    title: "2 Pack Hair Drying Towels, Hair Wrap Towels, Super Absorbent Microfiber Hair Towel Turban with Button Design to Dry Hair Quickly(Coffee& Pink)",
     price: 11.96,
     description: [
         "1. Premium quality and absorbent material : made of high quality microfiber fabric material ,extremely soft and super absorbent , cut the time to dry your hair ,machine washable.",
@@ -466,7 +466,7 @@ beauty_health3 = Product.create(
 )
 
 beauty_health4 = Product.create(
-    name: "Sensodyne Extra Whitening Sensitive Teeth Whitening Toothpaste - 4 Ounces (Pack of 3)",
+    title: "Sensodyne Extra Whitening Sensitive Teeth Whitening Toothpaste - 4 Ounces (Pack of 3)",
     price: 15.17,
     description: [
         "Three 4 oz tubes of Sensodyne Extra Whitening Sensitive Teeth Whitening Toothpaste",
@@ -483,7 +483,7 @@ beauty_health4 = Product.create(
 )
 
 beauty_health5 = Product.create(
-    name: "ZO SKIN HEALTH Growth Factor Serum Plus - 30ml, 1 Fl Oz (Pack of 1), (GFS)",
+    title: "ZO SKIN HEALTH Growth Factor Serum Plus - 30ml, 1 Fl Oz (Pack of 1), (GFS)",
     price: 139.97,
     description: [
         "Helps reduce the appearance of expression lines, lines and wrinkles",
@@ -501,7 +501,7 @@ beauty_health5 = Product.create(
 # Toys, Kids & Baby
 
 toys_kids_baby1 = Product.create(
-    name: "Kids Dancing Talking Cactus Toys for Baby Boys and Girls, Talking Sunny Cactus Toy Electronic Plush Toy Singing, Record & Repeating What You Say with 120 English Songs and LED Lighting for Home Decor",
+    title: "Kids Dancing Talking Cactus Toys for Baby Boys and Girls, Talking Sunny Cactus Toy Electronic Plush Toy Singing, Record & Repeating What You Say with 120 English Songs and LED Lighting for Home Decor",
     price: 24.99,
     description: [
         "【Singing Sunny Cactus Toys】：Dancing talking cactus toy has 120 English songs,and the cactus plush toy will dance with the music.Talking cactus toy can record what you say and repeat what you say,The sound is processed which is very funny and interesting,promote family atmosphere.",
@@ -517,7 +517,7 @@ toys_kids_baby1 = Product.create(
 )
 
 toys_kids_baby2 = Product.create(
-    name: "SplashEZ 3-in-1 Splash Pad, Sprinkler for Kids and Wading Pool for Learning – Children’s Sprinkler Pool, 60’’ Inflatable Water Summer Toys – “from A to Z” Outdoor Play Mat for Babies & Toddlers",
+    title: "SplashEZ 3-in-1 Splash Pad, Sprinkler for Kids and Wading Pool for Learning – Children’s Sprinkler Pool, 60’’ Inflatable Water Summer Toys – “from A to Z” Outdoor Play Mat for Babies & Toddlers",
     price: 18.29,
     description: [
         "MAKE LEARNING A BLAST – Time for a splish-splashin’ bash in SplashEZ’s educational water splash pad! Created by loving parents, with the aim of making learning easy and fun. SplashEZ innovative pool has a learning mat for a base, so your little squirt soaks up some knowledge during play!",
@@ -533,7 +533,7 @@ toys_kids_baby2 = Product.create(
 )
 
 toys_kids_baby3 = Product.create(
-    name: "Silicone Beach Toys for Kids - Baby Sandbox Toys - Best Silicone Toddler Beach Toy Set for Travel -Won't Break Like Plastic baby beach toys - Collapsible Beach Bucket, Shovel & Accessories",
+    title: "Silicone Beach Toys for Kids - Baby Sandbox Toys - Best Silicone Toddler Beach Toy Set for Travel -Won't Break Like Plastic baby beach toys - Collapsible Beach Bucket, Shovel & Accessories",
     price: 30.95,
     description: [
         "Entertain Your Kids For Hours At The Beach - Our silicone beach toys for toddlers and kids. Our beach toy set includes a silicone sand bucket, a sturdy silicone shovel and four soft silicone sand molds in one convenient set. Your little one will love making shapes and sandcastles and at the beach or in their sandbox at home.",
@@ -549,7 +549,7 @@ toys_kids_baby3 = Product.create(
 )
 
 toys_kids_baby4 = Product.create(
-    name: "ORSEN LCD Writing Tablet Toddler Toys, 8.5 Inch Doodle Board Drawing Pad Gifts for Kids, Dinosaur Boy Toy Drawing Board Christmas Birthday Gift, Drawing Tablet for Boys Girls 3 4 5 6 7 Years Old-Green",
+    title: "ORSEN LCD Writing Tablet Toddler Toys, 8.5 Inch Doodle Board Drawing Pad Gifts for Kids, Dinosaur Boy Toy Drawing Board Christmas Birthday Gift, Drawing Tablet for Boys Girls 3 4 5 6 7 Years Old-Green",
     price: 17.98,
     description: [
         "【UNIQUE DINOSAUR DRAWING TOYS FOR KIDS】 Designed with super cute Dinosaur pattern, LCD writing tablet is a perfect learning toys for 3 4 5 6 7 8 years old boys. ORSEN doodle board helps toddlers free their imagination and creativity. It also can be used as a drawing pad, toddler drawing board, drawing tablets, writing board, light drawing pad for kids, scribble board, magic graphic tablet. An ideal toddlers toys & gifts for back to school, Birthday, Christmas, Thanksgiving Day, Easter etc.",
@@ -567,7 +567,7 @@ toys_kids_baby4 = Product.create(
 # Handmade
 
 handmade1 = Product.create(
-    name: "Friendship Lamp – Classic Design - Wi-Fi Touch Lamp LED Light for Long-Distance, Connection, Relationship, Friendship, Gift, Over 200 Colors, App Setup, Handmade in USA by Filimin - Set of 2",
+    title: "Friendship Lamp – Classic Design - Wi-Fi Touch Lamp LED Light for Long-Distance, Connection, Relationship, Friendship, Gift, Over 200 Colors, App Setup, Handmade in USA by Filimin - Set of 2",
     price: 184,
     description: [
         "Connect with family and friends no matter the distance. Friendship Lamps allow you to stay connected with loved ones all around the world. Endless amount of people can join your group so everyone stays connected.",
@@ -583,7 +583,7 @@ handmade1 = Product.create(
 )
 
 handmade2 = Product.create(
-    name: "Personalized Grandma Necklace - Custom Childrens Names, Birthstone Colors - 25MM 32MM Engraved Washers - Grandmother Christmas Gift - DGR-2532W",
+    title: "Personalized Grandma Necklace - Custom Childrens Names, Birthstone Colors - 25MM 32MM Engraved Washers - Grandmother Christmas Gift - DGR-2532W",
     price: 30.65,
     description: [
         "Personalized grandma necklace with custom childrens names and birthstone colors. Charms are placed on a delicate but sturdy chain for a gorgeous add to your jewelry box. Beautiful gift for grandma - personalize with her grandchildren's names and birthstones!",
@@ -599,7 +599,7 @@ handmade2 = Product.create(
 )
 
 handmade3 = Product.create(
-    name: "New Inspirational Orgonite Pyramid for Success | Rainbow Moonstone Orgone Pyramid for Anti-stress - Calmness – Growth – Strength – Healing Crystal Gemstone Pyramid",
+    title: "New Inspirational Orgonite Pyramid for Success | Rainbow Moonstone Orgone Pyramid for Anti-stress - Calmness – Growth – Strength – Healing Crystal Gemstone Pyramid",
     price: 29.95,
     description: [
         "3 REASONS EVERYONE NEEDS ORGONE Cell Phones, laptops, tablets, TV’s, microwaves, and wifi/bluetooth devices, all emit dangerous RF-EMF, also known as Electromagnetic Radiation EMF’s emitted from these devices have been classified as a human carcinogen and can affect the quality of our thoughts/memory/focus. Orgone Crystal Pyramids can reduce or eliminate the harmful EMF’s effects produced from these devices.",
@@ -615,7 +615,7 @@ handmade3 = Product.create(
 )
 
 handmade4 = Product.create(
-    name: "Personalised Dog Gift Cushions | I Love My Dachshund | Custom Cushion Throw Pillow Cover | 18 x 18 Inch | Customised Gifts For Dog Lover Birthday Presents For Dog Mom Decor",
+    title: "Personalised Dog Gift Cushions | I Love My Dachshund | Custom Cushion Throw Pillow Cover | 18 x 18 Inch | Customised Gifts For Dog Lover Birthday Presents For Dog Mom Decor",
     price: 18.99,
     description: [
         "【 Gift For Dog Dachshund 】– Are You Looking For That Extra Special Dog Lover Gift ? This Stylish Personalised Dog Pillow Cover Is Sure To Delight.",
@@ -633,7 +633,7 @@ handmade4 = Product.create(
 # Sports
 
 sports1 = Product.create(
-    name: "Sports Mom, Baseball Mom, Mom life, Mom boss, Mom Tumbler, Sports Mom, Soccer Mom, Gifts for Mom, Mother's Day, Funny tumbler, Coffee tumbler, Coffee cup",
+    title: "Sports Mom, Baseball Mom, Mom life, Mom boss, Mom Tumbler, Sports Mom, Soccer Mom, Gifts for Mom, Mother's Day, Funny tumbler, Coffee tumbler, Coffee cup",
     price: 24,
     description: [
         "This funny Stainless steel tumbler says it all.. Double-walled, vacuum insulated stainless steel tumblers keep your drinks Hot or Cold 2X longer! All tumbler styles come with a clear lid. Water bottles have a black sport straw lid. 20 and 30oz tumblers are tapered to fit most cup holders. Each tumbler is engraved to order with your personalization. The design is permanently engraved into the power coating to reveal the stainless steel finish beneath. The engraving will never wash off or fade! All tumbler styles ship in a white box ready for gifting!",
@@ -650,7 +650,7 @@ sports1 = Product.create(
 )
 
 sports2 = Product.create(
-    name: "Basketball Wall Art Coat Hook - Boy's Sports Fan Themed Bedroom Nursery – Man Cave Decor - Towel Hanger",
+    title: "Basketball Wall Art Coat Hook - Boy's Sports Fan Themed Bedroom Nursery – Man Cave Decor - Towel Hanger",
     price: 14.95,
     description: [
         "Calling all sports fans! Our basketball wall art hook will add a bold pop of style to any room in the house. Perfect accent to corral backpacks, coats, or towels. Measures Length: 6\" Width: 4\" Projection (Distance Hook Will Extend From Surface): 1 3/8\" Orientation: Vertical Includes: 1 - D-Ring",
@@ -667,7 +667,7 @@ sports2 = Product.create(
 )
 
 sports3 = Product.create(
-    name: "Sports Player Girl Watercolor Art 8x10 Unframed Print Set Female Woman Grand Daughter Sport Player Volleyball Basketball Soccer Softball Wnba Kid's Room Bedroom Nursery Playroom Home Wall Decor",
+    title: "Sports Player Girl Watercolor Art 8x10 Unframed Print Set Female Woman Grand Daughter Sport Player Volleyball Basketball Soccer Softball Wnba Kid's Room Bedroom Nursery Playroom Home Wall Decor",
     price: 29.12,
     description: [
         "READY TO FRAME - You get four 8\"x 10\" prints. 8\" x 10\" frames are super easy to buy here on Amazon or at any department or craft store.Prints are ready for framing.Listing is for the poster only, frame / mount and accessories are not included.No Margin - Borderless Print.",
@@ -683,7 +683,7 @@ sports3 = Product.create(
 )
 
 sports4 = Product.create(
-    name: "Cullen Baseball Forks WA Shirts Baseball T-Shirts For Women and Men Sports T-Shirts Team Forks Tee Forks Graphic Tees Cullen Clothes Casual Sleeve Shirts",
+    title: "Cullen Baseball Forks WA Shirts Baseball T-Shirts For Women and Men Sports T-Shirts Team Forks Tee Forks Graphic Tees Cullen Clothes Casual Sleeve Shirts",
     price: 17.90,
     description: [
         "REGULAR FIT – This shirt runs true to size. You can feel the breathing with enough scratch. And also, it is pre-shrunk. So, nothing will change when washed! Definitely, a long-lasting tee model for adult men, women, or youths who loves quality.",
@@ -709,7 +709,7 @@ sports4 = Product.create(
 # Outdoors
 
 outdoors1 = Product.create(
-    name: "Custom Metal Signs | Metal Name Sign | Metal Wall Art | Split Letter Monogram Wall Decor | Metal Wall Art Last Name Sign | Family Name Sign | Personalized Wedding Gift | Metal Art | Outdoor Metal Sign",
+    title: "Custom Metal Signs | Metal Name Sign | Metal Wall Art | Split Letter Monogram Wall Decor | Metal Wall Art Last Name Sign | Family Name Sign | Personalized Wedding Gift | Metal Art | Outdoor Metal Sign",
     price: 18,
     description: [
         "Cut from heavy duty 16 gauge steel. Receives a durable weatherproof powder coated finish. FAST SHIPPING! Please message us if you're looking for custom pieces."
@@ -721,7 +721,7 @@ outdoors1 = Product.create(
 )
 
 outdoors2 = Product.create(
-    name: "Personalized Cabin Sign Outdoor Wood Sign Welcome Sign Rustic Decor Custom Wood Sign",
+    title: "Personalized Cabin Sign Outdoor Wood Sign Welcome Sign Rustic Decor Custom Wood Sign",
     price: 65,
     description: [
         "These Personalized outdoor signs by Benchmark Signs And Gifts make the perfect home decor for your outdoor escape. Each sign is carved from solid, rot resistant Mahogany and sealed with a clear coat to help protect it. The text and images are carved into the wood, not painted on and no cheap vinyl stickers are applied. The signs measure approximately 18''x7'' with other sizes available. Includes mounting hardware. Your sign will be formatted like our example.",
@@ -738,7 +738,7 @@ outdoors2 = Product.create(
 )
 
 outdoors3 = Product.create(
-    name: "Metal Sign - Warning Property Protected By Tortoise - Durable Metal Sign - Use Indoor/Outdoor - Great Gift and Decor Under $20 (8\" x 12\")",
+    title: "Metal Sign - Warning Property Protected By Tortoise - Durable Metal Sign - Use Indoor/Outdoor - Great Gift and Decor Under $20 (8\" x 12\")",
     price: 12.99,
     description: [
         "The Perfect Gift - A truly unique gift guaranteed to bring a smile",
@@ -755,7 +755,7 @@ outdoors3 = Product.create(
 )
 
 outdoors4 = Product.create(
-    name: "Wooden Tic Tac Toe Game | Board game for kids and family | Table Top Living Room Decor Fun Game | Indoor Outdoor Adults classic Travel Game (Burnt Wood)",
+    title: "Wooden Tic Tac Toe Game | Board game for kids and family | Table Top Living Room Decor Fun Game | Indoor Outdoor Adults classic Travel Game (Burnt Wood)",
     price: 22,
     description: [
         "This wooden tic tac toe is beautifully handcrafted with high quality parameters,great craftmanship by experienced artisians. Its a great piece of wood for home and decor. it's is one of the most popular games that is a brilliant addition to any family’s game night. Enjoy hours of fun challenging your friends and family to a feisty game of tic tac toe.More than just a tic tac toe wooden game and a fine piece of table coffee decor, this wooden tic tac toe game is sure to be an excellent conversation starter. Great for house parties and shy guests, this one of the best coffee table games for breaking the ice and encouraging conversation at your house party.",
@@ -774,7 +774,7 @@ outdoors4 = Product.create(
 # Automotive & Industrial
 
 automotive_industrial1 = Product.create(
-    name: "Vibration-based Condition Monitoring: Industrial, Automotive and Aerospace Applications",
+    title: "Vibration-based Condition Monitoring: Industrial, Automotive and Aerospace Applications",
     price: 116,
     description: [
         "The newly revised Second Edition of Vibration-based Condition Monitoring: Industrial, Automotive and Aerospace Applications delivers a thorough update to the most complete discussion of the field of machine condition monitoring. The distinguished author offers readers new sections on diagnostics of variable speed machines, including wind turbines, as well as new material on the application of cepstrum analysis to the separation of forcing functions, structural model properties, and the simulation of machines and faults.",
@@ -793,7 +793,7 @@ automotive_industrial1 = Product.create(
 )
 
 automotive_industrial2 = Product.create(
-    name: "The Archaeological Automobile: Understanding and Living with Historical Automobiles",
+    title: "The Archaeological Automobile: Understanding and Living with Historical Automobiles",
     price: 149.95,
     description: [
         "In the last one hundred years, cars have shaped our lives. Other everyday cultural artifacts, such as watches, telephones, musical instruments, and televisions, have certainly had influence, but the car is by far the most significant. Now, change is coming for the car, as it is for so many other industrial artifacts. Once, cars were distinct machines. Now, they are evolving into multifunctional digital devices. New fuels, new modes of travel, and new technologies are disrupting the traditional role of the much-loved family car.",
@@ -815,7 +815,7 @@ automotive_industrial2 = Product.create(
 )
 
 automotive_industrial3 = Product.create(
-    name: "Farm and Workshop Welding, Third Revised Edition: Everything You Need to Know to Weld, Cut, and Shape Metal (Fox Chapel Publishing) Learn and Avoid Common Mistakes with Over 400 Step-by-Step Photos",
+    title: "Farm and Workshop Welding, Third Revised Edition: Everything You Need to Know to Weld, Cut, and Shape Metal (Fox Chapel Publishing) Learn and Avoid Common Mistakes with Over 400 Step-by-Step Photos",
     price: 19.80,
     description: [
         "Learn hands-on welding to start repairing and creating metal equipment and structures",
@@ -850,7 +850,7 @@ automotive_industrial3 = Product.create(
 )
 
 automotive_industrial4 = Product.create(
-    name: "R. E. Olds and Industrial Lansing (MI) (Images of America)",
+    title: "R. E. Olds and Industrial Lansing (MI) (Images of America)",
     price: 16.27,
     description: [
         "Upon the dedication of a new Capitol building in 1879, the city of Lansing was just beginning to emerge from the swampy wilderness of its recent past. As industry began to take root along the banks of the Grand River, Ransom Eli Olds brought his father's motor shop to national prominence with advancements in gasoline and steam engines, and then horseless carriages. By the early 20th century, Oldsmobile became the world's first mass producer of automobiles and Olds had moved on to found a second car company, making Lansing the first Auto City. Through these efforts, Olds rose to become one of the nation's greatest industrialists and entrepreneurs. Using primary documents and historical images, this book traces the industrial history of the Capital City within the context of one of the 20th century's greatest entrepreneurs, R.E."

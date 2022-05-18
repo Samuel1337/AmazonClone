@@ -6,11 +6,10 @@
 }
 
 .carousel__image {
-    width: 100% auto;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    white-space: nowrap;
-    margin: 0;
+    // margin: 0;
 }
 
 .carousel__track-container {
@@ -18,7 +17,6 @@
     height: 100%;
     position: relative;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    white-space: nowrap;
 }
 
 .carousel__track {
@@ -26,16 +24,14 @@
     margin: 0;
     list-style: none;
     transition: all 1s;
-    white-space: nowrap;
 }
 
 .carousel__slide {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: auto;
+    width: 100%;
     height: 600px;
-    white-space: nowrap;
 }
 
 .carousel__button img {
