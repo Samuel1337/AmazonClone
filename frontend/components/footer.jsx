@@ -7,7 +7,6 @@ class Footer extends React.Component {
     }
 
     render() {
-        console.log(window.location.href)
         return (
             <footer>
                 <nav id="back-to-top-footer" onClick={this.topOfPage}>

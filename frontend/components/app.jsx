@@ -21,7 +21,7 @@ const App = () => (
       <Categories />
     </header>
     
-    <body id="body">
+    <div id="body">
       
       <Switch>
         <AuthRoute path="/login" component={loginFormContainer} />
@@ -36,7 +36,7 @@ const App = () => (
         <Route path="/reviews/:productId/edit" component={EditReviewForm} />
         <Route path="/cart" component={CartIndex} />
       </Switch> */}
-    </body>
+    </div>
     <footer>
       <Footer/>
     </footer>

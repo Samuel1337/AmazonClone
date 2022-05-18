@@ -16,6 +16,7 @@ class Carousel extends React.Component {
         // select elements
         this.track = document.querySelector('.carousel__track');
         this.slides = Array.from(this.track.children);
+        this.container = document.querySelector('.carousel__track-container');
         this.nextButton = document.querySelector('.carousel__button.right');
         this.prevButton = document.querySelector('.carousel__button.left');
 
@@ -27,7 +28,7 @@ class Carousel extends React.Component {
         }
         
         this.slides.forEach(this.setSlidePosition);
-
+        
         // moves slides
         this.moveToSlide = (currentSlide, targetSlide) => {
             this.track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
