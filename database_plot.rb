@@ -1,21 +1,24 @@
-Model:
+# Model:
 
-t.string    name
-t.float     price
-t.array     description
-t.integer   rating
-t.string    filename
-t.integer   category_id 
+# t.string    name
+# t.float     price
+# t.array     description
+# t.integer   rating
+# t.string    filename
+# t.integer   category_id 
 
-// Electronics
+# Electronics
+
+Product.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!("products")
 
 electronics1 = Product.create({
-    name: "Fire HD 10 tablet, 10.1", 1080p Full HD, 32 GB, latest model (2021 release), Black",
+    name: "Fire HD 10 tablet, 10.1\", 1080p Full HD, 32 GB, latest model (2021 release), Black",
     price: 149.99,
     description: [
         "Fast and responsive - powerful octa-core processor and 3 GB RAM. 50% more RAM than previous generation.",
         "Long-lasting 12-hour battery and 32 or 64 GB internal storage. Add up to 1 TB with microSD (sold separately).",
-        "Brighter display - Vivid 10.1" 1080p Full HD display is 10% brighter than previous generation, with more than 2 million pixels.",
+        "Brighter display - Vivid 10.1\" 1080p Full HD display is 10% brighter than previous generation, with more than 2 million pixels.",
         "Enjoy your favorite apps like Netflix, Facebook, Hulu, Instagram, TikTok, and more through Amazon’s Appstore (Google Play not supported. Subscription for some apps required).",
         "Stay connected - Download apps like Zoom, or ask Alexa to make video calls to friends and family.",
         "Get more done – Check email, update shopping lists, and set reminders. Use your favorite apps like Microsoft Office, OneNote, and Dropbox.",
@@ -70,10 +73,11 @@ electronics4 = Product.create({
     ],
     rating: 0,
     filename: "categories/electronics/video-camera.jpg",
-    category_id: 1}
+    category_id: 1
+})
 
 
-// Computers
+# Computers
 
 computers1 = Product.create({    
     name: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
@@ -126,7 +130,7 @@ computers3 = Product.create({
 })
 
 computers4 = Product.create({  
-    name: "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24" FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11",
+    name: "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24\" FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11",
     price: 699.99,
     description: [
         "This space-saving AIO PC hides raw, unfiltered power - with an AMD Ryzen 5 55000U processor, the IdeaCentre AIO 3 thrives under heavy performance loads",
@@ -137,9 +141,10 @@ computers4 = Product.create({
     ],
     rating: 0,
     filename: "categories/computers/lenovo.jpg",
-    category_id: 2}
+    category_id: 2
+})
 
-// Smart Home
+# Smart Home
 
 smart_home1 = Product.create({  
     name: "Echo (4th Gen) | With premium sound, smart home hub, and Alexa | Charcoal",
@@ -198,9 +203,10 @@ smart_home4 = Product.create({
     ],
     rating: 0,
     filename: "categories/smart-home/power-strip.jpg",
-    category_id: 3}
+    category_id: 3
+})
 
-// Home, Garden & Tools
+# Home, Garden & Tools
 
 home_garden_tools1 = Product.create({  
     name: "Shovel, Rake and Tool Holder with Hooks- Wall Mounted Organizer for Garage, Closet, or Shed-Hang Home and Garden Tools-Space Saving Rack by Stalwart",
@@ -236,8 +242,8 @@ home_garden_tools3 = Product.create({
     name: "CHRYZTAL Garden Tool Set, Stainless Steel Heavy Duty Gardening Tool Set, with Non-Slip Rubber Grip, Storage Tote Bag, Outdoor Hand Tools, Ideal Garden Tool Kit Gifts for Women and Men",
     price: 29.98,
     description: [
-        "【Premium Garden Tools 】- The gardening tool sets includes a large trowel, small trowel, cultivator, hand rake, weeder, pruning shears and an Oxford cloth tote to keep all your tools packed away, which are robust, so you don't need to worry about rust and damage. High quality, enough durable to cut through thick weeds. Stainless steel garden tools are easier to fix up your garden.",
-        "【A Neat Pocket to Hold all Tools】 - the nice storage tote bag are designed to hold all the garden tools to ensure you won't lose any tools.Made of extra-sturdy 600D Oxford cloth, it’s an easy-to-clean tote that resists tears and protects your gear; pack your tools in the deep pockets, each with an elastic cord, to effortlessly carry to and from your garden.",
+        "【Premium Garden Tools 】- The gardening tool sets includes a large trowel, small trowel, cultivator, hand rake, weeder, pruning shears and an Oxford cloth tote to keep all your tools packed away, which are robust, so you don\'t need to worry about rust and damage. High quality, enough durable to cut through thick weeds. Stainless steel garden tools are easier to fix up your garden.",
+        "【A Neat Pocket to Hold all Tools】 - the nice storage tote bag are designed to hold all the garden tools to ensure you won\'t lose any tools.Made of extra-sturdy 600D Oxford cloth, it’s an easy-to-clean tote that resists tears and protects your gear; pack your tools in the deep pockets, each with an elastic cord, to effortlessly carry to and from your garden.",
         "【Sturdy and Stainless Steel Garden Set】: Each tool has an ergonomically made soft handle, fashioned from high-quality TRP, that fits comfortably in small and large hands, on top of that, they’re intuitively designed to provide plenty of leverage and save you effort and strain when planting, weeding, and digging. Precisely scaled stainless steel blades that remain sharp for cutting. Sawtooth shovel for easy digging, 2.0 mm thickness, ensuring perfect insertion into the soil.",
         "【Comfortable and Easy to Store】 - Non-slip handles for comfortable grip. Reduce stress on your wrists and hands. Each tool comes with a handy hanging hole on the handle makes them easy to be stored.",
         "【Garden Tool Gifts for Women and Men】- Your garden-obsessed friend, wife, husband, parents and grandparents will be surely satisfied with our premium 7 in 1 gardening tool set when they are gifted on their birthday, anniversary, Valentine’s Day, Christmas, and any other cause for celebration; if you need any advice or product support, please contact our excellent customer service team who will happily respond to your question within 12 hours."
@@ -259,9 +265,10 @@ home_garden_tools4 = Product.create({
     ],
     rating: 0,
     filename: "categories/home-garden-tools/garden-stool.jpg",
-    category_id: 4}
+    category_id: 4
+})
 
-// Pet Supplies
+# Pet Supplies
 
 pet_supplies1 = Product.create({  
     name: "Rocco & Roxie Stain & Odor Eliminator for Strong Odor - Enzyme-Powered Pet Odor Eliminator for Home - Carpet Stain Remover for Cats and Dog Pee - Enzymatic Cat Urine Destroyer - Carpet Cleaner Spray",
@@ -282,7 +289,7 @@ pet_supplies2 = Product.create({
     name: "VEVOR 50 Inch Dog Grooming Tub, Professional Stainless Steel Pet Dog Bath Tub, with Steps Faucet & Accessories Dog Washing Station",
     price: 1139.99,
     description: [
-        "59"H Stainless Steel Tub: Product Size: 49.2"L x 25.2"W x 59.5"H; Fit for maximize size pets: 49"L x 25"W x 40"H. It can accommodate different-sized dogs(max.220LB). The pet grooming tub is constructed with 304 stainless steel, which is non-deformation, rust-proof, scratch-proof, and sturdy enough for long-time use. What's more, the durable stainless steel pet grooming bathtub is easy maintenance and cleaning.",
+        "59\"H Stainless Steel Tub: Product Size: 49.2\"L x 25.2\"W x 59.5\"H; Fit for maximize size pets: 49\"L x 25\"W x 40\"H. It can accommodate different-sized dogs(max.220LB). The pet grooming tub is constructed with 304 stainless steel, which is non-deformation, rust-proof, scratch-proof, and sturdy enough for long-time use. What's more, the durable stainless steel pet grooming bathtub is easy maintenance and cleaning.",
         "Movable Door & Ramp: Fully welded one-piece dog washing station features outstanding sealing performance to be water leakage-proof. The tub is equipped with a sliding right door with a secure lock to keep your pet inside the bath; a space-saving ramp can be folded and hidden when not in use, the non-skid grooved surface on the ramp helps your pet walk in out securely. The rubber feet are also non-skid and have no damage to the floor.",
         "Adjustable Sprayer & Faucet: The pet washing station comes with a high-pressure sprayer(3 types of water outlet volume) and a faucet with two hoses(adjust water temperature) to give your pets a warm and comfortable bath. Besides, There is a non-skid floor grate for detachable to fit different pet sizes and keep your pet away from long-term soaking in the water.",
         "Fell Set of Accessories: Our pet wash tub includes an s-shaped stainless steel pipe for isolating the foul smell; A drain strainer for filter pet fur and other dirt; And an overhead grooming arm with two loops for fixing the pet. Besides, a red play ball is a gift for keeping pets occupied and making bathing more pleasant.",
@@ -322,7 +329,7 @@ pet_supplies4 = Product.create({
     category_id: 5
 })
 
-// Food & Grocery
+# Food & Grocery
 
 food_grocery1 = Product.create({  
     name: "Quaker Instant Oatmeal, 4 Flavor Variety Pack, Individual Packets, 48 Count",
@@ -382,7 +389,7 @@ food_grocery4 = Product.create({
     category_id: 6
 })
 
-// Beauty & Health
+# Beauty & Health
 
 beauty_health1 = Product.create({
     name: "Facial Cleansing Brush by Olay Regenerist, Face Exfoliator with 2 Brush Heads Mothers Day Gifts Set",
@@ -461,7 +468,7 @@ beauty_health5 = Product.create({
     category_id: 7
 })
 
-// Toys, Kids & Baby
+# Toys, Kids & Baby
 
 toys_kids_baby1 = Product.create({
     name: "Kids Dancing Talking Cactus Toys for Baby Boys and Girls, Talking Sunny Cactus Toy Electronic Plush Toy Singing, Record & Repeating What You Say with 120 English Songs and LED Lighting for Home Decor",
@@ -516,14 +523,14 @@ toys_kids_baby4 = Product.create({
         "【PERFECT SCREEN-TIME FREE ACTIVITY】 Drawing pad gifts for kids adopts highly sensitive pressure sensitive technology and smooth flexible LCD color screen, NO radiation, NO glare, NO blue light, NO harm to eyesight, very safe and comfortable for your kids to doodle anytime! Keep away from the mess of crayons, markers, or chalk! And drawing board kids christmas gifts will show different lines thinness if use different pressures while writing. What a magic drawing board toddler boy toys!",
         "【EASY TO USE & ONE-CLICK CLEAR AND SCREEN LOCK】 Electronic educational toys for kids 5-7 drawing tablet is easy to use, just use stylus to write, draw, scribble, doodle anything you want! Travel toys writing board has erase key (dinosaur’s eye) and screen lock function, emptying the screen content instantly and save it via lock button of writing tablet. Your Christmas Birthday Gifts First Choice! TIPS: Please DO NOT put kid learning toys drawing tablet in humid or high temperature places.",
         "【SAFE & DURABLE & PORTABLE TODDLER LEARNING TOYS DRAWING PAD】 Made with safe & non-toxic & durable material, ensure the health and safety of your children; dinosaur toys drawing board for kids age 3-5 can write about 100,000 times, just like an endless paper! And the CR2032 button battery can be used for up to 6 months! Environmentally and save your money! 8.5 inch Lightweight kids drawing board is easy to carry anywhere (school, airplane, car, road trips, restaurant, sofa, outside etc.)",
-        "【WHAT YOU GET & CUSTOMER SERVICE】 1X 8.5" Kids Gifts LCD Doodle Board with Battery; 1X Extra Replaceable Battery; 1X Screwdriver; 1X Stylus. ORSEN is dedicated to providing customers with the best products and services. Please feel free to contact us if any problems. TIPS: There may have scratches on the screen when opening package, which is caused by transportation, just press the erase button and the screen will be clear instantly."
+        "【WHAT YOU GET & CUSTOMER SERVICE】 1X 8.5\" Kids Gifts LCD Doodle Board with Battery; 1X Extra Replaceable Battery; 1X Screwdriver; 1X Stylus. ORSEN is dedicated to providing customers with the best products and services. Please feel free to contact us if any problems. TIPS: There may have scratches on the screen when opening package, which is caused by transportation, just press the erase button and the screen will be clear instantly."
     ],
     rating: 0,
     filename: "categories/toys-kids-baby/tablet-toy.jpg",
     category_id: 8
 })
 
-// Handmade
+# Handmade
 
 handmade1 = Product.create({
     name: "Friendship Lamp – Classic Design - Wi-Fi Touch Lamp LED Light for Long-Distance, Connection, Relationship, Friendship, Gift, Over 200 Colors, App Setup, Handmade in USA by Filimin - Set of 2",
@@ -585,7 +592,7 @@ handmade4 = Product.create({
     category_id: 9
 })
 
-// Sports
+# Sports
 
 sports1 = Product.create({
     name: "Sports Mom, Baseball Mom, Mom life, Mom boss, Mom Tumbler, Sports Mom, Soccer Mom, Gifts for Mom, Mother's Day, Funny tumbler, Coffee tumbler, Coffee cup",
@@ -607,7 +614,7 @@ sports2 = Product.create({
     name: "Basketball Wall Art Coat Hook - Boy's Sports Fan Themed Bedroom Nursery – Man Cave Decor - Towel Hanger",
     price: 14.95,
     description: [
-        "Calling all sports fans! Our basketball wall art hook will add a bold pop of style to any room in the house. Perfect accent to corral backpacks, coats, or towels. Measures Length: 6" Width: 4" Projection (Distance Hook Will Extend From Surface): 1 3/8" Orientation: Vertical Includes: 1 - D-Ring",
+        "Calling all sports fans! Our basketball wall art hook will add a bold pop of style to any room in the house. Perfect accent to corral backpacks, coats, or towels. Measures Length: 6\" Width: 4\" Projection (Distance Hook Will Extend From Surface): 1 3/8\" Orientation: Vertical Includes: 1 - D-Ring",
         "Length: 6\"",
         "Width: 4\"",
         "Projection (Distance Hook Will Extend From Surface): 1 3/8\"",
@@ -623,7 +630,7 @@ sports3 = Product.create({
     name: "Sports Player Girl Watercolor Art 8x10 Unframed Print Set Female Woman Grand Daughter Sport Player Volleyball Basketball Soccer Softball Wnba Kid's Room Bedroom Nursery Playroom Home Wall Decor",
     price: 29.12,
     description: [
-        "READY TO FRAME - You get four 8"x 10" prints. 8" x 10" frames are super easy to buy here on Amazon or at any department or craft store.Prints are ready for framing.Listing is for the poster only, frame / mount and accessories are not included.No Margin - Borderless Print.",
+        "READY TO FRAME - You get four 8\"x 10\" prints. 8\" x 10\" frames are super easy to buy here on Amazon or at any department or craft store.Prints are ready for framing.Listing is for the poster only, frame / mount and accessories are not included.No Margin - Borderless Print.",
         "GREAT GIFT - Perfect gift for the people you love for birthdays, christmas, weddings, anniversaries, retirement, graduation, father's day, mother's day, valentine's day.",
         "QUALITY - Printed on high quality, weather resistant, 300gr. glossy paper. All prints will be produced to the highest archival standards, they’re inkjet printed with archival pigment inks that significantly enhance the visual brilliance of both your color and black & white images. These inks also have a substantial longevity that keeps your images beautiful for generations.",
         "PERFECT FOR ANY ROOM - They look great in living rooms, dens, bedrooms, kitchens, entries, dining rooms, bathrooms, offices, man-caves, she sheds, home bars, game rooms, dorms or garages or any wall.",
@@ -657,7 +664,7 @@ sports4 = Product.create({
     category_id: 10
 })
 
-// Outdoors
+# Outdoors
 
 outdoors1 = Product.create({
     name: "Custom Metal Signs | Metal Name Sign | Metal Wall Art | Split Letter Monogram Wall Decor | Metal Wall Art Last Name Sign | Family Name Sign | Personalized Wedding Gift | Metal Art | Outdoor Metal Sign",
@@ -687,11 +694,11 @@ outdoors2 = Product.create({
 })
 
 outdoors3 = Product.create({
-    name: "Metal Sign - Warning Property Protected By Tortoise - Durable Metal Sign - Use Indoor/Outdoor - Great Gift and Decor Under $20 (8" x 12")",
+    name: "Metal Sign - Warning Property Protected By Tortoise - Durable Metal Sign - Use Indoor/Outdoor - Great Gift and Decor Under $20 (8\" x 12\")",
     price: 12.99,
     description: [
         "The Perfect Gift - A truly unique gift guaranteed to bring a smile",
-        "Durable - 8" x 12" or 12" x 18" Aluminum metal sign printed with epoxy ink so you can hang it inside or outside",
+        "Durable - 8\" x 12\" or 12\" x 18\" Aluminum metal sign printed with epoxy ink so you can hang it inside or outside",
         "Easy to Hang - Comes with two screw holes and it's light enough to be mounted with double-sided foam tape or Command Strips",
         "Guarantee - I´m so sure you´re going to love the sign you can return it for any reason. We want you to be happy. Plus we´ll just recycle it into a new sign",
         "Made in the USA (Tomball, Texas) in our family-owned shop",
@@ -718,7 +725,7 @@ outdoors4 = Product.create({
     category_id: 11
 })
 
-// Automotive & Industrial
+# Automotive & Industrial
 
 automotive_industrial1 = Product.create({
     name: "Vibration-based Condition Monitoring: Industrial, Automotive and Aerospace Applications",
