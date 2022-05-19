@@ -1,4 +1,5 @@
 import React from "react";
+import GridItem from "./gridItem";
 
 class CategoryIndex extends React.Component {
     constructor(props) {
@@ -10,27 +11,37 @@ class CategoryIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.match.params.category !== this.props.match.params.category) {
+        console.log("hi")
+        if (prevProps.category !== this.props.category) {
             this.props.getCategoryProducts(this.props.category);
         }
         if (!prevProps) {
             this.props.getCategoryProducts(this.props.category);
         }
     }
-
+    
     render() {
-        
         if (!this.props.products) return null;
-        
+        if (this.props.products[0] === undefined) return null;
+
         return (
-            <div>
-                { this.props.products.map(product => (
-                        <>
-                            <h1>{product.title}</h1>
-                            <img src={product.photoUrl} alt="" />
-                        </>
-                    ))
-                }    
+            <div className="category-page">
+            <div className="category-bar">
+                {this.props.products.length} items
+            </div>
+                <div className="grid">
+                    { this.props.products.map(product => (
+                        <GridItem
+                        title={product.title}
+                        price={product.price}
+                        rating={product.rating}
+                        specialty={product.specialty}
+                        photoUrl={product.photoUrl}
+                        key={product.id}
+                        />
+                        ))
+                    }    
+                </div>
             </div>
         )
 

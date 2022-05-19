@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import CategoryIndex from "./categoryIndex"
 
 const selectCategoryProducts = (products, category) => {
-
     
     let res = Object.values(products).map(product => {
         if (product.category === category) {
@@ -11,7 +10,7 @@ const selectCategoryProducts = (products, category) => {
         }
     });
     return res;
-}
+} 
 
 const mSTP = (state, { match }) => {
     return {
