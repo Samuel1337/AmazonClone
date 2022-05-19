@@ -8,18 +8,18 @@ class Categories extends React.Component {
             <nav id="header-blue">
                 <ul>
                     <li><Link to="/all">All Products</Link></li>
-                    <li><Link to="/electronics">Electronics</Link></li>
-                    <li><Link to="/computers">Computers</Link></li>
-                    <li><Link to="/smart-home">Smart Home</Link></li>
-                    <li><Link to="/home-garden-tools">Home, Garden &#38; Tools</Link></li>
-                    <li><Link to="/pet-supplies">Pet Supplies</Link></li>
-                    <li><Link to="/food-grocery">Food &#38; Grocery</Link></li>
-                    <li><Link to="/beauty-health">Beauty &#38; Health</Link></li>
-                    <li><Link to="/toys-kids-baby">Toys, Kids &#38; Baby</Link></li>
-                    <li><Link to="/handmade">Handmade</Link></li>
-                    <li><Link to="/sports">Sports</Link></li>
-                    <li><Link to="/outdoors">Outdoors</Link></li>
-                    <li><Link to="/automotive-industrial">Automotive &#38; Industrial</Link></li>
+                    <li><Link to="/categories/electronics">Electronics</Link></li>
+                    <li><Link to="/categories/computers">Computers</Link></li>
+                    <li><Link to="/categories/smart-home">Smart Home</Link></li>
+                    <li><Link to="/categories/home-garden-tools">Home, Garden &#38; Tools</Link></li>
+                    <li><Link to="/categories/pet-supplies">Pet Supplies</Link></li>
+                    <li><Link to="/categories/food-grocery">Food &#38; Grocery</Link></li>
+                    <li><Link to="/categories/beauty-health">Beauty &#38; Health</Link></li>
+                    <li><Link to="/categories/toys-kids-baby">Toys, Kids &#38; Baby</Link></li>
+                    <li><Link to="/categories/handmade">Handmade</Link></li>
+                    <li><Link to="/categories/sports">Sports</Link></li>
+                    <li><Link to="/categories/outdoors">Outdoors</Link></li>
+                    <li><Link to="/categories/automotive-industrial">Automotive &#38; Industrial</Link></li>
                 </ul>
             </nav>
         )

@@ -6,7 +6,7 @@ export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
 export const getAllProducts = () => dispatch => fetchAllProducts()
     .then(products => dispatch(receiveProducts(products)));
 
-export const getCategoryProducts = categoryId => dispatch => fetchCategoryProducts(categoryId)
+export const getCategoryProducts = category => dispatch => fetchCategoryProducts(category)
     .then(products => dispatch(receiveProducts(products)));
 
 export const getProduct = productId => dispatch => fetchProduct(productId)

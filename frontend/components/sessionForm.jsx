@@ -112,7 +112,7 @@ class SessionForm extends React.Component {
                 partial += char;
                 console.log(partial)
                 field.value = partial;
-            }, 500);
+            }, 100*i);
         }
     }
 

@@ -5,8 +5,14 @@ class GridItem extends React.Component {
         super(props);
     }
 
-    render() {
+    componentDidMount() {
+        this.props.getProduct(this.props.productId)
+    }
 
+    render() {
+        return (
+            <div></div>
+        )
     }
 }
 

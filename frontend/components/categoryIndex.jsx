@@ -6,16 +6,29 @@ class CategoryIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getCategoryProducts(this.props.categoryId);
+        this.props.getCategoryProducts(this.props.category);
+        // console.log(this.props)
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.category !== this.props.match.params.category) {
+            this.props.getCategoryProducts(this.props.category);
+        }
+        if (!prevProps) {
+            this.props.getCategoryProducts(this.props.category);
+        }
     }
 
     render() {
-
+        
+        if (!this.props.products) return null;
+        
         return (
             <div>
-                <script type="text/javascript">
-                    
-                </script>
+                { this.props.products.map(product => (
+                        <h1>{product.title}</h1>
+                    ))
+                }    
             </div>
         )
 

@@ -10,7 +10,7 @@ import Home from './home';
 import { Link } from 'react-router-dom';
 import Categories from './categories';
 import Footer from './footer';
-import CategoryIndex from './categoryIndex';
+import CategoryIndexContainer from './categoryIndexContainer';
 
 const App = () => (
   <div>
@@ -23,11 +23,10 @@ const App = () => (
     </header>
     
     <div id="body">
-      
       <Switch>
         <AuthRoute path="/login" component={loginFormContainer} />
         <AuthRoute path="/signup" component={signupFormContainer} />
-        <Route path="/categories/:categoryId/products" component={CategoryIndex} />
+        <Route path="/categories/:category" component={CategoryIndexContainer} />
         <Route path="/under_construction" component={UnderConstruction} />
         <Route exact path="/" component={Home} />
         <Redirect to="/under_construction" />

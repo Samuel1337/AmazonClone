@@ -3,7 +3,7 @@ import Carousel from "./carousel";
 
 class Home extends React.Component {
 
-    render () {
+    render() {
         return (
             <Carousel/>
         )

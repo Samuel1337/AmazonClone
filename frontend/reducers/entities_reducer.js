@@ -5,10 +5,7 @@ import usersReducer from "./users_reducer";
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
-  products: productsReducer,
-  categories: {
-    
-  }
+  products: productsReducer
 });
 
 export default entitiesReducer;

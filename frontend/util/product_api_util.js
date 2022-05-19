@@ -4,9 +4,9 @@ export const fetchAllProducts = () => (
     })
 )
 
-export const fetchCategoryProducts = categoryId => (
+export const fetchCategoryProducts = category => (
     $.ajax({
-        url: `/api/categories/${categoryId}products`
+        url: `/api/categories/${category}`
     })
 )
 
