@@ -7,7 +7,6 @@ class CategoryIndex extends React.Component {
 
     componentDidMount() {
         this.props.getCategoryProducts(this.props.category);
-        // console.log(this.props)
     }
 
     componentDidUpdate(prevProps) {
@@ -26,7 +25,10 @@ class CategoryIndex extends React.Component {
         return (
             <div>
                 { this.props.products.map(product => (
-                        <h1>{product.title}</h1>
+                        <>
+                            <h1>{product.title}</h1>
+                            <img src={product.photoUrl} alt="" />
+                        </>
                     ))
                 }    
             </div>
