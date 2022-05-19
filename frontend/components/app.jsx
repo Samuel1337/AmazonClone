@@ -21,7 +21,7 @@ const App = () => (
       </nav>
       <Categories />
     </header>
-    
+     
     <div id="body">
       <Switch>
         <AuthRoute path="/login" component={loginFormContainer} />

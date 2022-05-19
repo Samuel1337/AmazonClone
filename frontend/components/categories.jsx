@@ -7,7 +7,7 @@ class Categories extends React.Component {
         return (
             <nav id="header-blue">
                 <ul>
-                    <li><Link to="/all">All Products</Link></li>
+                    <li><Link to="/categories/all">All Products</Link></li>
                     <li><Link to="/categories/electronics">Electronics</Link></li>
                     <li><Link to="/categories/computers">Computers</Link></li>
                     <li><Link to="/categories/smart-home">Smart Home</Link></li>

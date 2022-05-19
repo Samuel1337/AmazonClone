@@ -3,15 +3,19 @@ import { connect } from "react-redux"
 import CategoryIndex from "./categoryIndex"
 
 const selectCategoryProducts = (products, category) => {
-    
-    let res = Object.values(products).map(product => {
-        if (product.category === category) {
-            return product;
-        }
-    });
+    let res = [];
+    if (category === "all") {
+        res = Object.values(products);
+    } else {
+        res = Object.values(products).map(product => {
+            if (product.category === category) {
+                return product;
+            }
+        });
+    }
     return res;
 } 
-
+ 
 const mSTP = (state, { match }) => {
     return {
         category: match.params.category,

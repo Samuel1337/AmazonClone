@@ -5,6 +5,8 @@ class GridItem extends React.Component {
         super(props);
 
         this.price = this.price.bind(this);
+        this.date = this.date.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     price(field) {
@@ -12,6 +14,11 @@ class GridItem extends React.Component {
         let dollars = Math.floor(price);
         let cents = price - dollars;
         
+        if (dollars > 1000) {
+            let temp = dollars + "";
+            dollars = temp.slice(0,1) + "," + temp.slice(1)
+        }
+
         if (cents < 1) {
             cents = "00";
         } else if (cents < 10) {
@@ -30,6 +37,10 @@ class GridItem extends React.Component {
         let date = new Date();
         date.setDate(date.getDate() + 2);
         return date.toLocaleDateString('en-us', {weekday: 'short', month: 'short', day: 'numeric'})
+    }
+
+    handleClick(e) {
+        return 
     }
 
     render() {
