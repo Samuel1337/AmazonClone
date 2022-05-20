@@ -9,6 +9,8 @@
     src: url('app/assets/fonts/AmazonEmber-Lt.ttf');
     font-family: 'Amazon Ember Regular';
     src: url('app/assets/fonts/AmazonEmber-Rg.ttf');
+    font-family: 'Amazon Ember Regular Light';
+    src: url('app/assets/fonts/AmazonEmber-Rglt.ttf');
  }
 
  body {
@@ -17,6 +19,7 @@
 
 * {
     font-family: Amazon Ember Regular, Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
 #body {

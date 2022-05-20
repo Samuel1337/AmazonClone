@@ -3,7 +3,6 @@ import { getProduct } from "../actions/product_actions";
 import GridItem from "./gridItem";
 
 const mSTP = (state, ownProps) = state => {
-    console.log(ownProps)
     return {
         category: ownProps.match.category
     }

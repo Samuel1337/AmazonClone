@@ -110,7 +110,6 @@ class SessionForm extends React.Component {
             const char = content[i];
             setTimeout(() => {
                 partial += char;
-                console.log(partial)
                 field.value = partial;
             }, 100*i);
         }
@@ -122,8 +121,6 @@ class SessionForm extends React.Component {
             let errorArr = errors.map(error => {
                 return <p>{error}</p>
             });
-            console.log(errors);
-            console.log(errorArr);
             return errorArr;
         }
     }

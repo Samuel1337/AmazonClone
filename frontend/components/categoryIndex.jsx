@@ -20,22 +20,21 @@ class CategoryIndex extends React.Component {
     }
     
     makeGetRequest() {
-        console.log(this.props.category)
         if (this.props.category === "all") {
             this.props.getAllProducts();
         } else {
             this.props.getCategoryProducts(this.props.category);
         }
     }
-
+    
     sortBy(qualifier) {
         return this.props.products.mergeSort(function(a, b) {
             const valueA = a[qualifier];
             const valueB = b[qualifier];
-            if (valueA < valueB) {
+            if (valueA > valueB) {
                 return -1;
               }
-              if (valueA > valueB) {
+              if (valueA < valueB) {
                 return 1;
               }
               return 0;
@@ -48,7 +47,7 @@ class CategoryIndex extends React.Component {
         if (!products) return null;
         if (products[0] === undefined) return null;
 
-        let gridItems = this.sortBy('title');
+        let gridItems = this.sortBy('price');
 
         return (
             <div className="category-page">
@@ -58,11 +57,7 @@ class CategoryIndex extends React.Component {
                 <div className="grid">
                     { gridItems.map(product => (
                         <GridItem
-                            title={product.title}
-                            price={product.price}
-                            rating={product.rating}
-                            specialty={product.specialty}
-                            photoUrl={product.photoUrl}
+                            product={product}
                             key={product.id}
                         />
                         ))

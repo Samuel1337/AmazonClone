@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class GridItem extends React.Component {
     constructor(props) {
@@ -6,13 +7,13 @@ class GridItem extends React.Component {
 
         this.price = this.price.bind(this);
         this.date = this.date.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        this.topOfPage = this.topOfPage.bind(this);
     }
 
     price(field) {
-        const { price } = this.props;
-        let dollars = Math.floor(price);
-        let cents = price - dollars;
+        const { product } = this.props;
+        let dollars = Math.floor(product.price);
+        let cents = product.price - dollars;
         
         if (dollars > 1000) {
             let temp = dollars + "";
@@ -35,29 +36,30 @@ class GridItem extends React.Component {
 
     date() {
         let date = new Date();
-        date.setDate(date.getDate() + 2);
+        let days = Math.random() * 5 + 2;
+        date.setDate(date.getDate() + days);
         return date.toLocaleDateString('en-us', {weekday: 'short', month: 'short', day: 'numeric'})
     }
 
-    handleClick(e) {
-        return 
+    topOfPage() {
+        window.scrollTo(0,0);
     }
 
     render() {
-        const { title, price, rating, specialty, photoUrl } = this.props
+        const { product } = this.props
 
         return (
             <div className="grid-item">
                 <div className="grid-image-container">
-                    <img src={photoUrl} alt={title} />
+                    <Link to={`/products/${product.id}`} onClick={this.topOfPage}><img src={product.photoUrl} alt={product.title} /></Link>
                 </div>
-                <h2>{title}</h2>
-                <div className="grid-rating">{rating}</div>
-                <div className="grid-price">
+                <Link to={`/products/${product.id}`} onClick={this.topOfPage}><h2>{product.title}</h2></Link>
+                <div className="grid-rating">{product.rating}</div>
+                <Link to={`/products/${product.id}`} onClick={this.topOfPage}><div className="grid-price">
                     <span className="grid-dollar-sign">$</span>
                     <span className="grid-dollars">{this.price("dollars")}</span>
                     <span className="grid-cents">{this.price("cents")}</span>
-                </div>
+                </div></Link>
                 <div className="grid-shipping">
                     Get it as soon as <b>{this.date()}</b><br />
                     FREE Shipping by Euphrates

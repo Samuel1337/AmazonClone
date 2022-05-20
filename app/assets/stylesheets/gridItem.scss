@@ -6,6 +6,7 @@
     margin: 0 10px;
     display: flex;
     flex-direction: column;
+    
 
 
     .grid-image-container {
@@ -35,6 +36,7 @@
         max-height: 140px;
         text-overflow: ellipsis;
         overflow: hidden;
+        color: black;
 
         &:hover {
             color:#C35727;
@@ -51,6 +53,7 @@
         margin-top: 8px;
         display: flex;
         align-items: flex-start;
+        color: black;
     
         .grid-dollar-sign, .grid-cents {
             font-size: 12px;

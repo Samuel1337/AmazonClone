@@ -18,7 +18,7 @@ const receiveProducts = products => ({
 });
 
 const receiveProduct = product => ({
-    type: RECEIVE_PRODUCTS,
+    type: RECEIVE_PRODUCT,
     product
 });
 
