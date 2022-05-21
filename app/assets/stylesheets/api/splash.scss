@@ -1,0 +1,47 @@
+.splash-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 1500px;
+    bottom: 0;
+    height: 50%;
+    z-index: 300;
+}
+
+.splash-row {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+    margin: 1em;
+}
+
+.box {
+    height: 100%;
+    width: 25%;
+    margin: 1em;
+    background-color: white;
+    outline: 1px solid red;
+    h1 {
+
+    }
+
+    img {
+
+    }
+
+    a {
+
+    }
+}
+

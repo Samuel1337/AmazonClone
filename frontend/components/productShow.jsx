@@ -121,10 +121,13 @@ class ProductShow extends React.Component {
                                 </div> */}
                             </div>
                             <div className="show-price">
-                                <span className="show-dollar-sign">$</span>
-                                <span className="show-dollars">{this.price("dollars")}</span>
-                                <span className="show-cents">{this.price("cents")}</span>
-                                <span className="free-returns-label"> &#38; <span className="free-returns-link">FREE Returns</span></span>
+                                <div className="show-money">
+                                    <span className="show-dollar-sign">$</span>
+                                    <span className="show-dollars">{this.price("dollars")}</span>
+                                    <span className="show-cents">{this.price("cents")}</span>
+                                </div>
+                                <br />
+                                <span className="free-returns-symbol"> &#38; <span className="free-returns-text">FREE Returns</span></span>
                             </div>
                             <div className="about-heading">
                                 <b>About this item</b>
@@ -137,10 +140,11 @@ class ProductShow extends React.Component {
 
                         <nav className="buybox">
                             <div className="buybox-price">
-                                <span className="show-dollar-sign">$</span>
-                                <span className="show-dollars">{this.price("dollars")}</span>
-                                <span className="show-cents">{this.price("cents")}</span>
-                                {/* <span>$</span><span>{Math.floor(product.price)}</span> */}
+                                <div className="show-money">
+                                    <span className="show-dollar-sign">$</span>
+                                    <span className="show-dollars">{this.price("dollars")}</span>
+                                    <span className="show-cents">{this.price("cents")}</span>
+                                </div>
                             </div>
                             <h5>&#38; <span>FREE Returns</span></h5>
                             <div className="free-delivery">

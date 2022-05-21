@@ -87,30 +87,39 @@
 
 .show-price {
     font-size: 14px;
-    line-height: 40px;
     // color: #565959;
     border-bottom: 1px solid #dddddd;
     margin-bottom: 14px;
     padding-bottom: 8px;
     display: flex;
+    // align-items: flex-start;
+    flex-direction: column;
+    line-height: normal;
+}
+
+.show-money {
+    margin-top: 1em;
+    display: flex;
     align-items: flex-start;
 }
 
 .show-dollar-sign .show-cents {
-
+    vertical-align: super;
 }
 
 .show-dollars {
+    line-height:90%;
 
 }
 
-.free-returns-label {
-    font-family: Amazon Ember Medium;
+.free-returns-symbol {
+    font-family: Amazon Ember Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
     color: #0f1111;
-    // align-self: flex-end;
+    margin-bottom: 1em;
 }
 
-.free-returns-link {
+.free-returns-text {
     color: #007185;
 }
 .about-heading {
@@ -143,10 +152,6 @@
 .buybox-price {
     margin-top: 5px;
     margin-bottom: 5px;
-    // font-size: 28px;
-    // line-height: 22px;
-    // color: #B12704;
-    // padding: 0 6px;
 }
 
 .show-dollar-sign .show-cents {
@@ -159,7 +164,7 @@
 }
 
 .buybox h5 {
-    font-family: Amazon Ember Medium;
+    font-family: Amazon Ember Regular, Arial, Helvetica, sans-serif;
     padding: 0px 0px 2px 3px;
     margin-top: 0px;
     font-size: 14px;
@@ -210,11 +215,11 @@
 }
 
 #in-stock {
-    margin-top: 5px;
+    margin-top: 1em;
     color: #007600;
     font-size: 18px;
     line-height: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 1em;
 }
 
 .buybox-quantity {
@@ -224,21 +229,24 @@
     border: 1px solid #dcd9d9;
     width: fit-content;
     background: #F0F2F2;
-    // box-shadow: 0 2px 5px rgb(15, 17, (17 / 15%));
+    box-shadow: 0 2px 16px 0 rgba(15,17,17,0.2);
     line-height: 19px;
 }
 
 .quantity-dropdown {
+    font-family: Amazon Ember, Arial, Helvetica, sans-serif;
+    text-align: center;
+    vertical-align: text-bottom;
+    font-size: 12px;
     border: none;
     background-color: #f0f0f0;
     line-height: 19px;
-    min-width: 76px;
-    height: 29px;
+    min-width: 56px;
+    height: 20px;
     border-color: #D5D9D9;
     background: #F0F2F2;
-    // box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
     border-radius: 8px;
-    width: 80px;
+    width: 56px;
 
     overflow: visible;
 }
@@ -258,9 +266,10 @@ option {
 }
 
 #add-to-cart {
+    font-family: Amazon Ember, Arial, Helvetica, sans-serif;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     margin-bottom: 5px;
     background-image: none;
@@ -269,15 +278,22 @@ option {
     border: 1px solid #fcd200;
     border-radius: 20px;
     box-shadow: 0 2px 5px 0 #d5d9d9;
-    height: 38px;
+    height: 34px;
     width: 100%;
     margin-top: 5px;
+    
+    &:hover {
+        background-color: #F7CA00;
+        box-shadow: 0 2px 5px 0 rgba(15,17,17,0.2);
+        
+    }
 }
 
 #buy-now {
+    font-family: Amazon Ember, Arial, Helvetica, sans-serif;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     margin-bottom: 5px;
     background-image: none;
@@ -286,7 +302,13 @@ option {
     border: 1px solid #ff8f00;
     border-radius: 20px;
     box-shadow: 0 2px 5px 0 #d5d9d9;
-    height: 38px;
+    height: 34px;
     width: 100%;
     margin-top: 5px;
+
+    &:hover {
+        background: #FA8900;
+        border-color: #E3931E;
+        box-shadow: 0 2px 5px 0 rgba(15,17,17,0.2);
+    }
 }
