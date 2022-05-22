@@ -2,9 +2,9 @@ import { connect } from "react-redux"
 import { createReview, deleteReview, editReview } from "../actions/review_action";
 import ReviewsIndex from "./reviewsIndex"
 
-const mSTP = ({ entities }, { match }) => ({
-    product: entities.products[match.params.productId],
-    reviews: entities.reviews
+const mSTP = (state, { match }) => ({
+    currentUser: state.entities.users[state.session.id],
+    reviews: state.entities.reviews
 });
 
 const mDTP = dispatch => ({

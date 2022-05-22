@@ -8,7 +8,7 @@ class ReviewsIndex extends React.Component {
     }
 
     render() {
-        const {  product, reviews, createReview, editReview, deleteReview } = this.props;
+        const {  product, reviews, currentUser, createReview, editReview, deleteReview } = this.props;
         return (
         <div className="reviews-index">
                 <div className="reviews-container">
@@ -21,6 +21,7 @@ class ReviewsIndex extends React.Component {
                                 Object.values(reviews).map(review => (
                                     <li>
                                         <ReviewItem
+                                            currentUser={currentUser}
                                             review={review} 
                                             editReview={editReview}
                                             deleteReview={deleteReview}

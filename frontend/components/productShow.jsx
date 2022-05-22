@@ -1,4 +1,5 @@
 import React from "react";
+import ReviewsIndexContainer from "./reviewsIndexContainer";
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -176,7 +177,7 @@ class ProductShow extends React.Component {
                         </nav>
 
                     </div>
-
+                    <ReviewsIndexContainer product={this.props.product}/>
                 </div>
             </div>
         )
