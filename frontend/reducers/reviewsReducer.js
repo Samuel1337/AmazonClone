@@ -1,0 +1,25 @@
+import { RECEIVE_PRODUCT } from "../actions/product_actions";
+import { EDIT_REVIEW, RECEIVE_REVIEW, REMOVE_REVIEW } from "../actions/review_action";
+
+
+const reviewsReducer = (oldState = {}, action) => {
+
+    Object.freeze(oldState);
+
+    switch (action.type) {
+        case RECEIVE_PRODUCT:
+            return Object.assign({},  action.reviews)
+        case RECEIVE_REVIEW:
+            return Object.assign({}, oldState, {[action.review.id]: action.review})
+        case EDIT_REVIEW:
+            return Object.assign({}, oldState, {[action.review.id]: action.review})
+        case REMOVE_REVIEW:
+            const newState = Object.assign({}, oldState)
+            delete newState[reviewId];
+            return newState;
+        default:
+            return oldState;
+    }
+}
+
+export default reviewsReducer;

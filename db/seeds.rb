@@ -50,7 +50,7 @@ electronics1 = Product.create(
 
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/fire-tablet.jpg')
 electronics1.photo.attach(io: file, filename: 'fire-tablet.jpg')
-
+=begin
 electronics2 = Product.create(
     title: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
     price: 24.99,
@@ -1021,3 +1021,4 @@ automotive_industrial4 = Product.create(
 
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/industrial-lansing.jpg')
 automotive_industrial4.photo.attach(io: file, filename: 'industrial-lansing.jpg')
+=end

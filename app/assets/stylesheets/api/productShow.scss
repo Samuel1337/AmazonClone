@@ -67,7 +67,7 @@
     width: 100%;
     min-width: 300px;
     margin-right: 25px;
-
+    
     h1 {
         font-size: 24px;
         line-height: 32px;  
@@ -172,6 +172,11 @@
     
     span {
         color: #007185;
+
+        &:hover {
+            cursor: pointer;
+            color: #B12704;
+        }
     }
 }
 
@@ -183,6 +188,11 @@
 #free-delivery {
     font-size: 14px;
     color: #007185;
+
+    &:hover {
+        cursor: pointer;
+        color: #B12704;
+    }
 }
 
 .fast-delivery {
@@ -285,7 +295,7 @@ option {
     &:hover {
         background-color: #F7CA00;
         box-shadow: 0 2px 5px 0 rgba(15,17,17,0.2);
-        
+        cursor: pointer;
     }
 }
 
@@ -306,9 +316,10 @@ option {
     width: 100%;
     margin-top: 5px;
 
-    &:hover {
-        background: #FA8900;
-        border-color: #E3931E;
-        box-shadow: 0 2px 5px 0 rgba(15,17,17,0.2);
-    }
+        &:hover {
+            background: #FA8900;
+            border-color: #E3931E;
+            box-shadow: 0 2px 5px 0 rgba(15,17,17,0.2);
+            cursor: pointer;
+        }
 }

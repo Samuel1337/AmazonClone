@@ -3,15 +3,16 @@ import { Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 import GreetingContainer from './greetingContainer';
+import UnderConstruction from './under_construction';
 import loginFormContainer from './loginFormContainer';
 import signupFormContainer from './signupFormContainer';
-import UnderConstruction from './under_construction';
-import Home from './home';
+import CategoryIndexContainer from './categoryIndexContainer';
+import ProductShowContainer from './productShowContainer';
+import reviewFormContainer from './reviewFormContainer';
 import { Link } from 'react-router-dom';
 import Categories from './categories';
 import Footer from './footer';
-import CategoryIndexContainer from './categoryIndexContainer';
-import ProductShowContainer from './productShowContainer';
+import Home from './home';
 
 const App = () => (
   <div>
@@ -29,6 +30,7 @@ const App = () => (
         <AuthRoute path="/signup" component={signupFormContainer} />
         <Route path="/categories/:category" component={CategoryIndexContainer} />
         <Route path="/products/:productId" component={ProductShowContainer} />
+        <Route path="/products/:productId/review" component={reviewFormContainer} />
         <Route path="/under_construction" component={UnderConstruction} />
         <Route exact path="/" component={Home} />
         <Redirect to="/under_construction" />

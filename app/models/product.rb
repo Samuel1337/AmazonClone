@@ -7,7 +7,7 @@ class Product < ApplicationRecord
 
     has_many :reviews,
         primary_key: :id,
-        foreign_key: :product_id;
+        foreign_key: :product_id,
         class_name: :Review
 
 end
