@@ -17,7 +17,7 @@ class ReviewsIndex extends React.Component {
     }
 
     render() {
-        const {  product, reviews, currentUser, createReview, editReview, deleteReview } = this.props;
+        const { product, reviews, currentUser, createReview, editReview, deleteReview } = this.props;
         
         if (reviews) {
         
