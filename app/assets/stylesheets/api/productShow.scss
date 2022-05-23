@@ -52,7 +52,7 @@
 }
 
 .show-center-col {
-    font-family: Amazon Ember;
+    font-family: Amazon Ember, Arial, Helvetica, sans-serif;
     display: block;
     width: 30%;
     min-width: 300px;
@@ -109,7 +109,6 @@
 
 .show-dollars {
     line-height:90%;
-
 }
 
 .free-returns-symbol {
@@ -121,6 +120,11 @@
 
 .free-returns-text {
     color: #007185;
+
+    &:hover {
+        cursor: pointer;
+        color: #B12704;
+    }
 }
 .about-heading {
     padding-bottom: 4px;
@@ -138,8 +142,6 @@
     list-style-type: disc;
     list-style-position: outside;
 }
-
-
 
 .buybox {
     font-family: Amazon Ember, Arial, Helvetica, sans-serif;

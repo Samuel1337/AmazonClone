@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
@@ -9,8 +10,8 @@ import signupFormContainer from './signupFormContainer';
 import CategoryIndexContainer from './categoryIndexContainer';
 import ProductShowContainer from './productShowContainer';
 import reviewFormContainer from './reviewFormContainer';
-import { Link } from 'react-router-dom';
 import Categories from './categories';
+import SearchBar from './searchBar';
 import Footer from './footer';
 import Home from './home';
 
@@ -19,6 +20,7 @@ const App = () => (
     <header>
       <nav id="header-black">
         <Link to="/"><img src={window.logo} id="logo" /></Link>
+        <SearchBar />
         <GreetingContainer />
       </nav>
       <Categories />
