@@ -1,10 +1,12 @@
 import React from "react";
+import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 class GridItem extends React.Component {
     constructor(props) {
         super(props);
 
+        this.stars = this.stars.bind(this);
         this.price = this.price.bind(this);
         this.date = this.date.bind(this);
         this.topOfPage = this.topOfPage.bind(this);
@@ -34,6 +36,33 @@ class GridItem extends React.Component {
         }
     }
 
+    stars() {
+        return (
+            <div className="five-stars-small">
+                {[...Array(5)].map((star, i) => {
+                    const ratingValue = i+1;
+                    return (
+                        <label key={i+1200} name="rating">
+                            <input
+                                key={(i+1)*1356}
+                                type="radio"
+                                className="star-radio"
+                                name="rating"
+                                value={ratingValue}
+                            />
+                            <FaStar
+                                key={i*63}
+                                className="star-small"
+                                size={15}
+                                color={ratingValue <= this.props.product.rating ? "#ffc107" : "#e4e5e9" }
+                            />
+                        </label>
+                    )
+                })}
+            </div>
+        )
+    }
+
     date() {
         let date = new Date();
         let days = Math.random() * 5 + 2;
@@ -53,8 +82,8 @@ class GridItem extends React.Component {
                 <div className="grid-image-container">
                     <Link to={`/products/${product.id}`} onClick={this.topOfPage}><img src={product.photoUrl} alt={product.title} /></Link>
                 </div>
-                <Link to={`/products/${product.id}`} onClick={this.topOfPage}><h2>{product.title}</h2></Link>
-                <div className="grid-rating">{product.rating}</div>
+                <Link to={`/products/${product.id}`} onClick={this.topOfPage}><h2 className="grid-title">{product.title}</h2></Link>
+                <div className="grid-rating">{this.stars()}</div>
                 <Link to={`/products/${product.id}`} onClick={this.topOfPage}><div className="grid-price">
                     <span className="grid-dollar-sign">$</span>
                     <span className="grid-dollars">{this.price("dollars")}</span>

@@ -5,10 +5,10 @@ import { EDIT_REVIEW, RECEIVE_REVIEW, REMOVE_REVIEW } from "../actions/review_ac
 const reviewsReducer = (oldState = {}, action) => {
 
     Object.freeze(oldState);
-
+    console.log(action)
     switch (action.type) {
         case RECEIVE_PRODUCT:
-            return Object.assign({},  action.reviews)
+            return Object.assign({},  action.product.reviews)
         case RECEIVE_REVIEW:
             return Object.assign({}, oldState, {[action.review.id]: action.review})
         case EDIT_REVIEW:

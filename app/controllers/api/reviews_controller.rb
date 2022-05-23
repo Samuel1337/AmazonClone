@@ -1,7 +1,11 @@
 class Api::ReviewsController < ApplicationController
 
     def create
-        @review = Review.create(review_params)
+        @review = Review.new(review_params)
+        @product = @review.product
+
+        puts @review
+
         if @review.save
             render "api/products/show"
         else 
@@ -11,6 +15,7 @@ class Api::ReviewsController < ApplicationController
 
     def update
         @review = review.find_by(id: params[:id])
+        @product = @review.product
         if @review.update(review_params)
             render "api/products/show"
         else 
@@ -28,6 +33,6 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        review.require(:review).permit(:rating, :title, :body, :user_id, :product_id)
+        params.require(:review).permit(:rating, :title, :body, :user_id, :product_id)
     end
 end

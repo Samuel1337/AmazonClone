@@ -1,4 +1,5 @@
 import React from "react";
+import { FaStar } from "react-icons/fa";
 import ReviewsIndexContainer from "./reviewsIndexContainer";
 
 class ProductShow extends React.Component {
@@ -6,6 +7,7 @@ class ProductShow extends React.Component {
         super(props);
         this.date = this.date.bind(this);
         this.hours = this.hours.bind(this);
+        this.stars = this.stars.bind(this);
         this.quantity = this.quantity.bind(this);
         this.description = this.description.bind(this);
     }
@@ -69,6 +71,33 @@ class ProductShow extends React.Component {
         )
     }
 
+    stars() {
+        return (
+            <div className="five-stars-small">
+                {[...Array(5)].map((star, i) => {
+                    const ratingValue = i+1;
+                    return (
+                        <label key={i+1200} name="rating">
+                            <input
+                                key={(i+1)*1356}
+                                type="radio"
+                                className="star-radio"
+                                name="rating"
+                                value={ratingValue}
+                            />
+                            <FaStar
+                                key={i*63}
+                                className="star-small"
+                                size={20}
+                                color={ratingValue <= this.props.product.rating ? "#ffc107" : "#e4e5e9" }
+                            />
+                        </label>
+                    )
+                })}
+            </div>
+        )
+    }
+
     description() {
         const { product } = this.props
         
@@ -110,17 +139,8 @@ class ProductShow extends React.Component {
                         <div className="show-info">
                             <h1>{product.title}</h1>
                             <div className="show-rating">
-                                <p>{product.rating}</p>
-                                {/* <div className="show-stars">
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="star" color="#ffa41b" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 164, 27);"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg>
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="star" color="#ffa41b" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 164, 27);"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg>
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="star" color="#c9c9c9" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style="color: rgb(201, 201, 201);"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg>
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="star" color="#c9c9c9" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style="color: rgb(201, 201, 201);"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg>
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="star" color="#c9c9c9" height="15" width="15" xmlns="http://www.w3.org/2000/svg" style="color: rgb(201, 201, 201);"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg>
-                                </div>
-                                <div className="show-num-ratings">
-                                    x ratings.
-                                </div> */}
+                                {this.stars()}
+                                {/* <p>{this.props.product.reviews.length} ratings</p> */}
                             </div>
                             <div className="show-price">
                                 <div className="show-money">

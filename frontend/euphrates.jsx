@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from './components/root'
 import { signup, login, logout } from './actions/session_actions'
+import { postReview } from "./util/reviews_api_util";
 
 document.addEventListener("DOMContentLoaded", () => {
     // set up Store
@@ -32,4 +33,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login;
     window.logout = logout;
     window.dispatch = store.dispatch;
+    window.postReview = postReview;
 });

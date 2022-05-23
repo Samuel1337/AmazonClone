@@ -20,7 +20,8 @@
     // align-items: flex-start;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom: 50px;
+    padding-bottom: 4em;
+    border-bottom: 1px solid #dddddd;
 }
 
 .show-left-col {
@@ -79,10 +80,17 @@
     line-height: 20px;
     color: #007185;
     border-bottom: 1px solid #dddddd;
+    margin-top: 8px;
     margin-bottom: 8px;
+    padding-top: 5px;
     padding-bottom: 5px;
     display: flex;
     align-items: center;
+
+    p {
+        margin-left: 16px;
+        color: #007185;
+    }
 }
 
 .show-price {

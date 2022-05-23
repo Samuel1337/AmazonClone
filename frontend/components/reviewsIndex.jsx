@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReviewItem } from "./reviewItem";
+import  ReviewItem  from "./reviewItem";
 
 class ReviewsIndex extends React.Component {
     constructor(props) {
@@ -30,16 +30,17 @@ class ReviewsIndex extends React.Component {
                         <h1>Customer reviews</h1>
                         <ul>
                             {
-                                Object.values(reviews).map(review => (
-                                    <li>
+                                reviews.map((review,i) => (
+                                    <li key={(i+1)*(-500)}>
                                         <ReviewItem
+                                            key={-1-i}
                                             currentUser={currentUser}
                                             review={review} 
                                             editReview={editReview}
                                             deleteReview={deleteReview}
                                         />
                                     </li>
-                                ))
+                                )) 
                             }
                         </ul>
                     </div>

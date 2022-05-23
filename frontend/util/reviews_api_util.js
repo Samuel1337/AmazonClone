@@ -1,16 +1,19 @@
-export const postReview = review => ({
+export const postReview = review => (
+    $.ajax({
     url: '/api/reviews',
     method: 'POST',
-    data: review
-})
+    data: { review }
+}))
 
-export const updateReview = review => ({
+export const updateReview = review => (
+    $.ajax({
     url: `/api/reviews/${review.id}`,
     method: 'PATCH',
-    data: review
-})
+    data: { review }
+}))
 
-export const destroyReview = reviewId => ({
+export const destroyReview = reviewId => (
+    $.ajax({
     url: `/api/reviews/${reviewId}`,
     method: 'DELETE'
-})
+}))
