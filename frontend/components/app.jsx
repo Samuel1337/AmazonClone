@@ -1,19 +1,20 @@
 import React from 'react';
+import Home from './home';
+import Footer from './footer';
 import { Link } from 'react-router-dom';
+import SearchBar from './searchBar';
+import Categories from './categories';
 import { Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
-import GreetingContainer from './greetingContainer';
 import UnderConstruction from './under_construction';
+import GreetingContainer from './greetingContainer';
 import loginFormContainer from './loginFormContainer';
 import signupFormContainer from './signupFormContainer';
-import CategoryIndexContainer from './categoryIndexContainer';
 import ProductShowContainer from './productShowContainer';
-import reviewFormContainer from './reviewFormContainer';
-import Categories from './categories';
-import SearchBar from './searchBar';
-import Footer from './footer';
-import Home from './home';
+import CategoryIndexContainer from './categoryIndexContainer';
+import editReviewFormContainer from './editReviewFormContainer';
+import createReviewFormContainer from './createReviewFormContainer';
 
 const App = () => (
   <div>
@@ -31,7 +32,8 @@ const App = () => (
         <AuthRoute path="/login" component={loginFormContainer} />
         <AuthRoute path="/signup" component={signupFormContainer} />
         <Route path="/categories/:category" component={CategoryIndexContainer} />
-        <Route path="/products/:productId/review" component={reviewFormContainer} />
+        <Route path="/products/:productId/review/:reviewId/edit" component={editReviewFormContainer} />
+        <Route path="/products/:productId/review" component={createReviewFormContainer} />
         <Route path="/products/:productId" component={ProductShowContainer} />
         <Route path="/under_construction" component={UnderConstruction} />
         <Route exact path="/" component={Home} />

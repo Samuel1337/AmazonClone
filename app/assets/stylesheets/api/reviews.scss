@@ -36,7 +36,7 @@
     }
 }
 
-.reviews-left-col button {
+.write-review {
     height: 29px;
     width: 100%;
     color: #0f1111;
@@ -47,6 +47,24 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 5px #d6d6d6;
+
+    &:hover {
+        background-color: #F7FAFA;
+    }
+}
+
+.edit-review {
+    height: 29px;
+    color: #0f1111;
+    border: 1px solid #D5D9D9;
+    border-radius: 8px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px #d6d6d6;
+    margin-top: 7px;
+    margin-right: 14px;
 
     &:hover {
         background-color: #F7FAFA;
@@ -216,7 +234,7 @@
 
 
 .review-rating {
-    // border-top: 1px solid lightgray;
+    border-top: 1px solid lightgray;
     padding: 14px;
     display: flex;
     flex-direction: column;
@@ -245,7 +263,7 @@
 }
 
 .review-title {
-    // border-top: 1px solid lightgray;
+    border-top: 1px solid lightgray;
     padding: 14px;
     h2 {
         margin: 0;
@@ -300,6 +318,10 @@
         box-shadow: 0 1px 2px rgba(15, 17, 17, 0.2) inset;
         outline: 0;
     }
+}
+
+.review-buttons {
+    display: flex;
 }
 
 .review-submit {

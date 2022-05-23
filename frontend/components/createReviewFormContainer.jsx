@@ -6,14 +6,14 @@ import ReviewForm from "./reviewForm";
 const mSTP = (state, { match }) => {
     return {
         product: state.entities.products[match.params.productId],
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        formType: "Create Review"
     }
 }
 
 const mDTP = dispatch => ({
     getProduct: productId => dispatch(getProduct(productId)),
-    createReview: review => dispatch(createReview(review)),
-    editReview: review => dispatch(editReview(review)),
+    action: review => dispatch(createReview(review)),
     deleteReview: reviewId => dispatch(deleteReview(reviewId))
 })
 

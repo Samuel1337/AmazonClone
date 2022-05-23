@@ -4,10 +4,10 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const EDIT_REVIEW = "EDIT_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 
-export const createReview = review => dispatch => {
+export const createReview = review => dispatch => (
     reviewsApiUtil.postReview(review)
-        .then(review => dispatch(receiveReview(review)));
-}
+        .then(review => dispatch(receiveReview(review)))
+)
 
 export const editReview = review => dispatch => (
     reviewsApiUtil.updateReview(review)

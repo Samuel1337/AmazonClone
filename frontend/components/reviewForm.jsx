@@ -8,10 +8,10 @@ class ReviewForm extends React.Component {
 
         this.state = {
             rating: 3,
-            title: "",
-            body: "",
-            user_id: "",
-            product_id: ""
+            title: this.props.review ? this.props.review.title : "",
+            body: this.props.review ? this.props.review.body : "",
+            user_id: this.props.review ? this.props.review.user_id : "",
+            product_id: this.props.review ? this.props.review.product_id : ""
         }
         
         this.getRating = this.getRating.bind(this);
@@ -50,12 +50,16 @@ class ReviewForm extends React.Component {
         this.renderError();
         
         if (this.state.title !== "" || this.state.body !== "") {
-            this.props.createReview(this.state);
+            this.props.action(this.state)
+                .then(this.props.history.push(`/products/${this.state.product_id}`))
         }
     }
 
     update(field) {
         return e => {
+            if (this.props.match.params.reviewId !== this.state.id) {
+                this.setState({["id"]: this.props.match.params.reviewId})
+            }
             if (this.state.user_id === "") {
                 this.setState({["user_id"]: this.props.currentUser.id});
                 this.setState({["product_id"]: this.props.product.id});
@@ -68,7 +72,7 @@ class ReviewForm extends React.Component {
     render() {
         if (this.props.product === undefined) {return null};
 
-        const { product, currentUser } = this.props    
+        const { product, currentUser, formType } = this.props    
 
         return (
             <div className="review-page">
@@ -79,7 +83,7 @@ class ReviewForm extends React.Component {
                     </div>
                 </div>
                 <div className="create-review-container">
-                    <h1>Create Review</h1>
+                    <h1>{ formType }</h1>
                     <Link to={`/products/${product.id}`}><div className="review-product">
                         <img src={product.photoUrl} alt="" />
                         <h1>{ product.title }</h1>
