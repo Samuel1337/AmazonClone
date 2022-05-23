@@ -1,5 +1,5 @@
 import { RECEIVE_PRODUCT } from "../actions/product_actions";
-import { EDIT_REVIEW, RECEIVE_REVIEW, REMOVE_REVIEW } from "../actions/review_action";
+import { EDIT_REVIEW, RECEIVE_REVIEW, REMOVE_REVIEW } from "../actions/review_actions";
 
 
 const reviewsReducer = (oldState = {}, action) => {

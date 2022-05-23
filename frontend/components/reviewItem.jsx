@@ -26,16 +26,22 @@ class ReviewItem extends React.Component {
                     <img src="" alt="" />
                     <h1>{ review.author }</h1>
                 </div>
-                <div className="review-body">
+                <div className="review-headline">
+                    <div className="review-stars">
+
+                    </div>
                     <div className="review-title">
                         { review.title }
                     </div>
-                    <div className="review-created-at">
-                        { review.created_at }
-                    </div>
-                    <div className="review-text">
-                        { review.body }
-                    </div>
+                </div>
+                <div className="review-created-at">
+                    { review.created_at }
+                </div>
+                <div className="verified-purchase">
+                    Verified Purchase
+                </div>
+                <div className="review-text">
+                    { review.body }
                 </div>
             </div>
         )

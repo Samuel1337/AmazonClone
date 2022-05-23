@@ -1,8 +1,8 @@
 import { connect } from "react-redux"
-import { createReview, deleteReview, editReview } from "../actions/review_action";
+import { createReview, deleteReview, editReview } from "../actions/review_actions";
 import ReviewsIndex from "./reviewsIndex"
 
-const mSTP = (state, { match }) => ({
+const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],
     reviews: state.entities.reviews
 });

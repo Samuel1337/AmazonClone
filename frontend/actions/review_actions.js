@@ -5,8 +5,11 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const EDIT_REVIEW = "EDIT_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 
-export const createReview = review => dispatch => postReview(review)
+export const createReview = review => dispatch => {
+    debugger
+    postReview(review)
     .then(review => dispatch(receiveReview(review)));
+}
 
 export const editReview = review => dispatch => updateReview(review)
     .then(review => dispatch(changeReview(review)));

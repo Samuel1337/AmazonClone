@@ -50,6 +50,15 @@ electronics1 = Product.create(
 
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/fire-tablet.jpg')
 electronics1.photo.attach(io: file, filename: 'fire-tablet.jpg')
+
+review1 = Review.create(
+    title: "Very good",
+    body: "Amazing",
+    rating: 4,
+    user_id: 1,
+    product_id: 1
+)
+
 =begin
 electronics2 = Product.create(
     title: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",

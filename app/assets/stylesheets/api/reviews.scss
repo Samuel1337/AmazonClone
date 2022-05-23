@@ -1,3 +1,328 @@
 // Place all the styles related to the api/Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ReviewIndex
+
+.reviews-index {
+    width: 100%;
+}
+
+.reviews-container {
+    padding: 1em;
+    padding-bottom: 3em;
+    display: flex;
+}
+
+.reviews-left-col {
+    width: 300px;
+    padding-right: 40px;
+
+    h1 {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+        margin: 24px 10px 10px 0;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 16px;
+    }
+}
+
+.reviews-left-col button {
+    height: 29px;
+    width: 100%;
+    color: #0f1111;
+    border: 1px solid #D5D9D9;
+    border-radius: 8px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px #d6d6d6;
+
+    &:hover {
+        background-color: #F7FAFA;
+    }
+}
+
+.reviews-center-col {
+    width: 680px;
+    max-width: 680px;
+    
+    h1 {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+        margin: 24px 0 16px 0;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        margin-bottom: 22px;
+    }
+}
+
+// ReviewItem
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-author {
+    height: 34px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 100%;
+        width: 34px;
+        margin-right: 4px;
+    }
+
+    h1 {
+        font-size: 12px;
+    }
+}
+
+.review-headline {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 4px;
+}
+
+.review-stars {
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.review-title {
+    
+}
+
+.review-created-at {
+    color: #565959;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.verified-purchase {
+    color: #c45500;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    margin: 4px 0;
+}
+
+.review-text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+// ReviewForm
+
+.review-page {
+    width: 100%;
+}
+
+.user-bar {
+    background-color: #defaff;
+    width: 100%;
+    position: relative;
+    height: 54px;
+}
+
+.user {
+    position: relative;
+    width: 768px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px !important;
+    font-size: 14px;
+    justify-content: flex-start;
+
+    img {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+    }
+    
+    p {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+}
+
+.create-review-container {
+    padding: 20px;
+    width: 768px;
+    margin: 0 auto;
+    > h1 {
+        margin-bottom: 1em;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+
+.review-product {
+    padding: 14px;
+    height: 3em;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    
+    img {
+        height: 100%;
+        float: left;
+        object-fit: contain;
+    }
+    
+    h1 {
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: black;
+    }
+}
+
+
+.review-rating {
+    border-top: 1px solid lightgray;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        white-space: nowrap;
+        margin-bottom: 16px;
+    }
+
+    .stars {
+        box-sizing: border-box;
+    }
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 13px;
+    visibility: hidden;
+}
+
+.error-visible {
+    visibility: visible;
+}
+
+.review-title {
+    border-top: 1px solid lightgray;
+    padding: 14px;
+    h2 {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    input {
+        margin-top: 10px;
+        position: relative;
+        width: 100%;
+        background-color: #fff;
+        height: 31px;
+        padding: 3px 7px;
+        line-height: normal;
+        border: 1px solid #888C8C;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px rgba(15, 17, 17, 0.2) inset;
+        outline: 0;
+        margin-bottom: 4px;
+    }
+}
+
+.review-body {
+    border-top: 1px solid lightgray;
+    padding: 14px;
+    h2 {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    textarea {
+        margin-top: 10px;
+        height: 10vh;
+        width: 100%;
+        padding: 5px 7px;
+        resize: vertical;
+        border: 1px solid #888C8C;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px rgba(15, 17, 17, 0.2) inset;
+        outline: 0;
+    }
+}
+
+.review-submit {
+    border-top: 1px solid lightgray;
+    padding: 14px;
+    display: flex;
+    justify-content: flex-end;
+    
+    button {
+        font-family: Amazon Ember Medium, Arial, Helvetica, sans-serif;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px 0 rgba(213, 217, 217, 0.5);
+        background-color: #FFD814;
+        border-color: #FCD200;
+        height: 29px;
+        width: 64px;
+        font-weight: 500;
+        text-align: center;
+        color: #0F1111;
+        font-size: 13px;
+        border-style: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #FCD200;
+        }
+    }
+}
+

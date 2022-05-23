@@ -98,6 +98,7 @@ class ProductShow extends React.Component {
         const { product } = this.props
 
         return (
+            <>
             <div className="show-page">
                 <div className="show-container">
                     {/* left column */}
@@ -177,9 +178,10 @@ class ProductShow extends React.Component {
                         </nav>
 
                     </div>
-                    <ReviewsIndexContainer product={this.props.product}/>
                 </div>
             </div>
+            <ReviewsIndexContainer product={this.props.product}/>
+            </>
         )
     }
 }

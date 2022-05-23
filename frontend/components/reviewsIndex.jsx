@@ -5,6 +5,15 @@ import { ReviewItem } from "./reviewItem";
 class ReviewsIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.redirect = this.redirect.bind(this);
+    }
+
+    redirect() {
+        if (this.props.currentUser) {
+            return `/products/${this.props.product.id}/review`;
+        } else {
+            return '/signup';
+        }
     }
 
     render() {
@@ -13,9 +22,12 @@ class ReviewsIndex extends React.Component {
         <div className="reviews-index">
                 <div className="reviews-container">
                     <div className="reviews-left-col">
-                        <Link to={`/${product.id}/review`}><button className="write-review">Write a customer review</button></Link>
+                        <h1>Review this product</h1>
+                        <p>Share your thoughts with other customers</p>
+                        <Link to={this.redirect()}><button onClick={()=>window.scrollTo(0,0)} className="write-review">Write a customer review</button></Link>
                     </div>
                     <div className="reviews-center-col">
+                        <h1>Customer reviews</h1>
                         <ul>
                             {
                                 Object.values(reviews).map(review => (

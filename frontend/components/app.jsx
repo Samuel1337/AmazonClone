@@ -29,8 +29,8 @@ const App = () => (
         <AuthRoute path="/login" component={loginFormContainer} />
         <AuthRoute path="/signup" component={signupFormContainer} />
         <Route path="/categories/:category" component={CategoryIndexContainer} />
-        <Route path="/products/:productId" component={ProductShowContainer} />
         <Route path="/products/:productId/review" component={reviewFormContainer} />
+        <Route path="/products/:productId" component={ProductShowContainer} />
         <Route path="/under_construction" component={UnderConstruction} />
         <Route exact path="/" component={Home} />
         <Redirect to="/under_construction" />
