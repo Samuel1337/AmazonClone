@@ -4,8 +4,6 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @product = @review.product
 
-        puts @review
-
         if @review.save
             render "api/products/show"
         else 
