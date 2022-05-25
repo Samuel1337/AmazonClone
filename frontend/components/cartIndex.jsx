@@ -3,29 +3,61 @@ import React from "react";
 class CartIndex extends React.Component {
     constructor(props) {
         super(props);
+
+        this.deleteItem = this.deleteItem.bind(this);
     }
 
     componentDidMount() {
-        this.props.getCartItemsById(this.props.currentUser)
+        if (this.props.currentUser) {
+            this.props.getCartItemsById(this.props.currentUser.id);
+        } else {
+            this.props.history.push("/login");
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.cartItems !== this.props.cartItems) {
+            if (this.props.currentUser) {
+                this.props.getCartItemsById(this.props.currentUser.id);
+            } else {
+                this.props.history.push("/login");
+            }
+        }
+    }
+
+    deleteItem(productId) {
+        const { cartItems } = this.props;
+        
+        let res = [];
+        
+        Object.values(cartItems).forEach(cartItem => {
+            if (cartItem.productId === productId) {
+                res.push(cartItem.id);
+            }
+        });
+
+        res.forEach(cartItemId => {
+            this.props.deleteCartItem(cartItemId);
+        })
     }
 
     cartItemList() {
 
-        const { cartItems } = this.props;
+        const { products } = this.props;
 
         return (
             <ul className="cart-list">
-                {
-                    cartItems.map(cartItem)
-                }
-                <li className="cart-item">
-                    <img className="cart-item-img" src={cartItem.photoUrl} alt="" />
+            {
+                products.map(product => (
+                    
+                        <li className="cart-item">
+                    <img className="cart-item-img" src={product.photoUrl} alt="" />
                     <div className="cart-item-info">
-                        <div className="cart-item-name">{cartItem.title}</div>
-                        <div className="cart-item-price">${cartItem.price}</div>
+                        <div className="cart-item-name">{product.title}</div>
+                        <div className="cart-item-price">${product.price}</div>
                         <div className="cart-item-in-stock">In Stock</div>
                         <div className="cart-item-shipping"></div>
-                        <div className="cart-item-category">{cartItem.category}</div>
+                        <div className="cart-item-category">{product.category}</div>
                         <div className="cart-item-quantity-container">
                         <select name="quantity" id="quantity" className="quantity-dropdown">               
                             <option value="1">Qty: 1</option>
@@ -36,17 +68,19 @@ class CartIndex extends React.Component {
                             <option value="6">Qty: 6</option>
                         </select>
                             <div className="cart-item-quantity-divider">|</div>
-                            <div className="cart-item-quantity-delete">Delete</div>
+                            <a onClick={()=>this.deleteItem(product.id)} className="cart-item-quantity-delete">Delete</a>
                         </div>
                     </div>
                 </li>
-            </ul>
+                ))
+            }
+        </ul>
         )
     }
 
 
     render() {
-        if (this.props.cartItems === undefined) {return null}
+        if (this.props.products === undefined) {return null}
 
         const { cartItems } = this.props;
 
@@ -58,30 +92,7 @@ class CartIndex extends React.Component {
                             <h1>Shopping Cart</h1>   
                         </div>
                         <div className="cart-main">
-                            <ul className="cart-list">
-                                <li className="cart-item">
-                                    <img className="cart-item-img" src="" alt="" />
-                                    <div className="cart-item-info">
-                                        <div className="cart-item-name"></div>
-                                        <div className="cart-item-price"></div>
-                                        <div className="cart-item-in-stock">In Stock</div>
-                                        <div className="cart-item-shipping"></div>
-                                        <div className="cart-item-category"></div>
-                                        <div className="cart-item-quantity-container">
-                                        <select name="quantity" id="quantity" className="quantity-dropdown">               
-                                            <option value="1">Qty: 1</option>
-                                            <option value="2">Qty: 2</option>
-                                            <option value="3">Qty: 3</option>
-                                            <option value="4">Qty: 4</option>
-                                            <option value="5">Qty: 5</option>
-                                            <option value="6">Qty: 6</option>
-                                        </select>
-                                            <div className="cart-item-quantity-divider">|</div>
-                                            <div className="cart-item-quantity-delete">Delete</div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                            {this.cartItemList()}
                             <div className="cart-subtotal">
                                 Subtotal:
                             </div>

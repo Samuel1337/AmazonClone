@@ -4,6 +4,7 @@ import CartIndex from "./cartIndex";
 
 const mSTP = state => ({
     cartItems: Object.values(state.entities.cart),
+    products: Object.values(state.entities.products),
     currentUser: state.entities.users[state.session.id]
 })
 

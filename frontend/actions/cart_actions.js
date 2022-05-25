@@ -10,24 +10,24 @@ export const getCartItemsById = userId => dispatch => (
     .then(cartItems => dispatch(receiveCartItems(cartItems)))
 )
 
-export const createCartItem = CartItem => dispatch => (
-    cartItemsApiUtil.postCartItem(CartItem)
-        .then(CartItem => dispatch(receiveCartItem(CartItem)))
+export const createCartItem = cartItem => dispatch => (
+    cartItemsApiUtil.postCartItem(cartItem)
+        .then(cartItem => dispatch(receiveCartItem(cartItem)))
 )
 
-export const editCartItem = CartItem => dispatch => (
-    cartItemsApiUtil.updateCartItem(CartItem)
-        .then(CartItem => dispatch(updateCartItem(CartItem)))
+export const editCartItem = cartItem => dispatch => (
+    cartItemsApiUtil.updateCartItem(cartItem)
+        .then(cartItem => dispatch(updateCartItem(cartItem)))
 )
 
-export const deleteCartItem = CartItemId => dispatch => (
-    cartItemsApiUtil.destroyCartItem(CartItemId)
-        .then(() => dispatch(removeCartItem(CartItemId)))
+export const deleteCartItem = cartItemId => dispatch => (
+    cartItemsApiUtil.destroyCartItem(cartItemId)
+        .then(() => dispatch(removeCartItem(cartItemId)))
 )
 
-const receiveCartItems = cartItems => ({
+const receiveCartItems = payload => ({
     type: RECEIVE_CART_ITEMS,
-    cartItems
+    payload
 })
 
 const receiveCartItem = cartItem => ({

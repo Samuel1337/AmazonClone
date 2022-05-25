@@ -5,7 +5,8 @@ class Api::CartItemsController < ApplicationController
     end
     
     def index
-        @cart_items = CartItem.find_by(user_id: cart_item_params[:user_id])
+        @cart_items = CartItem.where(user_id: params[:user_id])
+        @products = Product.joins(:cart_items).where(cart_items: {user_id: params[:user_id]})
     end
     
     def create

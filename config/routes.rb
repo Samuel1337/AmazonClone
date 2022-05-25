@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
     get "categories/:category", :to => "categories#index"
-    get "users/:userId/cart_items", :to => "cart_items#index"
+    get "users/:user_id/cart_items", :to => "cart_items#index"
   end
 end

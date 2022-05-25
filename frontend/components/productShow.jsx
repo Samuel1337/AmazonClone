@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import ReviewsIndexContainer from "./reviewsIndexContainer";
 
 class ProductShow extends React.Component {
@@ -10,6 +11,7 @@ class ProductShow extends React.Component {
         this.stars = this.stars.bind(this);
         this.quantity = this.quantity.bind(this);
         this.description = this.description.bind(this);
+        this.addToCart = this.addToCart.bind(this);
     }
 
     componentDidMount() {
@@ -121,6 +123,20 @@ class ProductShow extends React.Component {
         }
     }
 
+    addToCart() {
+        if (this.props.currentUser !== undefined) {
+            const cartItem = {
+                user_id: this.props.currentUser.id,
+                product_id: this.props.product.id,
+                quantity: 1
+            }
+            this.props.createCartItem(cartItem);
+            this.props.history.push("/cart")
+        } else {
+            this.props.history.push("/login")
+        }
+    }
+
     render() {
         if (this.props.product === undefined) {return null};
         
@@ -192,7 +208,7 @@ class ProductShow extends React.Component {
                                 </div>
                             </div>
                             <div className="buybox-cart">
-                                <button id="add-to-cart">Add to Cart</button>
+                                <button onClick={this.addToCart} id="add-to-cart">Add to Cart</button>
                                 <button id="buy-now">Buy Now</button>
                             </div>
                         </nav>

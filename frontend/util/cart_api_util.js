@@ -1,4 +1,4 @@
-export const fetchCartItemsByUserId = userId => (
+export const fetchCartItemsById = userId => (
     $.ajax({
         url: `/api/users/${userId}/cart_items`
     })
@@ -8,7 +8,7 @@ export const postCartItem = cartItem => (
     $.ajax({
     url: '/api/cart_items',
     method: 'POST',
-    data: { cartItem }
+    data: { cart_item: cartItem }
 }))
 
 export const updateCartItem = cartItem => (

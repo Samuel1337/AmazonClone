@@ -101,6 +101,10 @@
 .cart-item-quantity-delete {
     font-size: 12px;
     color: #007185;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .cart-subtotal {
