@@ -15,6 +15,7 @@ import ProductShowContainer from './productShowContainer';
 import CategoryIndexContainer from './categoryIndexContainer';
 import editReviewFormContainer from './editReviewFormContainer';
 import createReviewFormContainer from './createReviewFormContainer';
+import cartIndexContainer from './cartIndexContainer';
 
 const App = () => (
   <div>
@@ -31,6 +32,7 @@ const App = () => (
       <Switch>
         <AuthRoute path="/login" component={loginFormContainer} />
         <AuthRoute path="/signup" component={signupFormContainer} />
+        <Route path="/cart" component={cartIndexContainer} />
         <Route path="/categories/:category" component={CategoryIndexContainer} />
         <Route path="/products/:productId/review/:reviewId/edit" component={editReviewFormContainer} />
         <Route path="/products/:productId/review" component={createReviewFormContainer} />
@@ -39,11 +41,6 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Redirect to="/under_construction" />
       </Switch>
-        {/* <Route path="/products/:productId" component={ProductShow} />
-        <Route path="/reviews/new" component={CreateReviewForm} />
-        <Route path="/reviews/:productId/edit" component={EditReviewForm} />
-        <Route path="/cart" component={CartIndex} />
-      </Switch> */}
     </div>
     <footer>
       <Footer/>

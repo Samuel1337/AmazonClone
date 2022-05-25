@@ -11,6 +11,5 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     get "categories/:category", :to => "categories#index"
     get "users/:userId/cart_items", :to => "cart_items#index"
-    get "products/search/:search_term", :to => "products#index"
   end
 end

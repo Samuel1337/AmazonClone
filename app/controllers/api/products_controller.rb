@@ -7,6 +7,12 @@ class Api::ProductsController < ApplicationController
 
     def index
         @products = Product.all
+        # if (params[:search] == nil) {
+        # } else {
+        #     @products = Product
+        #         .where(category: params[:category])
+        #         .where(title: /#{Regexp.quote(params[:search])}/)
+        # }
         render :index
     end
 

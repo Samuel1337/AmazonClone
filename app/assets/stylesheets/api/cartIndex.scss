@@ -1,0 +1,145 @@
+.cart-page {
+    background-color: #eaeded;
+    height: 100vh;
+    padding: 18px;
+    // display: flex;
+}
+
+.cart-container {
+    display: flex;
+    width: 100%;
+}
+
+.cart-center-col {
+    background-color: white;
+    width: 74%;
+    min-width: 642px;
+    padding: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-headline {
+    font-size: 28px;
+    line-height: 36px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 20px;
+}
+
+.cart-main {
+
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item {
+    border: 1px solid #dddddd;
+    min-width: 602px;
+    height: 230px;
+    padding: 12px;
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.cart-item-img {
+    height: 220px;
+    width: 220px;
+    margin: 0 10px;
+    object-fit: contain;
+}
+
+.cart-item-info {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.cart-item-name {
+    font-size: 16px;
+    line-height: 24px;
+}
+.cart-item-price {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.cart-item-in-stock {
+    color: #007600;
+    font-size: 12px;
+    line-height: 16px;
+}
+.cart-item-shipping {
+    font-size: 12px;
+    line-height: 16px;
+    color: #565959;
+}
+.cart-item-category {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.cart-item-quantity-container {
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+}
+
+.cart-item-quantity-divider {
+    color: #ddd;
+    margin: 0 10px;
+}
+
+.cart-item-quantity-delete {
+    font-size: 12px;
+    color: #007185;
+}
+
+.cart-subtotal {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    align-self: flex-end;
+}
+
+.cart-right-col {
+    
+}
+
+.cart-subtotal-card {
+    width: 265px;
+    min-width: 265px;
+    height: 75px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-subtotal-headline {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.checkout {
+    width: 100%;
+    height: 30px;
+    background-color: #FFD814;
+    border: 1px solid #FCD200;
+    border-radius: 19px;
+
+    &:hover {
+        background-color: #F7CA00;
+        border-color: #F2C200;
+        cursor: pointer;
+    }
+}

@@ -10,9 +10,11 @@ require("open-uri")
 
 User.destroy_all
 Product.destroy_all
+Review.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!("users");
 ActiveRecord::Base.connection.reset_pk_sequence!("products");
+ActiveRecord::Base.connection.reset_pk_sequence!("reviews");
 
 demo = User.create!(username: "Demo", password: "123456");
 
@@ -28,7 +30,7 @@ demo = User.create!(username: "Demo", password: "123456");
 
 # Electronics
 
-electronics1 = Product.create(
+electronics1 = Product.create!(
     title: "Fire HD 10 tablet, 10.1\", 1080p Full HD, 32 GB, latest model (2021 release), Black",
     price: 149.99,
     description: [
@@ -42,7 +44,7 @@ electronics1 = Product.create(
         "Thinner and lighter than previous generation. Screen made with strengthened aluminosilicate glass.",
         "Split screen – All-new feature for Fire OS that shows two compatible apps, like Facebook Messenger and Prime Video, open side by side for easy multitasking."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/electronics/fire-tablet.jpg",
     specialty: "best seller",
     category: "electronics"
@@ -51,7 +53,7 @@ electronics1 = Product.create(
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/fire-tablet.jpg')
 electronics1.photo.attach(io: file, filename: 'fire-tablet.jpg')
 
-review1 = Review.create(
+review1 = Review.create!(
     title: "Very good",
     body: "Amazing",
     rating: 4,
@@ -59,8 +61,7 @@ review1 = Review.create(
     product_id: 1
 )
 
-=begin
-electronics2 = Product.create(
+electronics2 = Product.create!(
     title: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
     price: 24.99,
     description: [
@@ -70,7 +71,7 @@ electronics2 = Product.create(
         "[IPX8 waterproof] Earbuds and charging case inner Nano-coating makes it possible to waterproof for 1 meters deep for 30 minutes. It is suitable for sports to prevent water. Ideal for sweating it out at the gym . Earbuds and case even can be washed by water and soap.",
         "[Charge on the go] Playtime lasts for over 6 hours from single charge and total 30 hours with charging case. Enjoy fast charging, to fully charge the rechargerable case only 55 minutes via cable or less than 2 hours via wireless charger. Providing convenient charging way with no strings attached."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/electronics/wireless-earbuds.jpg",
     specialty: "none",
     category: "electronics"
@@ -79,7 +80,7 @@ electronics2 = Product.create(
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/wireless-earbuds.jpg')
 electronics2.photo.attach(io: file, filename: 'wireless-earbuds.jpg')
 
-electronics3 = Product.create(
+electronics3 = Product.create!(
     title: "Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
     price: 299.00,
     description: [
@@ -89,7 +90,7 @@ electronics3 = Product.create(
         "Connects over Wi-Fi for multiplayer gaming; Up to 8 consoles can be connected for local wireless multiplayer",
         "Model number: HAC-001(-01)"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/electronics/nintendo-switch.jpg",
     specialty: "none",
     category: "electronics"
@@ -98,7 +99,7 @@ electronics3 = Product.create(
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/nintendo-switch.jpg')
 electronics3.photo.attach(io: file, filename: 'nintendo-switch.jpg')
 
-electronics4 = Product.create(
+electronics4 = Product.create!(
     title: "Wyze Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT",
     price: 35.98,
     description: [
@@ -108,7 +109,7 @@ electronics4 = Product.create(
         "24/7 Continuous Recording: Continuous video recording with a 32GB MicroSD card (sold separately). Just insert the MicroSD into the base of the Wyze Cam and you’re all set.",
         "IFTTT certified connect all of your different apps and devices. When you sign up for a free account, you can enable your apps and devices to work together."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/electronics/video-camera.jpg",
     specialty: "none",
     category: "electronics"
@@ -119,7 +120,7 @@ electronics4.photo.attach(io: file, filename: 'video-camera.jpg')
 
 # Computers
 
-computers1 = Product.create(    
+computers1 = Product.create!(    
     title: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
     price: 1249,
     description: [
@@ -127,14 +128,14 @@ computers1 = Product.create(
         "Powerful Performance – Take on everything from professional-quality editing to action-packed gaming with ease. The Apple M1 chip with an 8-core CPU delivers up to 3.5x faster performance than the previous generation while using way less power.",
         "Superfast Memory – 8GB of unified memory makes your entire system speedy and responsive. That way it can support tasks like memory-hogging multitab browsing and opening a huge graphic file quickly and easily.",
         "Stunning Display – With a 13.3” Retina display, images come alive with new levels of realism. Text is sharp and clear, and colors are more vibrant.",
-        "Why Mac – Easy to learn. Easy to set up. Astoundingly powerful. Intuitive. Packed with apps to use right out of the box. Mac is designed to let you work, play, and create like never before.",
+        "Why Mac – Easy to learn. Easy to set up. Astoundingly powerful. Intuitive. Packed with apps to use right out of the box. Mac is designed to let you work, play, and create! like never before.",
         "Simply Compatible – All your existing apps work, including Adobe Creative Cloud, Microsoft 365, and Google Drive. Plus you can use your favorite iPhone and iPad apps directly on macOS. Altogether you’ll have access to the biggest collection of apps ever for Mac. All available on the App Store.",
         "Easy to Learn – If you already have an iPhone, MacBook Air feels familiar from the moment you turn it on. And it works perfectly with all your Apple devices. Use your iPad to extend the workspace of your Mac, answer texts and phone calls directly on your Mac, and more.",
         "Fanless Design – Your MacBook Air stays cool and runs quietly even while tackling intense workloads.",
         "AppleCare – Every Mac comes with a one-year limited warranty and up to 90 days of complimentary technical support. Get AppleCare+ to extend your coverage and reduce the stress and cost of unexpected repairs.",
         "Environmentally Friendly – MacBook Air is made with a 100% recycled aluminum enclosure and uses less energy for a smaller carbon footprint."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/computers/macbook-air-laptop.jpg",
     specialty: "none",
     category: "computers"
@@ -142,8 +143,8 @@ computers1 = Product.create(
 
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/macbook-air-laptop.jpg')
 computers1.photo.attach(io: file, filename: 'macbook-air-laptop.jpg')
-    
-computers2 = Product.create(  
+
+computers2 = Product.create!(  
     title: "OMEN 30L NVIDIA RTX 3090 Gaming Desktop PC (Liquid Cooled Intel i7-10700K, Z490 Mobo, 750 Watt Platinum PSU, Windows 11 Home, 1TB WD Black NVMe SSD, 32GB HyperX RGB RAM)",
     price: 2799,
     description: [
@@ -153,7 +154,7 @@ computers2 = Product.create(
         "1TB WD Black Performance PCIe NVMe M.2 SSD",
         "32GB Kingston HyperX DDR4 3200MHz XMP RGB RAM; Z490 Motherboard; Windows 11 Home; Intel AX201 Wi-Fi 6"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/computers/gaming-desktop.jpg",
     specialty: "best seller",
     category: "computers"
@@ -161,8 +162,8 @@ computers2 = Product.create(
 
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/gaming-desktop.jpg')
 computers2.photo.attach(io: file, filename: 'gaming-desktop.jpg')
-    
-computers3 = Product.create(  
+
+computers3 = Product.create!(  
     title: "HP Elite Desktop PC Computer Intel Core i5 3.1-GHz, 8 gb Ram, 1 TB Hard Drive, DVDRW, 19 Inch LCD Monitor, Keyboard, Mouse, Wireless WiFi, Windows 10 (Renewed)",
     price: 181.50,
     description: [
@@ -172,7 +173,7 @@ computers3 = Product.create(
         "Ports: USB 2.0, DisplayPort, VGA, PS/2 keyboard, PS/2 mouse, RJ-45, microphone/headphone jack, line in, line out.",
         "Operating System: Windows 10 64 Bit – Multi-language supports English/Spanish/French."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/computers/elite-desktop",
     specialty: "none",
     category: "computers"
@@ -181,7 +182,7 @@ computers3 = Product.create(
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/elite-desktop.jpg')
 computers3.photo.attach(io: file, filename: 'elite-desktop.jpg')
 
-computers4 = Product.create(  
+computers4 = Product.create!(  
     title: "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24\" FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11",
     price: 699.99,
     description: [
@@ -191,7 +192,7 @@ computers4 = Product.create(
         "The hidden camera on the top of the AIO 3 offers up to 5M clarity, enhancing authenticity during your video chatting or conferencing – push the webcam down for extra security",
         "Connect with two USB 2.0 ports and two USB 3.2 Gen 2 Type-A ports, one 1000 LAN, one microphone/earphone combo, one Power DC Jack and one HDMI-out"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/computers/lenovo.jpg",
     specialty: "none",
     category: "computers"
@@ -200,6 +201,7 @@ computers4 = Product.create(
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/lenovo.jpg')
 computers4.photo.attach(io: file, filename: 'lenovo.jpg')
 
+=begin
 # Smart Home
 
 smart_home1 = Product.create(  
@@ -215,7 +217,7 @@ smart_home1 = Product.create(
         "CONNECT WITH OTHERS HANDS-FREE: Call friends and family who have the Alexa app or an Echo device. Instantly drop in on other rooms or announce to the whole house that dinner's ready.",
         "PRIVACY CONTROLS: Designed to protect your privacy – Amazon is not in the business of selling your personal information to others. Built with multiple layers of privacy controls including a mic off button.",
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/smart-home/echo-dot.jpg",
     specialty: "best seller",
     category: "smart-home"
@@ -232,7 +234,7 @@ smart_home2 = Product.create(
         "Powers your device for up to six months depending on motion and light settings.",
         "Includes a quick-release tab to easily change the battery without moving the device."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/smart-home/battery-pack.jpg",
     specialty: "none",
     category: "smart-home"
@@ -250,7 +252,7 @@ smart_home3 = Product.create(
         "Power connection is 13 feet. Item dimensions is 7.75 x 5.50 x 0.50 inch.",
         "Ring recommends at least 3-4 hours of direct sunlight, depending on your usage. Ability to recharge varies based on device settings, motion notifications and sun exposure in the area of placement."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/smart-home/solar-panel.jpg",
     specialty: "none",
     category: "smart-home"
@@ -269,7 +271,7 @@ smart_home4 = Product.create(
         "Timer Function - Set a schedule to turn on/off electrical appliances when you are home or away by Timer and Countdown function. Just like lamps, coffee makers, humidifiers, lights, and so on. This also helps lower your electricity bill by turning power-hungry devices off when they are not working.",
         "Multiple Safeguards - Smart extension cord is made of high-quality materials. Support 100-240V, 10A maximum load. The circuit breaker automatically breaks off when the current exceeds the threshold, preventing plugged-in high-temperature devices from damages. PC-V0 materials can protect your home safely."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/smart-home/power-strip.jpg",
     specialty: "none",
     category: "smart-home"
@@ -290,7 +292,7 @@ home_garden_tools1 = Product.create(
         "EASY TO INSTALL AND USE: Installation is simple, and the necessary screws are included. To install, simply drill the organizer into the wall of your choice to hold your mops, cleaning supplies, or tools.",
         "PRODUCT DETAILS: Color: Gray. Materials: High density plastic and rubber. Dimensions: (L) 16” x (W) 2.75” x (H) 3.25”. Screws and mollies are included for installation."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/home-garden-tools/tool-holder.jpg",
     specialty: "none",
     category: "home-garden-tools"
@@ -309,7 +311,7 @@ home_garden_tools2 = Product.create(
         "【COMPLETE VARIETY】: There are more than 104 home repair tool kits in the tool kit with drill. Claw hammer, saw, plumbing pliers, wrench, needle-nose pliers, tape measure (16 inches) level, paper cutter, screwdriver head,bike tire lever removal tools chain detacher，and other combination kits for heavy-duty cordless electric drills.",
         "【QUALITY GUARANTEE】: Quality Guarantee: Our hand tools are forged for strength, and lasts a lifetime in normal use.Every purchase comes with 1 year warranty. If you are not satisfied, please contact us at any time."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/home-garden-tools/tool-kit.jpg",
     specialty: "none",
     category: "home-garden-tools"
@@ -328,7 +330,7 @@ home_garden_tools3 = Product.create(
         "【Comfortable and Easy to Store】 - Non-slip handles for comfortable grip. Reduce stress on your wrists and hands. Each tool comes with a handy hanging hole on the handle makes them easy to be stored.",
         "【Garden Tool Gifts for Women and Men】- Your garden-obsessed friend, wife, husband, parents and grandparents will be surely satisfied with our premium 7 in 1 gardening tool set when they are gifted on their birthday, anniversary, Valentine’s Day, Christmas, and any other cause for celebration; if you need any advice or product support, please contact our excellent customer service team who will happily respond to your question within 12 hours."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/home-garden-tools/tool-set.jpg",
     specialty: "none",
     category: "home-garden-tools"
@@ -347,7 +349,7 @@ home_garden_tools4 = Product.create(
         "HEAVY DUTY AND LIGHTWEIGHT: With premium quality of EVA Foam cushion to kneel and sit down, this gardening seat kneeler only weighs 5.7 lbs and folds with no physical force. Portable to move from space to space as you perform chores, easy to store and carry",
         "WARRANTY: Buy Now without any risk. The warranty period for our multifunctional garden kneeler seat is 365 days. If you face any issue with our product, feel free to contact us."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/home-garden-tools/garden-stool.jpg",
     specialty: "none",
     category: "home-garden-tools"
@@ -368,7 +370,7 @@ pet_supplies1 = Product.create(
         "ENZYME ACTIVATED The key is getting to the problem deep-down. This spray contains natural enzymes that are activated on contact with odors and stains, feeding on ammonia crystals and organic matter until they are completely eliminated.",
         "100% SATISFACTION GUARANTEED An Amazon best seller—for a reason. If your stains and odors aren’t gone, neither is your money. We’ll refund it in full."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/pet-supplies/stain-eliminator.jpg",
     specialty: "none",
     category: "pet-supplies"
@@ -387,7 +389,7 @@ pet_supplies2 = Product.create(
         "Fell Set of Accessories: Our pet wash tub includes an s-shaped stainless steel pipe for isolating the foul smell; A drain strainer for filter pet fur and other dirt; And an overhead grooming arm with two loops for fixing the pet. Besides, a red play ball is a gift for keeping pets occupied and making bathing more pleasant.",
         "Wide Application: The dog tub for bath can be applied to indoor or outdoor places to give your pet a more enjoyable user experience, such as home, pet hospital, and pet beauty salon. There is no more trouble bathing for your pet with our pet bathtub."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/pet-supplies/groom-tub.jpg",
     specialty: "none",
     category: "pet-supplies"
@@ -404,7 +406,7 @@ pet_supplies3 = Product.create(
         "HELPS PROMOTE CALM BEHAVIOR DURING TIMES OF STRESS: For some pets, stressful events like fireworks, storms, and car rides can result in behavior that can make home life difficult. Solliquin helps promote and maintain calm and relaxed behavior in pets",
         "CONVENIENT ADMINISTRATION: Available in a tasty soft chew for dogs and cats 8-30 lbs"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/pet-supplies/supplement.jpg",
     specialty: "none",
     category: "pet-supplies"
@@ -424,7 +426,7 @@ pet_supplies4 = Product.create(
         "Durable & strong, quality construction creates a secure place for your dog to fulfill their natural instinct to den. Proper ventilation, large door openings with low thresholds, and rounded corner clips make New World a safer crate experience for your dog",
         "PLEASE NOTE: MidWest Homes for Pets manufactures the New World dog crates. Assembly and safety instructions are included; please read all safety instructions prior to use"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/pet-supplies/pet-home.jpg",
     specialty: "none",
     category: "pet-supplies"
@@ -443,7 +445,7 @@ food_grocery1 = Product.create(
         "Quaker Oats help support a healthy heart; Diets rich in whole grain foods and other plant foods and low in saturated fat and cholesterol may help reduce the risk of heart disease",
         "Contains 48 packets: 23 maple and brown sugar, 13 apples and cinnamon, 7 cinnamon and spice, 5 peaches and cream flavor"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/food-grocery/instant-oatmeal.jpg",
     specialty: "none",
     category: "food-grocery"
@@ -462,7 +464,7 @@ food_grocery2 = Product.create(
         "Fits a low carb lifestyle with 25 grams net carbs per serving (28 grams total carbs minus 3 grams dietary fiber)",
         "Great for snacking"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/food-grocery/meat-sauce.jpg",
     specialty: "none",
     category: "food-grocery"
@@ -481,7 +483,7 @@ food_grocery3 = Product.create(
         "HEAVY DUTY & DURABLE: Made from a high-quality, hardwearing, non-woven fabric material that is built to last. Sturdy and strong construction easily supports 45 lbs. Triple-layered, cross-stitched, reinforced handles designed to wrap around the bag for heavy loading without breaking or tearing. A reinforced, dual tab, smooth sliding, zippered lid keeps items from falling out. Easy to clean with wipes.",
         "FLEXIBLE: Flexible fabric sides accommodate bulky and odd shaped items. Collapsible and folds flat for future use and easy storage in your kitchen, under your car seat, or in your trunk."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/food-grocery/grocery-bag.jpg",
     specialty: "none",
     category: "food-grocery"
@@ -500,7 +502,7 @@ food_grocery4 = Product.create(
         "Happy Family Organics: We are on a mission to change the trajectory of children's health through nutrition; We provide age and stage appropriate premium organic food products for baby, tot, kid, and mama",
         "Our Happy Promise: All products are certified USDA organic, made with non-GMO ingredients grown without the use of toxic persistent pesticides and in packaging made without BPA, BPS, or phthalates"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/food-grocery/super-foods.jpg",
     specialty: "none",
     category: "food-grocery"
@@ -522,7 +524,7 @@ beauty_health1 = Product.create(
         "WATER RESISTANT: Safe for in-shower use",
         "INCLUDES: 1 facial cleansing device handle, 2 soft bristle brush heads, 2 AA batteries"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/beauty-health/cleansing-brush.jpg",
     specialty: "best seller",
     category: "beauty-health"
@@ -541,7 +543,7 @@ beauty_health2 = Product.create(
         "Women's multivitamin gummy that contains Biotin, Zinc, calcium and vitamins A, B, C, D and E",
         "M`ade with gluten free ingredients and no artificial flavors or sweeteners"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/beauty-health/centrum.jpg",
     specialty: "none",
     category: "beauty-health"
@@ -560,7 +562,7 @@ beauty_health3 = Product.create(
         "4.Sizes:25*65 cm, large enough for most big head , you can also estimate the size if adjust to your size or not before buying.",
         "5.Package including: 2 pack( coffee& pink) hair drying towels"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/beauty-health/towels.jpg",
     specialty: "none",
     category: "beauty-health"
@@ -580,7 +582,7 @@ beauty_health4 = Product.create(
         "Comes in a toothpaste 3 pack that will keep you stocked for longer to cover your daily dental care needs",
         "Enjoy the benefits of Sensodyne Extra Whitening toothpaste by brushing twice a day"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/beauty-health/toothpaste.jpg",
     specialty: "none",
     category: "beauty-health"
@@ -599,7 +601,7 @@ beauty_health5 = Product.create(
         "Helps promote healthier, brighter skin",
         "Cruelty Free, NO Animal Testing"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/beauty-health/serum.jpg",
     specialty: "none",
     category: "beauty-health"
@@ -620,7 +622,7 @@ toys_kids_baby1 = Product.create(
         "【Cactus Toy Operation Process】:1.At the bottom,remove the screw with a screwdriver,install AA batteries 3 pack,and tighten the screw.Black button at the bottom:ON;2.Press the label button on the cactus,cactus can sing;3.Press repeatedly to switch to the next song - 100 songs;4.Left Label:Long press to record,15 seconds at most,and press to play sound --- Right Label:press to play music,you can record after the song is paused.",
         "【LED Light Cactus Toys】:Aunpoos is committed to providing consumers with the best product and service,your SATISFACTION is the most important.If not completely satisfied with our product,please feel free to contact us.We will give you a satisfactory solution.",
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/toys-kids-baby/talking-cactus.jpg",
     specialty: "none",
     category: "toys-kids-baby"
@@ -639,7 +641,7 @@ toys_kids_baby2 = Product.create(
         "LEARNING THROUGH PLAY – We’ve got fun down to a science. Educators, psychologists, and researchers all agree that learning through play is key to a child’s healthy development. SplashEZ gives your baby both learning and play in one incredible pool!",
         "PROUD AMERICAN COMPANY – As parents, we know nothing comes before the safety of our kids and the quality of their toys! If for any reason your purchase isn’t right for you, then reach out to SplashEZ customer care. We’ll happily make things right!"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/toys-kids-baby/splash-pad.jpg",
     specialty: "none",
     category: "toys-kids-baby"
@@ -658,7 +660,7 @@ toys_kids_baby3 = Product.create(
         "Eco-Friendly, Non-Toxic And Safe - Our Silicone sand toys for kids and sand box toys are made from 100% premium soft silicone. Our baby beach toys are BPA, Phthalate & Lead-Free are safe for your kids. Free from harmful chemicals, recyclable and reusable. This is what matters when looking for toddler sand beach toys for girls and for boys.",
         "Easy To Hold And Lightweight -The perfect toddler gift, modern and stylish in our signature colours - guaranteed entertainment for hours. The bucket is light and the handle with ridges for extra grip, means your little one will easily collect water from the ocean and buckets of sand. Suitable beach toys for toddlers age 3-4, as well as sand toys for toddlers age 3-5. The silicone molds are soft and easy for little hands to hold and make fun sea creature shapes with."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/toys-kids-baby/beach-toys.jpg",
     specialty: "none",
     category: "toys-kids-baby"
@@ -677,7 +679,7 @@ toys_kids_baby4 = Product.create(
         "【SAFE & DURABLE & PORTABLE TODDLER LEARNING TOYS DRAWING PAD】 Made with safe & non-toxic & durable material, ensure the health and safety of your children; dinosaur toys drawing board for kids age 3-5 can write about 100,000 times, just like an endless paper! And the CR2032 button battery can be used for up to 6 months! Environmentally and save your money! 8.5 inch Lightweight kids drawing board is easy to carry anywhere (school, airplane, car, road trips, restaurant, sofa, outside etc.)",
         "【WHAT YOU GET & CUSTOMER SERVICE】 1X 8.5\" Kids Gifts LCD Doodle Board with Battery; 1X Extra Replaceable Battery; 1X Screwdriver; 1X Stylus. ORSEN is dedicated to providing customers with the best products and services. Please feel free to contact us if any problems. TIPS: There may have scratches on the screen when opening package, which is caused by transportation, just press the erase button and the screen will be clear instantly."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/toys-kids-baby/tablet-toy.jpg",
     specialty: "none",
     category: "toys-kids-baby"
@@ -698,7 +700,7 @@ handmade1 = Product.create(
         "Friendship Lamps are handcrafted in Wichita, Kansas USA. We are proud to manufacture the original Friendship Lamps in the United States of America and each lamp is signed by the creators.",
         "Download our Friendship Lamp app to set up your lamps and start connecting. You can also stay connected even when you are not near your lamp with the touch of our app."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/handmade/friendship-lamp.jpg",
     specialty: "none",
     category: "handmade"
@@ -717,7 +719,7 @@ handmade2 = Product.create(
         "Add Swarovski birthstone for each grandchild",
         "Beautiful grandma necklace!"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/handmade/custom-necklace.jpg",
     specialty: "none",
     category: "handmade"
@@ -736,7 +738,7 @@ handmade3 = Product.create(
         "An Ideal Stone For Chakra Healing Rainbow Moonstone is a crystal that is considered to be ideal for meditation. The vibrational frequencies of this stone can facilitate a smooth transition into a deeper meditative state. By activating the Crown chakra, this crystal helps to bring loving and blissful energies from the beyond into your body to promote emotional well-being. This pyramid is ideal to boost your creativity and enhance your vision when it comes to fulfilling your goals.",
         "I'm so confident that once you receive your crystal that it will be your start to an amazing Orgone crystal collection! Once you see the quality and craftsmanship of our crystals."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/handmade/orgonite-pyramid.jpg",
     specialty: "none",
     category: "handmade"
@@ -755,7 +757,7 @@ handmade4 = Product.create(
         "【Timeless Dog Presents 】These Items Are Wonderful for Any Dog And Come As A Cushion Cover Only.",
         "【About Four Leaf Clover Gift Shop】– We Manufacture Personalised Gifts Here In The United Kingdom, Using High-quality Materials And Laser Printing Technology. Customer Satisfaction Is of Utmost Importance To Us. In-case Of Any Concern Or Question About Our Products Reach Out To Our Customer Service And We Will Try Our Best To Meet Your Expectations. ITEMS ARE SHIPPED FROM THE UK AND USUALLY ARRIVE IN 7-10 DAYS."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/handmade/custom-cushion.jpg",
     specialty: "none",
     category: "handmade"
@@ -777,7 +779,7 @@ sports1 = Product.create(
         "Design will be scaled to best fit the tumbler style you choose",
         "NOT recommended for dishwashers, hand wash only"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/sports/sports-cup.jpg",
     specialty: "none",
     category: "sports"
@@ -797,7 +799,7 @@ sports2 = Product.create(
         "Includes: 1 - D-Ring",
         "Perfect for hanging coats, towels, and backpacks"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/sports/basketball-hook.jpg",
     specialty: "none",
     category: "sports"
@@ -816,7 +818,7 @@ sports3 = Product.create(
         "PERFECT FOR ANY ROOM - They look great in living rooms, dens, bedrooms, kitchens, entries, dining rooms, bathrooms, offices, man-caves, she sheds, home bars, game rooms, dorms or garages or any wall.",
         "Please feel free to contact me..."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/sports/sports-art.jpg",
     specialty: "none",
     category: "sports"
@@ -843,7 +845,7 @@ sports4 = Product.create(
         "- Very high-quality smooth print, we use very reliable heat press machines on transfers.",
         "CAUTION: Solid colors are 100% Cotton, however, the heather shirts are made of 52% cotton and 48% polyester"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/sports/baseball-shirt.jpg",
     specialty: "none",
     category: "sports"
@@ -860,7 +862,7 @@ outdoors1 = Product.create(
     description: [
         "Cut from heavy duty 16 gauge steel. Receives a durable weatherproof powder coated finish. FAST SHIPPING! Please message us if you're looking for custom pieces."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/outdoors/metal-sign.jpg",
     specialty: "none",
     category: "outdoors"
@@ -880,7 +882,7 @@ outdoors2 = Product.create(
         "Suitable for outdoor display",
         "Made in the USA"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/outdoors/cabin-sign.jpg",
     specialty: "none",
     category: "outdoors"
@@ -900,7 +902,7 @@ outdoors3 = Product.create(
         "Made in the USA (Tomball, Texas) in our family-owned shop",
         "FAST & FREE SHIPPING!"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/outdoors/tortoise-sign.jpg",
     specialty: "none",
     category: "outdoors"
@@ -920,7 +922,7 @@ outdoors4 = Product.create(
         "One block is double sided.",
         "Burnt look has silver metal while Natural brown has gold metal."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/outdoors/wooden-tictactoe.jpg",
     specialty: "none",
     category: "outdoors"
@@ -944,7 +946,7 @@ automotive_industrial1 = Product.create(
         "A discussion of fault detection, diagnosis and prognosis in rotating and reciprocating machines, in particular new methods using fault simulation, since “big data” cannot provide sufficient data for late-stage fault development",
         "Perfect for machine manufacturers who want to include a machine monitoring service with their product, Vibration-based Condition Monitoring: Industrial, Automotive and Aerospace Applications will also earn a place in university and research institute libraries where there is an interest in machine condition monitoring and diagnostics."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/automotive-industrial/condition-monitoring.jpg",
     specialty: "none",
     category: "automotive-industrial"
@@ -969,7 +971,7 @@ automotive_industrial2 = Product.create(
         "Filled with engaging stories and practical examples, this is a handbook of the most thoughtful practices, not just for automobile owners and the historical car industry, but for collectors, professionals, and users of all kinds of industrial ­era artifacts.",
         "The Archaeological Automobile combines scholarship, pertinent anecdotes, style, and experience to provide a stimulating account of why we should all be archaeologists now."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/automotive-industrial/archeological-automobile.jpg",
     specialty: "none",
     category: "automotive-industrial"
@@ -1007,7 +1009,7 @@ automotive_industrial3 = Product.create(
         "Basic Blacksmithing",
         "From the farm to the workshop, this is your go-to guide to welding!"
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/automotive-industrial/welding.jpg",
     specialty: "none",
     category: "automotive-industrial"
@@ -1022,7 +1024,7 @@ automotive_industrial4 = Product.create(
     description: [
         "Upon the dedication of a new Capitol building in 1879, the city of Lansing was just beginning to emerge from the swampy wilderness of its recent past. As industry began to take root along the banks of the Grand River, Ransom Eli Olds brought his father's motor shop to national prominence with advancements in gasoline and steam engines, and then horseless carriages. By the early 20th century, Oldsmobile became the world's first mass producer of automobiles and Olds had moved on to found a second car company, making Lansing the first Auto City. Through these efforts, Olds rose to become one of the nation's greatest industrialists and entrepreneurs. Using primary documents and historical images, this book traces the industrial history of the Capital City within the context of one of the 20th century's greatest entrepreneurs, R.E."
     ],
-    rating: 0,
+    rating: 4,
     filename: "categories/automotive-industrial/industrial-lansing.jpg",
     specialty: "none",
     category: "automotive-industrial"

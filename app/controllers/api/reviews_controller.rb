@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
         @product = @review.product
 
         if @review.save
-            render "api/products/show"
+            render :show
         else 
             render json: @review.errors.full_messages, status: 422
         end 

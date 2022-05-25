@@ -1,6 +1,6 @@
 class CartItem < ApplicationRecord
 
-    has_many :products,
+    belongs_to :product,
         primary_key: :id,
         foreign_key: :product_id,
         class_name: :Product

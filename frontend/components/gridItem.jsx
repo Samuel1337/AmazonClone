@@ -40,7 +40,7 @@ class GridItem extends React.Component {
         return (
             <div className="five-stars-small">
                 {[...Array(5)].map((star, i) => {
-                    const ratingValue = i+1;
+                    const ratingValue = Math.floor(i+1);
                     return (
                         <label key={i+1200} name="rating">
                             <input

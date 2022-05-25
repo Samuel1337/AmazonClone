@@ -1,36 +1,35 @@
 import React from "react";
-import { FontAwesomeIcon } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-import productShowContainer from "./productShowContainer";
 
 class SearchBar extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            category: "All",
-            searchTerm: ""
+            category: "all",
+            search: ""
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
+    
     handleSubmit() {
-        const dropdown = document.querySelector('.search-dropdown');
-        const category = dropdown.options[dropdown.selectedIndex].value;
-
-        if (category === 'all') {
-            this.props.getAllProducts();
-        } else {
-            this.props.getCategoryProducts(category);
-        }
-
-        this.props.products.forEach(product => {
-            if (product.title.toLowerCase().includes(this.state.searchTerm)) {
-                
-            }
-        });
+        debugger
+        // const dropdown = document.querySelector('.search-dropdown').value;
+        // const category = dropdown.options[dropdown.selectedIndex].value;
+        const input = document.getElementById('search-input').value;
         
+        this.setState({
+            ["search"]: input,
+        })
+        
+        
+    }
+
+    handleChange(field) {
+        return e => this.setState({[field]: e.currentTarget.selectedIndex})
     }
 
     render() {
@@ -38,7 +37,11 @@ class SearchBar extends React.Component {
         return (
             <div className="search-container">
                 <div className="search-bar">
-                    <select type="dropdown" className="search-dropdown">
+                    <select
+                        type="dropdown"
+                        className="search-dropdown"
+                        onChange={()=>this.handleChange("category")}
+                    >
                         <option value="all">All</option>
                         <option value="electronics">Electronics</option>
                         <option value="computers">Computers</option>
@@ -55,7 +58,11 @@ class SearchBar extends React.Component {
                     </select>
 
                     {/* Search Bar */}
-                    <input type="text" className="search-input" />
+                    <input
+                        type="text"
+                        id="search-input"
+                        className="search-input"
+                    />
                     <button onClick={this.handleSubmit} className="search-button">
                         <FaSearch />
                     </button>

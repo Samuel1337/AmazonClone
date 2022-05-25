@@ -12,14 +12,16 @@ class ReviewItem extends React.Component {
     }
 
     handleButtonDisplay() {
-        if (this.props.currentUser.id === this.props.review.user_id) {
-            console.log(this.props)
-            return (
-                <>
-                    <Link to={`/products/${this.props.review.product_id}/review/${this.props.review.id}/edit`}><button className="edit-review">Edit Review</button></Link>
-                    <button className="edit-review" onClick={()=>this.props.deleteReview(this.props.review.id)}>Delete Review</button>
-                </>
-            )
+        if (this.props.currentUser) {
+
+            if (this.props.currentUser.id === this.props.review.user_id) {
+                return (
+                    <>
+                        <Link to={`/products/${this.props.review.product_id}/review/${this.props.review.id}/edit`}><button className="edit-review">Edit Review</button></Link>
+                        <button className="edit-review" onClick={()=>this.props.deleteReview(this.props.review.id)}>Delete Review</button>
+                    </>
+                )
+            }
         }
     }
 
@@ -86,43 +88,35 @@ class ReviewItem extends React.Component {
 
     render() {
         const { review, editReview, deleteReview } = this.props
-        
-        if (review) {
 
-            return (
-                <div className="review-container">
-                    <div className="review-author">
-                        <img src={window.profile_picture} alt="" />
-                        <h1>{ review.author }</h1>
+        return (
+            <div className="review-container">
+                <div className="review-author">
+                    <img src={window.profile_picture} alt="" />
+                    <h1>{ review.author }</h1>
+                </div>
+                <div className="review-headline">
+                    <div className="review-stars">
+                        { this.stars() }
                     </div>
-                    <div className="review-headline">
-                        <div className="review-stars">
-                            { this.stars() }
-                        </div>
-                        <div className="review-title">
-                            { review.title }
-                        </div>
-                    </div>
-                    <div className="review-created-at">
-                        { this.formatDate(review.created_at) }
-                    </div>
-                    <div className="verified-purchase">
-                        Verified Purchase
-                    </div>
-                    <div className="review-text">
-                        { review.body }
-                    </div>
-                    <div className="review-buttons">
-                        {this.handleButtonDisplay()}
+                    <div className="review-item-title">
+                        { review.title }
                     </div>
                 </div>
-            )
-
-        } else {
-            setTimeout(() => {
-                this.render();
-            }, 1000);
-        }
+                <div className="review-created-at">
+                    { this.formatDate(review.created_at) }
+                </div>
+                <div className="verified-purchase">
+                    Verified Purchase
+                </div>
+                <div className="review-text">
+                    { review.body }
+                </div>
+                <div className="review-buttons">
+                    {this.handleButtonDisplay()}
+                </div>
+            </div>
+        )
     }
 }
 

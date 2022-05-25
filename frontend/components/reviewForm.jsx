@@ -18,10 +18,21 @@ class ReviewForm extends React.Component {
         this.renderError = this.renderError.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        this.username = this.username.bind(this);
     }
 
     componentDidMount() {
+        if (this.props.currentUser === undefined) {
+            this.props.history.push(`/products/${this.props.match.params.productId}`);
+        }
         this.props.getProduct(this.props.match.params.productId);
+        window.scrollTo(0,0);
+    }
+
+    componentDidUpdate() {
+        if (this.props.currentUser === undefined) {
+            this.props.history.push(`/products/${this.props.match.params.productId}`);
+        }
     }
     
     renderError() {
@@ -50,8 +61,9 @@ class ReviewForm extends React.Component {
         this.renderError();
         
         if (this.state.title !== "" || this.state.body !== "") {
+            console.log(this.props)
             this.props.action(this.state)
-                .then(this.props.history.push(`/products/${this.state.product_id}`))
+                .then(this.props.history.push(`/products/${this.props.match.params.productId}`))
         }
     }
 
@@ -69,8 +81,17 @@ class ReviewForm extends React.Component {
         }
     }
 
+    username() {
+        if (this.props.currentUser !== undefined) {
+            return this.props.currentUser.username;
+        }
+    }
+
     render() {
         if (this.props.product === undefined) {return null};
+        if (this.props.currentUser === undefined) {
+            this.props.history.push(`/products/${this.state.product_id}`);
+        };
 
         const { product, currentUser, formType } = this.props    
 
@@ -79,7 +100,7 @@ class ReviewForm extends React.Component {
                 <div className="user-bar">
                     <div className="user">
                         <img src={window.profile_picture} alt="" />
-                        <p>{currentUser.username}</p>
+                        <p>{this.username()}</p>
                     </div>
                 </div>
                 <div className="create-review-container">

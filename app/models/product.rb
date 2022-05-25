@@ -10,7 +10,7 @@ class Product < ApplicationRecord
         foreign_key: :product_id,
         class_name: :Review
 
-    belongs_to :cart_item,
+    has_many :cart_items,
         primary_key: :id,
         foreign_key: :product_id,
         class_name: :CartItem
