@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { createCartItem, getCartItemsById } from "../actions/cart_actions"
+import { createCartItem, editCartItem, getCartItemsById } from "../actions/cart_actions"
 import { getProduct } from "../actions/product_actions"
 import ProductShow from "./productShow"
 

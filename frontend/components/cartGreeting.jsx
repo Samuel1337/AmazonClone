@@ -4,10 +4,29 @@ import { Link } from "react-router-dom";
 class CartGreeting extends React.Component {
     constructor(props) {
         super(props);
+        this.cartQuantity = this.cartQuantity.bind(this);
     }
 
     componentDidMount() {
         this.props.getCartItemsById(this.props.currentUserId);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.currentUserId !== this.props.currentUserId) {
+            this.props.getCartItemsById(this.props.currentUserId);
+        }
+    }
+
+    cartQuantity() {
+        const { cartItems } = this.props;
+
+        let sum = 0;
+
+        cartItems.forEach(cartItem => {
+            sum += cartItem.quantity;
+        });
+
+        return sum;
     }
 
     render() {
@@ -17,7 +36,7 @@ class CartGreeting extends React.Component {
             <Link to="/cart">
                 <div className="cart-greeting">
                     <div className="cart-counter">
-                        <p>{this.props.cartItems.length}</p>
+                        <p>{this.cartQuantity()}</p>
                         <img src={window.cart} alt="" />
                     </div>
                     <p>Cart</p>

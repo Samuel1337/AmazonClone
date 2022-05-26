@@ -10,12 +10,11 @@ class ProductShow extends React.Component {
         this.date = this.date.bind(this);
         this.hours = this.hours.bind(this);
         this.stars = this.stars.bind(this);
-        // this.quantity = this.quantity.bind(this);
         this.description = this.description.bind(this);
         this.addToCart = this.addToCart.bind(this);
         this.updateSelect = this.updateSelect.bind(this);
+        this.cartItemExists = this.cartItemExists.bind(this);
         this.state = {
-            oldQuantity: 1,
             newQuantity: 1
         }
     }
@@ -64,23 +63,6 @@ class ProductShow extends React.Component {
             return cents;
         }
     }
-
-    // quantity() {
-    //     let options = [];
-    //     let quantity = Math.random() * 12;
-    //     for (let i = 1 ; i < quantity; i++) {
-    //         options.push(i+"")            
-    //     }
-    //     return (
-    //         <select name="quantity" id="quantity" className="quantity-dropdown">               
-    //             {
-    //                 options.forEach(i => {
-    //                     <option value={i}>Qty: {i}</option>
-    //                 })
-    //             }
-    //         </select>
-    //     )
-    // }
 
     stars() {
         return (
@@ -134,19 +116,32 @@ class ProductShow extends React.Component {
 
     addToCart() {
         if (this.props.currentUser !== undefined) {
-            const cartItem = {
+            const dummy = {
                 user_id: this.props.currentUser.id,
                 product_id: this.props.product.id,
                 quantity: 1
             }
-            if (this.cartItemExists(cartItem)) {
-                cartItem.quantity = this.state.oldQuantity + this.state.newQuantity;
-                this.props.editCartItem(cartItem)
+            
+            let oldQuantity;
+            let result = false;
+
+            Object.values(this.props.cart).forEach(element => {
+                if (element.productId === dummy.product_id) {
+                    oldQuantity = element.quantity;
+                    dummy.id = element.id;
+                    result = true;
+                }
+            });
+            
+            if (result) {
+                dummy.quantity = oldQuantity + this.state.newQuantity;
+                this.props.editCartItem(dummy)
                 .then(this.props.getCartItemsById(this.props.currentUser.id))
                 .then(this.props.history.push("/cart"));
+            
             } else {
-                cartItem.quantity = this.state.newQuantity;
-                this.props.createCartItem(cartItem)
+                dummy.quantity = this.state.newQuantity;
+                this.props.createCartItem(dummy)
                     .then(this.props.getCartItemsById(this.props.currentUser.id))
                     .then(this.props.history.push("/cart"));
             }
@@ -156,18 +151,20 @@ class ProductShow extends React.Component {
     }
 
     updateSelect() {
-        const dropdownValue = document.getElementById("quantity").value;
+        const dropdownValue = parseInt(document.getElementById("quantity").value);
         this.setState({newQuantity: dropdownValue});
     }
 
     cartItemExists(cartItem) {
+        let that = this;
+        let result = false;
         Object.values(this.props.cart).forEach(element => {
-            if (element.product_id === cartItem.product_id) {
-                this.setState({oldQuantity: element.quantity});
-                return true;
+            if (element.productId === cartItem.product_id) {
+                that.setState({id: element.id, oldQuantity: element.quantity});
+                result = true;
             }
         });
-        return false;
+        return result;
     }
 
     render() {

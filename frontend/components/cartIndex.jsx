@@ -8,6 +8,8 @@ class CartIndex extends React.Component {
 
         this.calculateSubtotal = this.calculateSubtotal.bind(this);
         this.numberOfItems = this.numberOfItems.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDisplay = this.handleDisplay.bind(this);
     }
 
     componentDidMount() {
@@ -30,8 +32,18 @@ class CartIndex extends React.Component {
                 }
             })
         })
+        let result = (Math.round(sum * 100) / 100).toFixed(2);
+        let array = (result + "").split(".");
+        let element = array[0];
+        let string;
 
-        return (`$${(Math.round(sum * 100) / 100).toFixed(2)}`);
+        if (element.length > 3) {
+            string = element.slice(0, element.length-3) + "," + element.slice(element.length-3)
+            array[0] = string;
+        }
+
+        
+        return (`$${array.join('.')}`);
     }
 
 
@@ -75,10 +87,37 @@ class CartIndex extends React.Component {
         return `(${num} items)`;
     }
 
+    handleSubmit() {
+        let that = this;
+        this.props.cartItems.forEach(cartItem => (
+                that.props.deleteCartItem(cartItem.id)
+        ))
+        this.props.history.push("/payment");
+    }
+
+    handleDisplay() {
+        if (this.props.products.length > 0) {
+            return (
+                <div className="cart-main">
+                    {this.cartItemList()}
+                    <div className="cart-subtotal">
+                        <div>
+                            Subtotal: {this.calculateSubtotal()}
+                        </div>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className="cart-main">
+                    <img className="empty-cart-page" src={window.empty_cart} alt="" />
+                </div>
+            )
+        }
+    }
+
     render() {
         if (this.props.products === undefined) {return null}
-
-        const { cartItems } = this.props;
 
         return (
             <div className="cart-page">
@@ -87,21 +126,14 @@ class CartIndex extends React.Component {
                         <div className="cart-headline">
                             <h1>Shopping Cart</h1>   
                         </div>
-                        <div className="cart-main">
-                            {this.cartItemList()}
-                            <div className="cart-subtotal">
-                                <div>
-                                    Subtotal: {this.calculateSubtotal()}
-                                </div>
-                            </div>
-                        </div>
+                        {this.handleDisplay()}
                     </div>
                     <div className="cart-right-col">
                         <div className="cart-subtotal-card">
                             <div className="cart-subtotal-headline">
                                 <h1>Subtotal {this.numberOfItems()}: {this.calculateSubtotal()}</h1>
                             </div>
-                                <button className="checkout">Proceed to checkout</button>
+                                <button onClick={this.handleSubmit} className="checkout">Proceed to checkout</button>
                         </div>
                     </div>
                 </div>
