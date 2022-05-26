@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import ShoppingCartItem from "./shoppingCartItem";
 
 class CartIndex extends React.Component {
     constructor(props) {
         super(props);
 
         this.deleteItem = this.deleteItem.bind(this);
+        this.calculateSubtotal = this.calculateSubtotal.bind(this);
     }
 
     componentDidMount() {
@@ -12,16 +15,6 @@ class CartIndex extends React.Component {
             this.props.getCartItemsById(this.props.currentUser.id);
         } else {
             this.props.history.push("/login");
-        }
-    }
-
-    componentDidUpdate(prevProps) {
-        if (prevProps.cartItems !== this.props.cartItems) {
-            if (this.props.currentUser) {
-                this.props.getCartItemsById(this.props.currentUser.id);
-            } else {
-                this.props.history.push("/login");
-            }
         }
     }
 
@@ -41,40 +34,36 @@ class CartIndex extends React.Component {
         })
     }
 
+    calculateSubtotal() {
+        const { products } = this.props;
+
+        let sum = 0;
+
+        products.forEach(product => {
+            sum += product.price;
+        })
+
+        return (`$${(Math.round(sum * 100) / 100).toFixed(2)}`);
+    }
+
+
     cartItemList() {
 
-        const { products } = this.props;
+        const { products, cartItems, editCartItem } = this.props;
 
         return (
             <ul className="cart-list">
-            {
-                products.map(product => (
-                    
-                        <li className="cart-item">
-                    <img className="cart-item-img" src={product.photoUrl} alt="" />
-                    <div className="cart-item-info">
-                        <div className="cart-item-name">{product.title}</div>
-                        <div className="cart-item-price">${product.price}</div>
-                        <div className="cart-item-in-stock">In Stock</div>
-                        <div className="cart-item-shipping"></div>
-                        <div className="cart-item-category">{product.category}</div>
-                        <div className="cart-item-quantity-container">
-                        <select name="quantity" id="quantity" className="quantity-dropdown">               
-                            <option value="1">Qty: 1</option>
-                            <option value="2">Qty: 2</option>
-                            <option value="3">Qty: 3</option>
-                            <option value="4">Qty: 4</option>
-                            <option value="5">Qty: 5</option>
-                            <option value="6">Qty: 6</option>
-                        </select>
-                            <div className="cart-item-quantity-divider">|</div>
-                            <a onClick={()=>this.deleteItem(product.id)} className="cart-item-quantity-delete">Delete</a>
-                        </div>
-                    </div>
-                </li>
-                ))
-            }
-        </ul>
+                {
+                    products.map((product, i) => (
+                        <ShoppingCartItem 
+                            key={i}
+                            product={product}
+                            cartItems={cartItems}
+                            editCartItem={editCartItem}
+                        />
+                    ))
+                }
+            </ul>
         )
     }
 
@@ -94,14 +83,16 @@ class CartIndex extends React.Component {
                         <div className="cart-main">
                             {this.cartItemList()}
                             <div className="cart-subtotal">
-                                Subtotal:
+                                <div>
+                                    Subtotal: {this.calculateSubtotal()}
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className="cart-right-col">
                         <div className="cart-subtotal-card">
                             <div className="cart-subtotal-headline">
-                                <h1>Subtotal:</h1>
+                                <h1>Subtotal: {this.calculateSubtotal()}</h1>
                             </div>
                                 <button className="checkout">Proceed to checkout</button>
                         </div>

@@ -15,7 +15,7 @@ export const updateCartItem = cartItem => (
     $.ajax({
     url: `/api/cart_items/${cartItem.id}`,
     method: 'PATCH',
-    data: { cartItem }
+    data: { cart_item: cartItem }
 }))
 
 export const destroyCartItem = cartItemId => (

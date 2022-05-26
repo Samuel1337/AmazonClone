@@ -22,7 +22,7 @@ export const editCartItem = cartItem => dispatch => (
 
 export const deleteCartItem = cartItemId => dispatch => (
     cartItemsApiUtil.destroyCartItem(cartItemId)
-        .then(() => dispatch(removeCartItem(cartItemId)))
+        .then(cartItem => dispatch(removeCartItem(cartItem)))
 )
 
 const receiveCartItems = payload => ({
@@ -40,7 +40,7 @@ const updateCartItem = cartItem => ({
     cartItem
 })
 
-const removeCartItem = cartItemId => ({
+const removeCartItem = cartItem => ({
     type: REMOVE_CART_ITEM,
-    cartItemId
+    cartItem
 })

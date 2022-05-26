@@ -16,6 +16,9 @@ import CategoryIndexContainer from './categoryIndexContainer';
 import editReviewFormContainer from './editReviewFormContainer';
 import createReviewFormContainer from './createReviewFormContainer';
 import cartIndexContainer from './cartIndexContainer';
+import PurchasePage from './purchasePage';
+import CartGreeting from './cartGreeting';
+import CartGreetingContainer from './cartGreetingContainer';
 
 const App = () => (
   <div>
@@ -24,6 +27,7 @@ const App = () => (
         <Link to="/"><img src={window.logo} id="logo" /></Link>
         <SearchBar />
         <GreetingContainer />
+        <CartGreetingContainer />
       </nav>
       <Categories />
     </header>
@@ -37,6 +41,7 @@ const App = () => (
         <Route path="/products/:productId/review/:reviewId/edit" component={editReviewFormContainer} />
         <Route path="/products/:productId/review" component={createReviewFormContainer} />
         <Route path="/products/:productId" component={ProductShowContainer} />
+        <Route path="/payment" component={PurchasePage} />
         <Route path="/under_construction" component={UnderConstruction} />
         <Route exact path="/" component={Home} />
         <Redirect to="/under_construction" />

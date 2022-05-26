@@ -1,8 +1,12 @@
 .cart-page {
     background-color: #eaeded;
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
     padding: 18px;
-    // display: flex;
+
+    * {
+        font-family: Amazon Ember, Arial, Helvetica, sans-serif;
+    }
 }
 
 .cart-container {
@@ -29,20 +33,23 @@
 }
 
 .cart-main {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-list {
     display: flex;
     flex-direction: column;
+    margin-bottom: 12px;
+    border: 1px solid #dddddd;
+    border-bottom: 0px;
 }
 
 .cart-item {
-    border: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
     min-width: 602px;
     height: 230px;
     padding: 12px;
-    margin-bottom: 12px;
     display: flex;
 }
 
@@ -111,7 +118,9 @@
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 16px;
-    align-self: flex-end;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .cart-right-col {

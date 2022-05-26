@@ -17,7 +17,6 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    // align-items: flex-start;
     justify-content: center;
     margin-top: 20px;
     padding-bottom: 4em;
@@ -26,10 +25,10 @@
 
 .show-left-col {
     box-sizing: border-box;
-    // align-items: flex-start;
     margin-top: 20px;
     width: 45%;
     max-width: 430px;
+    padding-right: 20px;
 }
 .show-left-col img {
     max-width: 100%;
@@ -95,12 +94,10 @@
 
 .show-price {
     font-size: 14px;
-    // color: #565959;
     border-bottom: 1px solid #dddddd;
     margin-bottom: 14px;
     padding-bottom: 8px;
     display: flex;
-    // align-items: flex-start;
     flex-direction: column;
     line-height: normal;
 }

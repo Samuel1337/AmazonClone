@@ -22,6 +22,8 @@ class GridItem extends React.Component {
             dollars = temp.slice(0,1) + "," + temp.slice(1)
         }
 
+        cents = Math.round(cents*100);
+
         if (cents < 1) {
             cents = "00";
         } else if (cents < 10) {

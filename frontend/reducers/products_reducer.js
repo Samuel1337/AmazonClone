@@ -1,4 +1,4 @@
-import { RECEIVE_CART_ITEMS } from "../actions/cart_actions";
+import { RECEIVE_CART_ITEMS, REMOVE_CART_ITEM } from "../actions/cart_actions";
 import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS } from "../actions/product_actions";
 
 
@@ -13,6 +13,10 @@ const productsReducer = (oldState = {}, action) => {
             return Object.assign({}, {[action.product.id]: action.product})
         case RECEIVE_CART_ITEMS:
             return Object.assign({}, action.payload.products);
+        case REMOVE_CART_ITEM:
+            let newState = Object.assign({}, oldState);
+            delete newState[action.cartItem.product_id];
+            return newState;
         default:
             return oldState;
     }

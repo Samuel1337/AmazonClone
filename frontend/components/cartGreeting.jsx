@@ -6,16 +6,24 @@ class CartGreeting extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.getCartItemsById(this.props.currentUserId);
+    }
+
     render() {
-        const {currentUser} = this.props;
-        if (currentUser) {
-            return (
-                <div id="cart-greeting">
-                    <p>Hello, {currentUser.username}</p>
-                    <a id="header-link" onClick={logout}>Logout</a>
+        const {currentUserId} = this.props;
+        if (currentUserId === undefined) { return null }
+        return (
+            <Link to="/cart">
+                <div className="cart-greeting">
+                    <div className="cart-counter">
+                        <p>{this.props.cartItems.length}</p>
+                        <img src={window.cart} alt="" />
+                    </div>
+                    <p>Cart</p>
                 </div>
-            )
-        }
+            </Link>
+        )
     }
 }
 

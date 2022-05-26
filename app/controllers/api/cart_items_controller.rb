@@ -24,13 +24,14 @@ class Api::CartItemsController < ApplicationController
             @cart_item.update(:quantity => cart_item_params[:quantity])   
             render :show
         else 
-            render json: @review.errors.full_messages, status: 422
+            render json: @cart_item.errors.full_messages, status: 422
         end     
     end
     
     def destroy
         @cart_item = CartItem.find_by(id: params[:id])
-        @cart_item.destroy        
+        @cart_item.destroy
+        render json: @cart_item
     end
 
     private

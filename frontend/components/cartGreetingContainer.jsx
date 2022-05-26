@@ -4,7 +4,7 @@ import CartGreeting from "./cartGreeting";
 
 const mSTP = state => ({
     cartItems: Object.values(state.entities.cart),
-    currentUser: state.entities.users[state.session.id]
+    currentUserId: state.session.id
 })
 
 const mDTP = dispatch => ({

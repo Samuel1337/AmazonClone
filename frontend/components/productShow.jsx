@@ -1,6 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { getCartItemsById } from "../actions/cart_actions";
 import ReviewsIndexContainer from "./reviewsIndexContainer";
 
 class ProductShow extends React.Component {
@@ -9,9 +10,14 @@ class ProductShow extends React.Component {
         this.date = this.date.bind(this);
         this.hours = this.hours.bind(this);
         this.stars = this.stars.bind(this);
-        this.quantity = this.quantity.bind(this);
+        // this.quantity = this.quantity.bind(this);
         this.description = this.description.bind(this);
         this.addToCart = this.addToCart.bind(this);
+        this.updateSelect = this.updateSelect.bind(this);
+        this.state = {
+            oldQuantity: 1,
+            newQuantity: 1
+        }
     }
 
     componentDidMount() {
@@ -42,6 +48,9 @@ class ProductShow extends React.Component {
             dollars = temp.slice(0,1) + "," + temp.slice(1)
         }
 
+        cents = Math.round(cents*100);
+
+
         if (cents < 1) {
             cents = "00";
         } else if (cents < 10) {
@@ -56,22 +65,22 @@ class ProductShow extends React.Component {
         }
     }
 
-    quantity() {
-        let options = [];
-        let quantity = Math.random() * 12;
-        for (let i = 1 ; i < quantity; i++) {
-            options.push(i+"")            
-        }
-        return (
-            <select name="quantity" id="quantity" className="quantity-dropdown">               
-                {
-                    options.forEach(i => {
-                        <option value={i}>Qty: {i}</option>
-                    })
-                }
-            </select>
-        )
-    }
+    // quantity() {
+    //     let options = [];
+    //     let quantity = Math.random() * 12;
+    //     for (let i = 1 ; i < quantity; i++) {
+    //         options.push(i+"")            
+    //     }
+    //     return (
+    //         <select name="quantity" id="quantity" className="quantity-dropdown">               
+    //             {
+    //                 options.forEach(i => {
+    //                     <option value={i}>Qty: {i}</option>
+    //                 })
+    //             }
+    //         </select>
+    //     )
+    // }
 
     stars() {
         return (
@@ -130,11 +139,34 @@ class ProductShow extends React.Component {
                 product_id: this.props.product.id,
                 quantity: 1
             }
-            this.props.createCartItem(cartItem);
+            if (this.cartItemExists(cartItem)) {
+                cartItem.quantity = this.state.oldQuantity + this.state.newQuantity;
+                this.props.editCartItem(cartItem)
+                .then(this.props.getCartItemsById(this.props.currentUser.id));
+            } else {
+                cartItem.quantity = this.state.newQuantity;
+                this.props.createCartItem(cartItem)
+                    .then(this.props.getCartItemsById(this.props.currentUser.id));
+            }
             this.props.history.push("/cart")
         } else {
             this.props.history.push("/login")
         }
+    }
+
+    updateSelect() {
+        const dropdownValue = document.getElementById("quantity").value;
+        this.setState({newQuantity: dropdownValue});
+    }
+
+    cartItemExists(cartItem) {
+        Object.values(this.props.cart).forEach(element => {
+            if (element.product_id === cartItem.product_id) {
+                this.setState({oldQuantity: element.quantity});
+                return true;
+            }
+        });
+        return false;
     }
 
     render() {
@@ -196,7 +228,7 @@ class ProductShow extends React.Component {
                                 <span id="hours"> {this.hours()}</span>
                                 <p id="in-stock">In Stock</p>
                                 <div className="buybox-quantity">
-                                <select name="quantity" id="quantity" className="quantity-dropdown">               
+                                <select name="quantity" id="quantity" onChange={this.updateSelect} className="quantity-dropdown">               
                                         <option value="1">Qty: 1</option>
                                         <option value="2">Qty: 2</option>
                                         <option value="3">Qty: 3</option>
@@ -209,7 +241,7 @@ class ProductShow extends React.Component {
                             </div>
                             <div className="buybox-cart">
                                 <button onClick={this.addToCart} id="add-to-cart">Add to Cart</button>
-                                <button id="buy-now">Buy Now</button>
+                                <Link to="/payment"><button id="buy-now">Buy Now</button></Link>
                             </div>
                         </nav>
 
