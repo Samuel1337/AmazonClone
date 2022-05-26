@@ -6,8 +6,8 @@ class CartIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        this.deleteItem = this.deleteItem.bind(this);
         this.calculateSubtotal = this.calculateSubtotal.bind(this);
+        this.numberOfItems = this.numberOfItems.bind(this);
     }
 
     componentDidMount() {
@@ -18,29 +18,17 @@ class CartIndex extends React.Component {
         }
     }
 
-    deleteItem(productId) {
-        const { cartItems } = this.props;
-        
-        let res = [];
-        
-        Object.values(cartItems).forEach(cartItem => {
-            if (cartItem.productId === productId) {
-                res.push(cartItem.id);
-            }
-        });
-
-        res.forEach(cartItemId => {
-            this.props.deleteCartItem(cartItemId);
-        })
-    }
-
     calculateSubtotal() {
-        const { products } = this.props;
+        const { products, cartItems } = this.props;
 
         let sum = 0;
 
         products.forEach(product => {
-            sum += product.price;
+            cartItems.forEach(cartItem => {
+                if (cartItem.productId === product.id) {
+                    sum += product.price * cartItem.quantity;
+                }
+            })
         })
 
         return (`$${(Math.round(sum * 100) / 100).toFixed(2)}`);
@@ -49,24 +37,43 @@ class CartIndex extends React.Component {
 
     cartItemList() {
 
-        const { products, cartItems, editCartItem } = this.props;
+        const { products, cartItems, editCartItem, deleteCartItem } = this.props;
 
         return (
             <ul className="cart-list">
                 {
-                    products.map((product, i) => (
-                        <ShoppingCartItem 
-                            key={i}
-                            product={product}
-                            cartItems={cartItems}
-                            editCartItem={editCartItem}
-                        />
-                    ))
+                    products.map((product, i) => {
+                        
+                        let currentCartItem;
+
+                        cartItems.forEach(cartItem => {
+                            if (cartItem.productId === product.id) {
+                                currentCartItem = cartItem;
+                            }
+                        })
+                        if (currentCartItem) {
+
+                            return (
+                                <ShoppingCartItem 
+                                    i={i}
+                                    key={i}
+                                    product={product}
+                                    cartItem={currentCartItem}
+                                    editCartItem={editCartItem}
+                                    deleteCartItem={deleteCartItem}
+                                />
+                            )
+                        }
+                    })
                 }
             </ul>
         )
     }
 
+    numberOfItems() {
+        const num = this.props.products.length;
+        return `(${num} items)`;
+    }
 
     render() {
         if (this.props.products === undefined) {return null}
@@ -92,7 +99,7 @@ class CartIndex extends React.Component {
                     <div className="cart-right-col">
                         <div className="cart-subtotal-card">
                             <div className="cart-subtotal-headline">
-                                <h1>Subtotal: {this.calculateSubtotal()}</h1>
+                                <h1>Subtotal {this.numberOfItems()}: {this.calculateSubtotal()}</h1>
                             </div>
                                 <button className="checkout">Proceed to checkout</button>
                         </div>

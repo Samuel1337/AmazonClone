@@ -24,7 +24,7 @@ class Api::CartItemsController < ApplicationController
             @cart_item.update(:quantity => cart_item_params[:quantity])   
             render :show
         else 
-            render json: @cart_item.errors.full_messages, status: 422
+            render json: ["Couldn't find Cart Item"], status: 422
         end     
     end
     

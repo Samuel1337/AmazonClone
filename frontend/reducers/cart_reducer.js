@@ -9,9 +9,9 @@ const cartReducer = (oldState = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return Object.assign({}, action.payload.cartItems);
         case RECEIVE_CART_ITEM:
-            return Object.assign({}, {[action.cartItem.id]: action.cartItem});
+            return Object.assign({}, oldState, {[action.cartItem.id]: action.cartItem});
         case UPDATE_CART_ITEM:
-            return Object.assign({}, {[action.cartItem.id]: action.cartItem});
+            return Object.assign({}, oldState, {[action.cartItem.id]: action.cartItem});
         case REMOVE_CART_ITEM:
             let newState = Object.assign({}, oldState);
             delete newState[action.cartItem.id];

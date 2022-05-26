@@ -142,13 +142,14 @@ class ProductShow extends React.Component {
             if (this.cartItemExists(cartItem)) {
                 cartItem.quantity = this.state.oldQuantity + this.state.newQuantity;
                 this.props.editCartItem(cartItem)
-                .then(this.props.getCartItemsById(this.props.currentUser.id));
+                .then(this.props.getCartItemsById(this.props.currentUser.id))
+                .then(this.props.history.push("/cart"));
             } else {
                 cartItem.quantity = this.state.newQuantity;
                 this.props.createCartItem(cartItem)
-                    .then(this.props.getCartItemsById(this.props.currentUser.id));
+                    .then(this.props.getCartItemsById(this.props.currentUser.id))
+                    .then(this.props.history.push("/cart"));
             }
-            this.props.history.push("/cart")
         } else {
             this.props.history.push("/login")
         }
