@@ -10,6 +10,7 @@ class CartIndex extends React.Component {
         this.numberOfItems = this.numberOfItems.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDisplay = this.handleDisplay.bind(this);
+        this.formType = this.formType.bind(this);
     }
 
     componentDidMount() {
@@ -88,6 +89,9 @@ class CartIndex extends React.Component {
     }
 
     handleSubmit() {
+
+        if (this.props.products.length < 1) {return null}
+
         let that = this;
         this.props.cartItems.forEach(cartItem => (
                 that.props.deleteCartItem(cartItem.id)
@@ -116,6 +120,14 @@ class CartIndex extends React.Component {
         }
     }
 
+    formType() {
+        if (this.props.products.length < 1) {
+            return "Your Shopping Cart is Empty"
+        } else {
+            return "Shopping Cart"
+        }
+    }
+
     render() {
         if (this.props.products === undefined) {return null}
 
@@ -124,7 +136,7 @@ class CartIndex extends React.Component {
                 <div className="cart-container">
                     <div className="cart-center-col">
                         <div className="cart-headline">
-                            <h1>Shopping Cart</h1>   
+                            <h1>{this.formType()}</h1>   
                         </div>
                         {this.handleDisplay()}
                     </div>
