@@ -54,7 +54,7 @@ class Splash extends React.Component  {
                     <div className="box">
                         <h1>In case you're hungry</h1>
                         <img className="splash-img" onClick={()=>this.redirect(22)} id="22" src={window.food_groceries} alt="" />
-                        <p>See more at <Link to="/categories/food-groceries"><span className="free-returns-text">Food &#38; Groceries </span></Link></p>
+                        <p>See more at <Link to="/categories/food-grocery"><span className="free-returns-text">Food &#38; Groceries </span></Link></p>
                     </div>
                     <div className="box">
                         <h1>Save up on cleaning products</h1>
