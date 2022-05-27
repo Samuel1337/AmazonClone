@@ -20,6 +20,7 @@ class ProductShow extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0,0);
         this.props.getProduct(this.props.productId);
     }
 
@@ -136,14 +137,14 @@ class ProductShow extends React.Component {
             if (result) {
                 dummy.quantity = oldQuantity + this.state.newQuantity;
                 this.props.editCartItem(dummy)
-                .then(this.props.getCartItemsById(this.props.currentUser.id))
-                .then(this.props.history.push("/cart"));
+                .then(()=>this.props.getCartItemsById(this.props.currentUser.id))
+                .then(()=>this.props.history.push("/cart"));
             
             } else {
                 dummy.quantity = this.state.newQuantity;
                 this.props.createCartItem(dummy)
-                    .then(this.props.getCartItemsById(this.props.currentUser.id))
-                    .then(this.props.history.push("/cart"));
+                    .then(()=>this.props.getCartItemsById(this.props.currentUser.id))
+                    .then(()=>this.props.history.push("/cart"));
             }
         } else {
             this.props.history.push("/login")

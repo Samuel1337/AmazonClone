@@ -63,7 +63,7 @@ class ReviewForm extends React.Component {
         if (this.state.title !== "" || this.state.body !== "") {
             console.log(this.props)
             this.props.action(this.state)
-                .then(this.props.history.push(`/products/${this.props.match.params.productId}`))
+                .then(()=>this.props.history.push(`/products/${this.props.match.params.productId}`))
         }
     }
 

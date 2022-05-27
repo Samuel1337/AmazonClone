@@ -201,7 +201,6 @@ computers4 = Product.create!(
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/lenovo.jpg')
 computers4.photo.attach(io: file, filename: 'lenovo.jpg')
 
-=begin
 # Smart Home
 
 smart_home1 = Product.create(  
@@ -1017,7 +1016,7 @@ automotive_industrial3 = Product.create(
 
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/welding.jpg')
 automotive_industrial3.photo.attach(io: file, filename: 'welding.jpg')
-
+=begin
 automotive_industrial4 = Product.create(
     title: "R. E. Olds and Industrial Lansing (MI) (Images of America)",
     price: 16.27,

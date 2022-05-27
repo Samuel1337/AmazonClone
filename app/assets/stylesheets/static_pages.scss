@@ -14,8 +14,10 @@
  }
 
  body {
-     width: 100%;
- }
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
 
 * {
     font-family: Amazon Ember Regular, Arial, Helvetica, sans-serif;

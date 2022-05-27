@@ -39,13 +39,14 @@
         font-size: 20px;
         font-weight: 700;
 
-        .purchase-check {
+        .purchase-check * {
             stroke: #007600;
             fill: #007600;
             stroke-width: 0;
             height: 40;
             width: 40;
             margin-left: 0;
+            margin-right: 10px;
         }
     }
 

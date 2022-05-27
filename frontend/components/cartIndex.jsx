@@ -84,7 +84,10 @@ class CartIndex extends React.Component {
     }
 
     numberOfItems() {
-        const num = this.props.products.length;
+        let num = 0;
+        this.props.cartItems.forEach(cartItem => {
+            num += cartItem.quantity
+        })
         return `(${num} items)`;
     }
 

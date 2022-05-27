@@ -62,6 +62,7 @@ class SearchBar extends React.Component {
                         type="text"
                         id="search-input"
                         className="search-input"
+                        placeholder="Search for a specific item"
                     />
                     <button onClick={this.handleSubmit} className="search-button">
                         <FaSearch />

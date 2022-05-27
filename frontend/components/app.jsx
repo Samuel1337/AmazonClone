@@ -19,6 +19,7 @@ import cartIndexContainer from './cartIndexContainer';
 import PurchasePage from './purchasePage';
 import CartGreeting from './cartGreeting';
 import CartGreetingContainer from './cartGreetingContainer';
+import HomeContainer from './homeContainer';
 
 const App = () => (
   <div>
@@ -43,7 +44,7 @@ const App = () => (
         <Route path="/products/:productId" component={ProductShowContainer} />
         <Route path="/payment" component={PurchasePage} />
         <Route path="/under_construction" component={UnderConstruction} />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={HomeContainer} />
         <Redirect to="/under_construction" />
       </Switch>
     </div>
