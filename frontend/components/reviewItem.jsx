@@ -14,12 +14,12 @@ class ReviewItem extends React.Component {
     handleButtonDisplay() {
         if (this.props.currentUser) {
 
-            if (this.props.currentUser.id === this.props.review.user_id) {
+            if (this.props.currentUser.id === this.props.review.userId) {
                 return (
-                    <>
-                        <Link to={`/products/${this.props.review.product_id}/review/${this.props.review.id}/edit`}><button className="edit-review">Edit Review</button></Link>
+                    <div className="review-buttons">
+                        <Link to={`/products/${this.props.review.productId}/review/${this.props.review.id}/edit`}><button className="edit-review">Edit Review</button></Link>
                         <button className="edit-review" onClick={()=>this.props.deleteReview(this.props.review.id)}>Delete Review</button>
-                    </>
+                    </div>
                 )
             }
         }
@@ -112,9 +112,7 @@ class ReviewItem extends React.Component {
                 <div className="review-text">
                     { review.body }
                 </div>
-                <div className="review-buttons">
                     {this.handleButtonDisplay()}
-                </div>
             </div>
         )
     }

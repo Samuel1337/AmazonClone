@@ -2,6 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Categories extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.checkWidth = this.checkWidth.bind(this);
+    }
+
+    checkWidth() {
+        if (window.innerWidth > 1550) {
+            return (<li><Link to="/categories/automotive-industrial">Automotive &#38; Industrial</Link></li>);
+        }
+    }
 
     render() {
         return (
@@ -19,7 +30,7 @@ class Categories extends React.Component {
                     <li><Link to="/categories/handmade">Handmade</Link></li>
                     <li><Link to="/categories/sports">Sports</Link></li>
                     <li><Link to="/categories/outdoors">Outdoors</Link></li>
-                    <li><Link to="/categories/automotive-industrial">Automotive &#38; Industrial</Link></li>
+                    {this.checkWidth()}
                 </ul>
             </nav>
         )

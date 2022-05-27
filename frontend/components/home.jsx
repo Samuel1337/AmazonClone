@@ -8,7 +8,7 @@ class Home extends React.Component {
         return (
             <>
                 <Carousel />
-                {/* <Splash /> */}
+                <Splash />
             </>
         )
     }
