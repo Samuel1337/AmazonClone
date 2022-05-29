@@ -1,24 +1,43 @@
-# README
+# Welcome to Euphrates — e-commerce website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![logo](https://github.com/Samuel1337/Euphrates/blob/main/app/assets/images/logo.png)
 
-Things you may want to cover:
+[Euphrates](euphrates2022.herokuapp.com) is an Amazon clone, where you can shop and review products online.
 
-* Ruby version
+## Techonologies used
 
-* System dependencies
+- Ruby on Rails
+- React / Redux
+- JavaScript / AJAX / JBuilder
+- PostgreSQL
+- HTML5 and CSS
+- AWS S3 and AWS IAM
+- Heroku
 
-* Configuration
+## Features
 
-* Database creation
+- ### Product Review
 
-* Database initialization
+Once signed in you can add, edit and delete reviews on a product's page.
 
-* How to run the test suite
+- ### Cart Update and Checkout
 
-* Services (job queues, cache servers, search engines, etc.)
+You can add any quantity of items to your cart and check out the subtotal before your purchase.
 
-* Deployment instructions
+- ### User Authentication
 
-* ...
+You can sign in and sign up with your own credentials or a convenient demo user.
+
+## Upcoming Features
+
+- ### Search Bar
+
+Find specific products quickly by searching them by name and category.
+
+- ### Ratings
+
+See accurate information on a product's quality based on real users' reviews.
+
+- ### Sort By
+
+View your products listed alphabetically, from cheapest to most expensive or vice-versa.
