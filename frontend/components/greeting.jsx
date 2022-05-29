@@ -5,7 +5,7 @@ class Greeting extends React.Component {
     constructor(props) {
         super(props);
     }
-
+    
     render() {
         const {currentUser, logout} = this.props;
         if (currentUser) {

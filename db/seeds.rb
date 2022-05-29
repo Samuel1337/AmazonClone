@@ -11,12 +11,21 @@ require("open-uri")
 User.destroy_all
 Product.destroy_all
 Review.destroy_all
+CartItem.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!("users");
 ActiveRecord::Base.connection.reset_pk_sequence!("products");
 ActiveRecord::Base.connection.reset_pk_sequence!("reviews");
+ActiveRecord::Base.connection.reset_pk_sequence!("cart_items");
 
 demo = User.create!(username: "Demo", password: "123456");
+jane = User.create!(username: "Jane Hopkins", password: "123456");
+abdul = User.create!(username: "Abdul Hamdi", password: "123456");
+eliza = User.create!(username: "Eliza Jones", password: "123456");
+trevor = User.create!(username: "Trevor Wallace", password: "123456");
+jing = User.create!(username: "Jing Lee", password: "123456");
+krzysztof = User.create!(username: "Krzysztof Marszczewski", password: "123456");
+roberta = User.create!(username: "Roberta Gonzalez", password: "123456");
 
 # Model:
 
@@ -52,14 +61,6 @@ electronics1 = Product.create!(
 
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/fire-tablet.jpg')
 electronics1.photo.attach(io: file, filename: 'fire-tablet.jpg')
-
-review1 = Review.create!(
-    title: "Very good",
-    body: "Amazing",
-    rating: 4,
-    user_id: 1,
-    product_id: 1
-)
 
 electronics2 = Product.create!(
     title: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
@@ -1016,6 +1017,7 @@ automotive_industrial3 = Product.create(
 
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/welding.jpg')
 automotive_industrial3.photo.attach(io: file, filename: 'welding.jpg')
+
 =begin
 automotive_industrial4 = Product.create(
     title: "R. E. Olds and Industrial Lansing (MI) (Images of America)",
@@ -1032,3 +1034,125 @@ automotive_industrial4 = Product.create(
 file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/industrial-lansing.jpg')
 automotive_industrial4.photo.attach(io: file, filename: 'industrial-lansing.jpg')
 =end
+
+review1 = Review.create!(
+    title: "New shape, new processor, better sound",
+    body: "The new Echo 4th Gen is a big change in aesthetics and design for the Echo line. The new spherical shape is wider and shorter than previous Echo versions, and now focus sound in one primary direction instead of 360 degrees. It adds an extra tweeter, and seems to produce more sound than previous versions.",
+    rating: 4,
+    user_id: 2,
+    product_id: 9
+)
+review2 = Review.create!(
+    title: "Mic is very insensitive",
+    body: "- Inconsistent when responding - sometimes will answer you from 10 feet away, sometimes won't respond from 3 feet away. Hot/cold.
+    - On some occasions, will understand you perfectly - better than you expect. At others, you wonder if you're on the same plane of existence.
+    
+    Speaking of Echo though, I do like the sound quality. It does sound bassy but I think there's a higher degree of clarity. I tested this by playing \"50 ways to lose your lover\" (aka Steve Gadd's iconic drum groove) on Echo 3rd gen and 4th gen. The song sounds so much better on the latter.",
+    rating: 1,
+    user_id: 3,
+    product_id: 9
+)
+review3 = Review.create!(
+    title: "Amazing! Wow!",
+    body: " I have been an early adopter of Amazon technology for the better part of a decade. This is my first full-size echo although, I have had the show, show 2, show 5, show 8 and every other generation of dot including this new fourth GEN. This is amazing. The sound is unparalleled, even by a wonderful Harmon Karmen speaker that has a ALEXA built-in. I can’t wait to get deeper into its capabilities but, just the first few hours have left me in awe.",
+    rating: 5,
+    user_id: 1,
+    product_id: 9
+)
+review4 = Review.create!(
+    title: "Seamless experience",
+    body: "LOVING this product and the direction it’s going. The future IS now and ECHO is the best, most supported, device with thousands and thousands of functions. Thank you Amazon and keep enhancing this baby because I’m upgrading all along the way. I returned on for a discount and the other 1st gen is going to a charity raffle. And heck, it’s in perfect condition with all the original packaging and boxes.",
+    rating: 5,
+    user_id: 5,
+    product_id: 9
+)
+review5 = Review.create!(
+    title: "It's a kindle with a color screen",
+    body: "Right up front I want to address the negative reviews that tarnish this product because, as usual, people buy this at a very budget price and expect an iPad or Samsung Tablet. It is NOT an iPad or Samsung, it is an Amazon content delivery device. It is inexpensive because Amazon provides the content and they want you to have a cheap way to enjoy it. It is an E Reader, Music Player, Video Player not a full fledged Android Tablet. Like most Amazon devices it has ads on the lock screen. Any other ads are the fault of the apps. It can be massaged to load apps from Google Play but it wasn't designed for that and results will vary.",
+    rating: 5,
+    user_id: 6,
+    product_id: 1
+)
+review6 = Review.create!(
+    title: "Great Tablet",
+    body: " I enjoy reading books and watching videos on my new Kindle.
+
+    - Screen and Size:
+    I appreciate the form factors -- it has sufficient screen size for my use but also very portable to carry around. The display quality of the 8 inch screen is great, everything is crisp and sharp. For me it is the most important thing. It's a great content consumption device which provides excellent reading experience similar to my old Paperwhite.",
+    rating: 5,
+    user_id: 7,
+    product_id: 1
+)
+review7 = Review.create!(
+    title: "Bad customer service for a broken kindle",
+    body: "We bought this kindle for my son this past Christmas and the screen glitches. Whenever it’s turned on every few seconds the screen will go black and then turn back on. It doesn’t matter if it’s on the home screen or in an app. My son tried to use this kindle many times during “homeschooling” and it would not work. Because of COVID it took me awhile to get to costumer service as this problem has been going for a few months. Once I was able to talk with someone they told me that because it was purchased through Target they are not responsible for replacing it.",
+    rating: 1,
+    user_id: 8,
+    product_id: 1
+)
+review8 = Review.create!(
+    title: "Disappointing restrictions",
+    body: "I bought this new and improved Fire 8 to replace an older model. And yet I find that I cannot apply Google Hangouts or Chats - one of the few uses I have for the device. Raised the issue with the help desk who simply confirmed that it was no longer possible \"at this time\" .",
+    rating: 2,
+    user_id: 1,
+    product_id: 1
+)
+review9 = Review.create!(
+    title: "Perfect gardening tool kit for yard work",
+    body: "A must tool kit to have in your garage, with these tools I can tackle any yard work to keep my garden neat, organized, and all my plants healthy.
+    The storage bag is like industrial grade, thick strong canvas like to keep from misplacing all the tools, but with the bright orange color handle I have no problem locate them in my backyard.
+    The cultivators, weeder made the weeding with ease. all the handles were comfortable to grip.
+    I like the depth guage of the transplant towel, no guesssing work. The blade is thick enough.",
+    rating: 5,
+    user_id: 3,
+    product_id: 15
+)
+review10 = Review.create!(
+    title: "Excellent Garden Tools!",
+    body: "Very impressed with the quality of the gardening tools in this set! The items are well made and the handles are exceptionally comfortable because of the thick rubber covering. An indentation on the rubber handles for the thumb makes for a perfect grip while gardening. The tools have holes in the handles for hanging or you can place them in the tote bag and take them to the garden! The tote bag is sturdy and holds all of the items in place in deep, outside pockets. Tote bag handles are wide and large. Inside, the bag is roomy and deep and can accommodate other items for gardening, such as spray bottles & plant food. This garden tool set is more than I expected and well worth the price!",
+    rating: 5,
+    user_id: 7,
+    product_id: 15
+)
+review11 = Review.create!(
+    title: "Tools have good grip.",
+    body: "The tools are made of good quality material. The grips are nice and thick and seem like they will last for a long time. The bag itself is also made of quite durable material. The only problem I had was with the tightening straps on either side of the bag. They are very fragile, if you pull on them too hard, they will come out of their housing. Which kind of sucks. One of them popped out on me so I had to knot it.",
+    rating: 5,
+    user_id: 2,
+    product_id: 15
+)
+review12 = Review.create!(
+    title: "Very good",
+    body: "These durable tools are JUST what I needed in a pinch. I needed something sturdy, as I'm trying to reclaim my yard and I've bent 3 trowels, and decided to give them a try. I was overjoyed that the items are precisely what I've needed. The handy carrying pouch is perfect to carry bulbs or random things you find that you don't have a trash near-by, and all of the tools are great. I cannot say how pleased I am with their \"sleek\" design (not too bulky for my hands, but not tiny like others) and the bright orange helps me to not lose them in the garden. Heck, I've even used them several times in repotting my indoor plants! They're great!",
+    rating: 5,
+    user_id: 1,
+    product_id: 15
+)
+review13 = Review.create!(
+    title: "Worth the investment!",
+    body: "So far so good!! We installed this in our garage on Thursday and on Friday our white golden retriever played in the mud so I could try it out. It worked fantastically! One of the main reasons we got this was because I have lower back issues and getting the girls in and out of the tub and then bending over it to bathe them about did me in. Since our golden, JoJo, is such a tomboy and gets dirty on a regular basis we needed a better option. This was definitely it. There is plenty of room for her or our German shepherd. They’re both around 70 lbs. They were both a little hesitant about walking up the ramp at first but I led them up on leash and they got in just fine. I’ve only used this once but am very happy with the purchase at this point. I know it’s a bit pricey but my back says it’s worth it.",
+    rating: 5,
+    user_id: 1,
+    product_id: 18
+)
+review14 = Review.create!(
+    title: "Extremely pleased with this product.",
+    body: "So the only gripe I had was that in order to hook it up to PVC I had to have the seller send out another piece. It's not worth deducting a star though because as soon as I messaged the seller on amazon I got a phone call and he had it sent out the next day. I can't say enough about the customer service. The ramp is a little slick but I have another dog ramp I use and it fits perfectly. This really is a great purchase since I have a golden retriever that gets dirty every single chance he gets. Another great thing about this is that it's not just a dog wash station. You can use it like any other utility sink for cleaning off mud or filling up a mop bucket. It's definitely a great addition to our house. Update: Magnets won't stick to the steel basin. The drain is interchangeable so if you want w different drain, you can buy one on Euphrates.",
+    rating: 5,
+    user_id: 6,
+    product_id: 18
+)
+review15 = Review.create!(
+    title: "Problem with rust.",
+    body: "The tub itself is nice. The quality is not. Please explain to me how something that is stainless steel can rust?",
+    rating: 2,
+    user_id: 4,
+    product_id: 18
+)
+review16 = Review.create!(
+    title: "Purchase you won't regret!",
+    body: "Very sturdy and good quality. The perfect size for my dogs. This tub really made a difference, as it was much more of a hassle before. Now I finally don’t have to bend over to wash them,which saved my back a lot. It is well designed and has everything I need all in one. Good purchase!!",
+    rating: 5,
+    user_id: 7,
+    product_id: 18
+)

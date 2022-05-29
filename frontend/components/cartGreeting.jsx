@@ -12,7 +12,7 @@ class CartGreeting extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.currentUserId !== this.props.currentUserId) {
+        if (this.props.currentUserId && prevProps.currentUserId !== this.props.currentUserId) {
             this.props.getCartItemsById(this.props.currentUserId);
         }
     }

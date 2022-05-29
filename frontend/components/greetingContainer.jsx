@@ -1,4 +1,6 @@
 import { connect } from "react-redux"
+import { withRouter } from "react-router-dom";
+import { getProduct } from "../actions/product_actions";
 import { logout } from "../actions/session_actions";
 import Greeting from "./greeting"
 
@@ -7,7 +9,8 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    getProduct: productId => dispatch(getProduct(productId))
 })
 
-export default connect(mSTP, mDTP)(Greeting);
+export default withRouter(connect(mSTP, mDTP)(Greeting));

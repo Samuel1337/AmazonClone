@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { getCartItemsById } from "../actions/cart_actions";
 import CartGreeting from "./cartGreeting";
 
@@ -11,4 +12,4 @@ const mDTP = dispatch => ({
     getCartItemsById: userId => dispatch(getCartItemsById(userId))
 })
 
-export default connect(mSTP,mDTP)(CartGreeting);
+export default withRouter(connect(mSTP,mDTP)(CartGreeting));

@@ -29,11 +29,11 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(()=>this.props.history.goBack());
     }
 
     update(field) {
-        return e => this.setState({[field]: e.currentTarget.value})
+        return e => this.setState({[field]: e.currentTarget.value});
     }
 
     redirect() {
@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
         
         setTimeout(() => {
             const user = Object.assign({}, {username: "Demo", password: "123456"});
-            this.props.demoLogin(user);
+            this.props.demoLogin(user).then(()=>this.props.history.goBack());
         }, 1500);
     }
 

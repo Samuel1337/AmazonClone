@@ -12,21 +12,33 @@ class SearchBar extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.displayUpcomingFeature = this.displayUpcomingFeature.bind(this);
+        this.removeUpcomingFeature = this.removeUpcomingFeature.bind(this);
     }
 
     
     handleSubmit() {
-        debugger
         // const dropdown = document.querySelector('.search-dropdown').value;
         // const category = dropdown.options[dropdown.selectedIndex].value;
-        const input = document.getElementById('search-input').value;
+        // const input = document.getElementById('search-input').value;
         
-        this.setState({
-            ["search"]: input,
-        })
-        
-        
+        // this.setState({
+        //     ["search"]: input,
+        // })   
     }
+
+    displayUpcomingFeature(e) {
+        e.currentTarget.value = "Search feature coming soon!";
+        e.currentTarget.style = "transition: 100ms; background-color: lightyellow; color: orange";
+        e.currentTarget.disabled = true;
+    }
+
+    removeUpcomingFeature(e) {
+        e.currentTarget.value = "";
+        e.currentTarget.style = "transition: 500ms; background-color: white; color: black";
+        e.currentTarget.disabled = false;
+    }
+
 
     handleChange(field) {
         return e => this.setState({[field]: e.currentTarget.selectedIndex})
@@ -63,6 +75,8 @@ class SearchBar extends React.Component {
                         id="search-input"
                         className="search-input"
                         placeholder="Search for a specific item"
+                        onMouseEnter={this.displayUpcomingFeature}
+                        onMouseLeave={this.removeUpcomingFeature}
                     />
                     <button onClick={this.handleSubmit} className="search-button">
                         <FaSearch />

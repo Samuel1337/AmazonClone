@@ -1,4 +1,4 @@
-import { clearErrors, signup } from "../actions/session_actions";
+import { clearErrors, login, signup } from "../actions/session_actions";
 import { connect } from "react-redux";
 import SessionForm from "./sessionForm";
 

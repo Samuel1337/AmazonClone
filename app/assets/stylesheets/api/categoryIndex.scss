@@ -19,10 +19,18 @@
     padding-left: 20px;
 }
 
-.grid {
+.grid-container {
     width: 100%;
     min-width: 762px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;  
+}
+
+.grid {
+    width: 80%;
+    min-width: 762px;
+    display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;   
 }

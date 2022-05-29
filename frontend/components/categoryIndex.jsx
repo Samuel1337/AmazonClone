@@ -54,14 +54,16 @@ class CategoryIndex extends React.Component {
             <div className="category-bar">
                 {gridItems.length} items
             </div>
-                <div className="grid">
-                    { gridItems.map(product => (
-                        <GridItem
+                <div className="grid-container">
+                    <div className="grid">
+                        { gridItems.map(product => (
+                            <GridItem
                             product={product}
                             key={product.id}
-                        />
-                        ))
-                    }    
+                            />
+                            ))
+                        }    
+                    </div>
                 </div>
             </div>
         )
