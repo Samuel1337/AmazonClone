@@ -15,7 +15,6 @@ class SearchBar extends React.Component {
         this.displayUpcomingFeature = this.displayUpcomingFeature.bind(this);
         this.removeUpcomingFeature = this.removeUpcomingFeature.bind(this);
     }
-
     
     handleSubmit() {
         // const dropdown = document.querySelector('.search-dropdown').value;
@@ -24,7 +23,7 @@ class SearchBar extends React.Component {
         
         // this.setState({
         //     ["search"]: input,
-        // })   
+        // })
     }
 
     displayUpcomingFeature(e) {
