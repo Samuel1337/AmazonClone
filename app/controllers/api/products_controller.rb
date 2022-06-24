@@ -7,13 +7,17 @@ class Api::ProductsController < ApplicationController
 
     def index
         @products = Product.all
-        # if (params[:search] == nil) {
-        # } else {
-        #     @products = Product
-        #         .where(category: params[:category])
-        #         .where(title: /#{Regexp.quote(params[:search])}/)
-        # }
         render :index
+    end
+
+    def search
+        query = params[:query]
+        @products = Listing.where('title ILIKE ? OR description ILIKE ? ', "%#{query}%", "%#{query}%") 
+        if @products.length > 0
+            render :index
+        else
+            render json: ["No results found for '#{query}'"], status: 404
+        end
     end
 
     private

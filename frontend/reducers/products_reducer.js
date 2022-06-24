@@ -1,5 +1,5 @@
 import { RECEIVE_CART_ITEMS, REMOVE_CART_ITEM } from "../actions/cart_actions";
-import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS } from "../actions/product_actions";
+import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS, RECEIVE_SEARCH } from "../actions/product_actions";
 
 
 const productsReducer = (oldState = {}, action) => {
@@ -17,6 +17,8 @@ const productsReducer = (oldState = {}, action) => {
             let newState = Object.assign({}, oldState);
             delete newState[action.cartItem.product_id];
             return newState;
+        case RECEIVE_SEARCH:
+            return Object.assign({}, action.products);
         default:
             return oldState;
     }

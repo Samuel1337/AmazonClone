@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
         // const category = dropdown.options[dropdown.selectedIndex].value;
         // const input = document.getElementById('search-input').value;
         
-        // this.setState({
+        // this.setState({ 
         //     ["search"]: input,
         // })
     }

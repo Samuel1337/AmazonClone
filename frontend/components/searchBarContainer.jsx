@@ -9,7 +9,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     getAllProducts: () => dispatch(getAllProducts()),
-    getCategoryProducts: category => dispatch(getCategoryProducts(category))
+    getCategoryProducts: category => dispatch(getCategoryProducts(category)),
+    search: query => dispatch(search(query))
 })
 
 export default connect(_, mDTP)(SearchBar);
