@@ -1,0 +1,80 @@
+.grid-item {
+    border-bottom: 2px solid #dddddd;
+    width: 23%;
+    min-width: 230px;
+    height: 500px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    
+
+
+    .grid-image-container {
+        cursor: pointer;
+        height: 220px;
+        width: 220px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 85%;
+            max-height: 220px;
+            object-fit: contain;
+            margin: 0 12px;
+            align-self: center;
+        }
+    }
+
+    h2 {
+        cursor: pointer;
+        font-family: Amazon Ember Medium, Arial, Helvetica, sans-serif;
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 24px;
+        max-height: 140px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: black;
+        margin-bottom: 8px;
+
+        &:hover {
+            color:#C35727;
+        }
+    }
+
+    .grid-rating {
+        padding-right: 5px;
+    }
+
+    .grid-price {
+        cursor: pointer;
+        font-family: Amazon Ember Medium, Arial, Helvetica, sans-serif;
+        margin-top: 8px;
+        display: flex;
+        align-items: flex-start;
+        color: black;
+    
+        .grid-dollar-sign, .grid-cents {
+            font-size: 12px;
+            padding-top: 2px;
+        }
+
+        .grid-dollars {
+            font-size: 21px;
+        }
+    }
+
+    .grid-shipping {
+        font-family: Amazon Ember Regular Light, Arial, Helvetica, sans-serif;
+        color: #565959;
+        padding-top: 4px;
+        font-size: 14px;
+        line-height: 20px;
+
+        b {
+            font-weight: 700;
+        }
+    }
+}

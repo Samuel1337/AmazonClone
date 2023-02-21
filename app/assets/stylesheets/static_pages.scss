@@ -1,0 +1,56 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+    font-family: 'Amazon Ember Medium';
+    src: url('app/assets/fonts/Amazon-Ember-Medium.ttf');
+    font-family: 'Amazon Ember Light';
+    src: url('app/assets/fonts/AmazonEmber_Lt.ttf');
+    font-family: 'Amazon Ember Regular';
+    src: url('app/assets/fonts/AmazonEmber_Rg.ttf');
+    font-family: 'Amazon Ember Regular Light';
+    src: url('app/assets/fonts/AmazonEmber_Rglt.ttf');
+    
+ }
+
+ body {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: Amazon Ember Regular, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+#body {
+    min-height: 100vh;
+    max-width: 100%;
+}
+
+#error-page {
+    height: 40vh;
+    bottom: 0%;
+    width: 100vw;
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+}
+
+.unsupported {
+    height: 100vh;
+    width: 100vw;
+    background-color: #232F3E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    span {
+        color: white;
+    }
+    img {
+        width: 30%;
+    }
+}

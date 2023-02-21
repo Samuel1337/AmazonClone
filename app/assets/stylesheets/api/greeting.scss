@@ -1,0 +1,23 @@
+#greeting {
+
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 16px;
+    cursor: default;
+    p {
+        color: white;
+        font-size: 12px;
+    }
+    span {
+        color: white;
+        font-weight: 700;
+    }
+    #header-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    #header-link:hover {
+        color: #EEA333;
+        cursor: pointer;
+    }
+}
