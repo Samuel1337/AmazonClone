@@ -26,14 +26,14 @@ class Categories extends React.Component {
             this.props.getAllProducts()
             .then(() => {
                 if (!this.props.location.pathname.includes(category)) {
-                    this.props.history.push(`/categories/${category}`)
+                    this.props.history.push(`/categories/${category}`);
                 }
             })
         } else {
             this.props.getCategoryProducts(category)
             .then(() => {
                 if (!this.props.location.pathname.includes(category)) {
-                    this.props.history.push(`/categories/${category}`)
+                    this.props.history.push(`/categories/${category}`);
                 }
             })
         }
