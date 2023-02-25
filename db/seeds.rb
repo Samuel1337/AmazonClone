@@ -59,7 +59,7 @@ electronics1 = Product.create!(
     category: "electronics"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/fire-tablet.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/fire-tablet.jpg')
 electronics1.photo.attach(io: file, filename: 'fire-tablet.jpg')
 
 electronics2 = Product.create!(
@@ -78,7 +78,7 @@ electronics2 = Product.create!(
     category: "electronics"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/wireless-earbuds.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/wireless-earbuds.jpg')
 electronics2.photo.attach(io: file, filename: 'wireless-earbuds.jpg')
 
 electronics3 = Product.create!(
@@ -97,7 +97,7 @@ electronics3 = Product.create!(
     category: "electronics"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/nintendo-switch.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/nintendo-switch.jpg')
 electronics3.photo.attach(io: file, filename: 'nintendo-switch.jpg')
 
 electronics4 = Product.create!(
@@ -116,7 +116,7 @@ electronics4 = Product.create!(
     category: "electronics"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/video-camera.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/electronics/video-camera.jpg')
 electronics4.photo.attach(io: file, filename: 'video-camera.jpg')
 
 # Computers
@@ -142,7 +142,7 @@ computers1 = Product.create!(
     category: "computers"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/macbook-air-laptop.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/macbook-air-laptop.jpg')
 computers1.photo.attach(io: file, filename: 'macbook-air-laptop.jpg')
 
 computers2 = Product.create!(  
@@ -161,7 +161,7 @@ computers2 = Product.create!(
     category: "computers"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/gaming-desktop.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/gaming-desktop.jpg')
 computers2.photo.attach(io: file, filename: 'gaming-desktop.jpg')
 
 computers3 = Product.create!(  
@@ -180,7 +180,7 @@ computers3 = Product.create!(
     category: "computers"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/elite-desktop.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/elite-desktop.jpg')
 computers3.photo.attach(io: file, filename: 'elite-desktop.jpg')
 
 computers4 = Product.create!(  
@@ -199,7 +199,7 @@ computers4 = Product.create!(
     category: "computers"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/lenovo.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/computers/lenovo.jpg')
 computers4.photo.attach(io: file, filename: 'lenovo.jpg')
 
 # Smart Home
@@ -223,7 +223,7 @@ smart_home1 = Product.create(
     category: "smart-home"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/echo-dot.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/echo-dot.jpg')
 smart_home1.photo.attach(io: file, filename: 'echo-dot.jpg')
 
 smart_home2 = Product.create(  
@@ -240,7 +240,7 @@ smart_home2 = Product.create(
     category: "smart-home"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/battery-pack.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/battery-pack.jpg')
 smart_home2.photo.attach(io: file, filename: 'battery-pack.jpg')
 
 smart_home3 = Product.create(  
@@ -258,7 +258,7 @@ smart_home3 = Product.create(
     category: "smart-home"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/solar-panel.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/solar-panel.jpg')
 smart_home3.photo.attach(io: file, filename: 'solar-panel.jpg')
 
 smart_home4 = Product.create(  
@@ -277,7 +277,7 @@ smart_home4 = Product.create(
     category: "smart-home"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/power-strip.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/smart-home/power-strip.jpg')
 smart_home4.photo.attach(io: file, filename: 'power-strip.jpg')
 
 # Home, Garden & Tools
@@ -298,7 +298,7 @@ home_garden_tools1 = Product.create(
     category: "home-garden-tools"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-holder.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-holder.jpg')
 home_garden_tools1.photo.attach(io: file, filename: 'tool-holder.jpg')
 
 home_garden_tools2 = Product.create(  
@@ -317,7 +317,7 @@ home_garden_tools2 = Product.create(
     category: "home-garden-tools"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-kit.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-kit.jpg')
 home_garden_tools2.photo.attach(io: file, filename: 'tool-kit.jpg')
 
 home_garden_tools3 = Product.create(  
@@ -336,7 +336,7 @@ home_garden_tools3 = Product.create(
     category: "home-garden-tools"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-set.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/tool-set.jpg')
 home_garden_tools3.photo.attach(io: file, filename: 'tool-set.jpg')
 
 home_garden_tools4 = Product.create(  
@@ -355,7 +355,7 @@ home_garden_tools4 = Product.create(
     category: "home-garden-tools"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/garden-stool.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/home-garden-tools/garden-stool.jpg')
 home_garden_tools4.photo.attach(io: file, filename: 'garden-stool.jpg')
 
 # Pet Supplies
@@ -376,7 +376,7 @@ pet_supplies1 = Product.create(
     category: "pet-supplies"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/stain-eliminator.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/stain-eliminator.jpg')
 pet_supplies1.photo.attach(io: file, filename: 'stain-eliminator.jpg')
 
 pet_supplies2 = Product.create(  
@@ -395,7 +395,7 @@ pet_supplies2 = Product.create(
     category: "pet-supplies"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/groom-tub.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/groom-tub.jpg')
 pet_supplies2.photo.attach(io: file, filename: 'groom-tub.jpg')
 
 pet_supplies3 = Product.create(  
@@ -412,7 +412,7 @@ pet_supplies3 = Product.create(
     category: "pet-supplies"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/supplement.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/supplement.jpg')
 pet_supplies3.photo.attach(io: file, filename: 'supplement.jpg')
 
 pet_supplies4 = Product.create(  
@@ -432,7 +432,7 @@ pet_supplies4 = Product.create(
     category: "pet-supplies"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/pet-home.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/pet-supplies/pet-home.jpg')
 pet_supplies4.photo.attach(io: file, filename: 'pet-home.jpg')
 
 # Food & Grocery
@@ -451,7 +451,7 @@ food_grocery1 = Product.create(
     category: "food-grocery"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/instant-oatmeal.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/instant-oatmeal.jpg')
 food_grocery1.photo.attach(io: file, filename: 'instant-oatmeal.jpg')
 
 food_grocery2 = Product.create(  
@@ -470,7 +470,7 @@ food_grocery2 = Product.create(
     category: "food-grocery"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/meat-sauce.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/meat-sauce.jpg')
 food_grocery2.photo.attach(io: file, filename: 'meat-sauce.jpg')
 
 food_grocery3 = Product.create(  
@@ -489,7 +489,7 @@ food_grocery3 = Product.create(
     category: "food-grocery"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/grocery-bag.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/grocery-bag.jpg')
 food_grocery3.photo.attach(io: file, filename: 'grocery-bag.jpg')
 
 food_grocery4 = Product.create(  
@@ -508,7 +508,7 @@ food_grocery4 = Product.create(
     category: "food-grocery"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/super-foods.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/food-grocery/super-foods.jpg')
 food_grocery4.photo.attach(io: file, filename: 'super-foods.jpg')
 
 # Beauty & Health
@@ -530,7 +530,7 @@ beauty_health1 = Product.create(
     category: "beauty-health"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/cleansing-brush.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/cleansing-brush.jpg')
 beauty_health1.photo.attach(io: file, filename: 'cleansing-brush.jpg')
 
 beauty_health2 = Product.create(
@@ -549,7 +549,7 @@ beauty_health2 = Product.create(
     category: "beauty-health"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/centrum.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/centrum.jpg')
 beauty_health2.photo.attach(io: file, filename: 'centrum.jpg')
 
 beauty_health3 = Product.create(
@@ -568,7 +568,7 @@ beauty_health3 = Product.create(
     category: "beauty-health"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/towels.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/towels.jpg')
 beauty_health3.photo.attach(io: file, filename: 'towels.jpg')
 
 beauty_health4 = Product.create(
@@ -588,7 +588,7 @@ beauty_health4 = Product.create(
     category: "beauty-health"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/toothpaste.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/toothpaste.jpg')
 beauty_health4.photo.attach(io: file, filename: 'toothpaste.jpg')
 
 beauty_health5 = Product.create(
@@ -607,7 +607,7 @@ beauty_health5 = Product.create(
     category: "beauty-health"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/serum.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/beauty-health/serum.jpg')
 beauty_health5.photo.attach(io: file, filename: 'serum.jpg')
 
 # Toys, Kids & Baby
@@ -628,7 +628,7 @@ toys_kids_baby1 = Product.create(
     category: "toys-kids-baby"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/talking-cactus.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/talking-cactus.jpg')
 toys_kids_baby1.photo.attach(io: file, filename: 'talking-cactus.jpg')
 
 toys_kids_baby2 = Product.create(
@@ -647,7 +647,7 @@ toys_kids_baby2 = Product.create(
     category: "toys-kids-baby"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/splash-pad.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/splash-pad.jpg')
 toys_kids_baby2.photo.attach(io: file, filename: 'splash-pad.jpg')
 
 toys_kids_baby3 = Product.create(
@@ -666,7 +666,7 @@ toys_kids_baby3 = Product.create(
     category: "toys-kids-baby"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/beach-toys.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/beach-toys.jpg')
 toys_kids_baby3.photo.attach(io: file, filename: 'beach-toys.jpg')
 
 toys_kids_baby4 = Product.create(
@@ -685,7 +685,7 @@ toys_kids_baby4 = Product.create(
     category: "toys-kids-baby"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/tablet-toy.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/toys-kids-baby/tablet-toy.jpg')
 toys_kids_baby4.photo.attach(io: file, filename: 'tablet-toy.jpg')
 
 # Handmade
@@ -706,7 +706,7 @@ handmade1 = Product.create(
     category: "handmade"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/friendship-lamp.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/friendship-lamp.jpg')
 handmade1.photo.attach(io: file, filename: 'friendship-lamp.jpg')
 
 handmade2 = Product.create(
@@ -725,7 +725,7 @@ handmade2 = Product.create(
     category: "handmade"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/custom-necklace.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/custom-necklace.jpg')
 handmade2.photo.attach(io: file, filename: 'custom-necklace.jpg')
 
 handmade3 = Product.create(
@@ -744,7 +744,7 @@ handmade3 = Product.create(
     category: "handmade"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/orgonite-pyramid.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/orgonite-pyramid.jpg')
 handmade3.photo.attach(io: file, filename: 'orgonite-pyramid.jpg')
 
 handmade4 = Product.create(
@@ -763,7 +763,7 @@ handmade4 = Product.create(
     category: "handmade"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/custom-cushion.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/handmade/custom-cushion.jpg')
 handmade4.photo.attach(io: file, filename: 'custom-cushion.jpg')
 
 # Sports
@@ -785,7 +785,7 @@ sports1 = Product.create(
     category: "sports"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/sports-cup.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/sports-cup.jpg')
 sports1.photo.attach(io: file, filename: 'sports-cup.jpg')
 
 sports2 = Product.create(
@@ -805,7 +805,7 @@ sports2 = Product.create(
     category: "sports"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/basketball-hook.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/basketball-hook.jpg')
 sports2.photo.attach(io: file, filename: 'basketball-hook.jpg')
 
 sports3 = Product.create(
@@ -824,7 +824,7 @@ sports3 = Product.create(
     category: "sports"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/sports-art.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/sports-art.jpg')
 sports3.photo.attach(io: file, filename: 'sports-art.jpg')
 
 sports4 = Product.create(
@@ -851,7 +851,7 @@ sports4 = Product.create(
     category: "sports"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/baseball-shirt.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/sports/baseball-shirt.jpg')
 sports4.photo.attach(io: file, filename: 'baseball-shirt.jpg')
 
 # Outdoors
@@ -868,7 +868,7 @@ outdoors1 = Product.create(
     category: "outdoors"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/metal-sign.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/metal-sign.jpg')
 outdoors1.photo.attach(io: file, filename: 'metal-sign.jpg')
 
 outdoors2 = Product.create(
@@ -888,7 +888,7 @@ outdoors2 = Product.create(
     category: "outdoors"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/cabin-sign.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/cabin-sign.jpg')
 outdoors2.photo.attach(io: file, filename: 'cabin-sign.jpg')
 
 outdoors3 = Product.create(
@@ -908,7 +908,7 @@ outdoors3 = Product.create(
     category: "outdoors"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/tortoise-sign.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/tortoise-sign.jpg')
 outdoors3.photo.attach(io: file, filename: 'tortoise-sign.jpg')
 
 outdoors4 = Product.create(
@@ -928,7 +928,7 @@ outdoors4 = Product.create(
     category: "outdoors"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/wooden-tictactoe.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/outdoors/wooden-tictactoe.jpg')
 outdoors4.photo.attach(io: file, filename: 'wooden-tictactoe.jpg')
 
 # Automotive & Industrial
@@ -952,7 +952,7 @@ automotive_industrial1 = Product.create(
     category: "automotive-industrial"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/condition-monitoring.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/condition-monitoring.jpg')
 automotive_industrial1.photo.attach(io: file, filename: 'condition-monitoring.jpg')
 
 automotive_industrial2 = Product.create(
@@ -977,7 +977,7 @@ automotive_industrial2 = Product.create(
     category: "automotive-industrial"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/archeological-automobile.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/archeological-automobile.jpg')
 automotive_industrial2.photo.attach(io: file, filename: 'archeological-automobile.jpg')
 
 automotive_industrial3 = Product.create(
@@ -1015,7 +1015,7 @@ automotive_industrial3 = Product.create(
     category: "automotive-industrial"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/welding.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/welding.jpg')
 automotive_industrial3.photo.attach(io: file, filename: 'welding.jpg')
 
 =begin
@@ -1031,7 +1031,7 @@ automotive_industrial4 = Product.create(
     category: "automotive-industrial"
 )
 
-file = open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/industrial-lansing.jpg')
+file = URI.open('https://euphrates-aa-seed.s3.us-west-1.amazonaws.com/categories/automotive-industrial/industrial-lansing.jpg')
 automotive_industrial4.photo.attach(io: file, filename: 'industrial-lansing.jpg')
 =end
 
