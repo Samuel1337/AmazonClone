@@ -12,7 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development",
     "webpack": "webpack --watch --mode=development",
-    "postinstall": "echo \"yes\" | webpack"
+    "postinstall": "echo \"yes\" | webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
