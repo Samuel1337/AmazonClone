@@ -1,0 +1,18 @@
+databases:
+  - name: Euphrates
+    databaseName: Euphrates
+    user: Euphrates
+
+services:
+  - type: web
+    name: Euphrates
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: postgres://samuelm:W1oOPhmNUPl5s9TMBLoADuZOGlmoSMxZ@dpg-cfsl301gp3joedc8nnu0-a/euphrates
+        fromDatabase:
+          name: Euphrates
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
