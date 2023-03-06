@@ -7,6 +7,8 @@ services:
     env: docker # valid values: https://render.com/docs/yaml-spec#environment
     dockerfilePath: Dockerfile.render
     plan: free # optional; defaults to starter
-    numInstances: 0
+    numInstances: 3
     envVars:
+      - key: RAILS_MASTER_KEY
+        value: 9c3b4531aa65d8b872d03c1a53765c9c
 
