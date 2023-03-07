@@ -20,7 +20,7 @@ on_worker_boot do
   ActiveRecord::Base.establish_connection
 end
 
-# threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 } // <--   comented out
+# threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 } // <--   comented out 
 # threads threads_count, threads_count  // <--                  comented out
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
