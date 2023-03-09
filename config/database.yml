@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: Euphrates_production
-  username: Euphrates
-  password: <%= ENV['EUPHRATES_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: Euphrates_production
+  # username: Euphrates
+  # password: <%= ENV['EUPHRATES_DATABASE_PASSWORD'] %>
