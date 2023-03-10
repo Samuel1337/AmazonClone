@@ -7,7 +7,7 @@
       content="Euphrates is a pixel perfect clone of the Amazon website. In it you can browse through categories of products or search for a specific item, create your own account and add them to your cart. You can also rate and review each product and calculate the total price of your purchase before you execute the transaction."
     />
     <meta property="og:url"
-      content="http://euphrates2022.herokuapp.com/"
+      content="http://euphrates.onrender.com/"
     />
     <link rel="stylesheet" href="reset.css">
     <%= favicon_link_tag asset_path("favicon.ico") %>
@@ -17,6 +17,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'bundle' %>
+
     <script type="text/javascript" >
       window.cart =  "<%= image_url('cart.png') %>"
       window.logo =  "<%= image_url('logo.png') %>"
