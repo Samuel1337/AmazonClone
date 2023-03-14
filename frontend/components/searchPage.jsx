@@ -8,13 +8,13 @@ class SearchPage extends React.Component {
     render() {
         const { products, error } = this.props;
         
-        if (error.error) return (
+        if (error.error || !products || products[0] === undefined) return (
             <div className="search-page">
                 <Link to="/"><img className="empty-search" src={window.empty_search} /></Link>
             </div>
         )
         
-        if (!products || products[0] === undefined) return LoadingPage;
+        // if (!products || products[0] === undefined) return <LoadingPage />;
         
         return (
             <div className="category-page">

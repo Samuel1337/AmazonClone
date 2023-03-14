@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
     handleSubmit() {
 
         if (this.state.category === "all" && this.state.query === "") {
-            this.props.history.push("/");
+            this.props.history.push("/categories/all");
             return null;
         } 
 

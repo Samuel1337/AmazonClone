@@ -56,9 +56,9 @@ class CategoryIndex extends React.Component {
                     <div className="grid-container">
                         <div className="grid">
                             {array.map(num => (
-                                <div className="grid-item">
-                                    <div className="grid-image-container"></div>
-                                    <div className="grid-rating"></div>
+                                <div className="grid-item" key={`grid-item-${num}`}>
+                                    <div className={`grid-image-container-${num}`}></div>
+                                    <div className={`grid-rating-${num}`}></div>
                                 </div>
                                 ))
                             }    
