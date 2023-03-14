@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // set up Root
     const root = createRoot(document.getElementById("root"));
-    root.render(<Root store={store} />, root);
+    root.render(<Root store={store} />);
 
     // testing
     window.store = store;
