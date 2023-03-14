@@ -23,7 +23,7 @@ import React from 'react';
 const App = () => {
   if (window.innerWidth < 1000) {
     return (
-      <div class="unsupported">
+      <div className="unsupported">
         <br/>
         <span>Unsupported Screen Size</span>
         <br/>
