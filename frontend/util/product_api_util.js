@@ -1,5 +1,3 @@
-import $ from jQuery;
-
 export const fetchAllProducts = () => (
     $.ajax({
         url: '/api/products'

@@ -1,5 +1,3 @@
-import $ from jQuery;
-
 export const signUp = user => (
     $.ajax({
         method: "POST",

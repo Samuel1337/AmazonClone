@@ -1,5 +1,3 @@
-import $ from jQuery;
-
 export const fetchCartItemsById = userId => (
     $.ajax({
         url: `/api/users/${userId}/cart_items`
