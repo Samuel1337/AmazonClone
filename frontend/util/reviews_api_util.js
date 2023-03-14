@@ -1,3 +1,5 @@
+import $ from jQuery;
+
 export const postReview = review => (
     $.ajax({
     url: '/api/reviews',
