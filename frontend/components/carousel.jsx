@@ -66,7 +66,6 @@ class Carousel extends React.Component {
             this.nextButton = document.querySelector('.carousel__button.right');
             this.prevButton = document.querySelector('.carousel__button.left');
         } else {
-            console.log("second branch");
             return null;
         }
         
@@ -119,20 +118,16 @@ class Carousel extends React.Component {
         this.clearEventListeners();
         clearInterval(this.timer);
         this.track = document.querySelector('.carousel__track');
-        console.log(this.track);
         if (this.track !== null) {
-            console.log("start");
             this.start();
             this.loop();
         } else {
-            console.log("remove resize");
             window.removeEventListener("resize", this.handleResize, true);
         }
     }
 
     refresh() {
         this.track = document.querySelector('.carousel__track');
-        console.log(this.track);
         if (this.track !== null) window.addEventListener("resize", this.handleResize, true);
     }
 
