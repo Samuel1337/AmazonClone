@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ShoppingCartItem from "./shoppingCartItem";
 
 class CartIndex extends React.Component {
@@ -14,7 +13,7 @@ class CartIndex extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.currentUser) {
+        if (this.props.currentUser !== undefined) {
             this.props.getCartItemsById(this.props.currentUser.id);
         } else {
             this.props.history.push("/login");
