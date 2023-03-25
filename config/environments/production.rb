@@ -84,9 +84,7 @@ Rails.application.configure do
 
   # config.hosts = "euphrates.app", "euphrates.onrender.com", "euphrates"
 
-  Rails.application.configure do
-    config.hosts.clear
-  end
+  config.hosts.clear
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
