@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Euphrates_development
+  database: euphrates_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: Euphrates_production
-  username: Euphrates
+  url: <%= ENV['DATABASE_URL'] %>
+  database: euphrates_production_qjak
+  username: euphrates
   password: <%= ENV['EUPHRATES_DATABASE_PASSWORD'] %>
