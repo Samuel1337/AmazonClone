@@ -1,14 +1,13 @@
 <% if logged_in? %>
   <script type="text/javascript">
-    object = 
+    window.currentUser =
       <%=      
-        render
-        partial: "api/users/user", 
-        formats: [:json], 
-        handlers: [:jbuilder],
-        locals: { user: current_user }
+          render
+          partial: "api/users/user", 
+          formats: [:json], 
+          handlers: [:jbuilder],
+          locals: { user: current_user }
       %>
-      window.currentUser = object.html_safe
   </script>
 <% end %>
 
