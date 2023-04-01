@@ -83,7 +83,7 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
   
-  config.hosts << "euphrates-yvas.onrender.com"
+  config.hosts << "euphrates.onrender.com"
   config.hosts << "www.euphrates.app"
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
