@@ -81,6 +81,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: euphrates_mgy1
+  database: euphrates_9gko
   username: euphrates
   password: <%= ENV['EUPHRATES_DATABASE_PASSWORD'] %>
