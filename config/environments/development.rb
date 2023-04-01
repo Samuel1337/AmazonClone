@@ -60,7 +60,7 @@ Rails.application.configure do
   config.assets.quiet = true
   config.assets.compile = true
   
-  config.hosts << "euphrates-yvas.onrender.com"
+  config.hosts << "euphrates.onrender.com"
   config.hosts << "www.euphrates.app"
   
   # Raises error for missing translations.
