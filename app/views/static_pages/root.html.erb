@@ -3,8 +3,7 @@
     window.currentUser =
       <%= 
         JSON.generate(     
-          render
-          partial: "api/users/user", 
+          render partial: "api/users/user", 
           formats: [:json], 
           handlers: [:jbuilder],
           locals: { user: current_user }
