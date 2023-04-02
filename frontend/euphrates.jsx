@@ -8,6 +8,7 @@ import { createRoot } from 'react-dom/client';
 document.addEventListener("DOMContentLoaded", () => {
     // set up Store
     let store;
+    console.log("currentUser: ", window.currentUser)
     if (window.currentUser) {
         const preloadedState = {
             entities: {
