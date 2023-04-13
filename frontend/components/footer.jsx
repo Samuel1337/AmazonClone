@@ -25,7 +25,7 @@ class Footer extends React.Component {
                         </div>
                 </nav>
                 <nav id="black-footer">
-                    <p>Euphrates is an Amazon.com clone project created by Sam Martins in May, 2022.</p>
+                    <p>Euphrates is an Amazon.com clone project created by Sam Martins</p>
                 </nav>
             </footer>
         )
