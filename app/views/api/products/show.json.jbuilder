@@ -1,3 +1,4 @@
+json.key_format! camelize: :lower
 json.partial! 'api/products/product', product: @product
 @product.reviews.each do |review|
     json.reviews do

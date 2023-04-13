@@ -1,3 +1,4 @@
+json.key_format! camelize: :lower
 json.cartItems do
     @cart_items.each do |cart_item| 
         json.set! cart_item.id do

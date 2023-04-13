@@ -1,3 +1,4 @@
+json.key_format! camelize: :lower
 @products.each do |product|
     json.set! product.id do
         json.extract! product, :id, :title, :price, :rating, :specialty, :category
