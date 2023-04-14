@@ -8,7 +8,6 @@ import { createRoot } from 'react-dom/client';
 document.addEventListener("DOMContentLoaded", () => {
     // set up Store
     let store;
-    console.log("currentUser: ", window.currentUser)
     if (window.currentUser) {
         const preloadedState = {
             entities: {
@@ -27,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
     root.render(<Root store={store} />);
 
     // testing
-    window.store = store;
-    window.getState = store.getState;
-    window.user = {username: 'Sam', password: '123456'}
-    window.signup = signup;
-    window.login = login;
-    window.logout = logout;
-    window.dispatch = store.dispatch;
-    window.postReview = postReview;
+    // window.store = store;
+    // window.getState = store.getState;
+    // window.user = {username: 'Sam', password: '123456'}
+    // window.signup = signup;
+    // window.login = login;
+    // window.logout = logout;
+    // window.dispatch = store.dispatch;
+    // window.postReview = postReview;
 });
