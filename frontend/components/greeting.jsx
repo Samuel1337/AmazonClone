@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 class Greeting extends React.Component {
     constructor(props) {
         super(props);
+        this.logout = this.logout.bind();
+    }
+    logout() {
+        this.props.history.push("/");
+        this.props.logout();
     }
     
     render() {
@@ -12,7 +17,7 @@ class Greeting extends React.Component {
             return (
                 <div id="greeting">
                     <p>Hello, {currentUser.username}</p>
-                    <a id="header-link" onClick={logout}>Logout</a>
+                    <a id="header-link" onClick={this.logout}>Logout</a>
                 </div>
             )
         } else {
